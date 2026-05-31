@@ -229,10 +229,11 @@ def import_letterboxd_zip(file: UploadFile = File(...), db: Session = Depends(ge
                         skipped += 1
                         continue
                     
-                    # Check if cached
+                    embedding_list = None
                     cached = db.query(MovieCache).filter(
                         MovieCache.tmdb_id == tmdb_id
                     ).first()
+                    
                     if not cached:
                         embedding_list = nlp.embed_movie(movie_data)
                         cached = MovieCache(
@@ -247,10 +248,12 @@ def import_letterboxd_zip(file: UploadFile = File(...), db: Session = Depends(ge
                             embedding=nlp.embedding_to_json(embedding_list),
                         )
                         db.add(cached)
-                        # No commit here yet, as it's part of a larger transaction
-                        # Or, commit if you want to ensure cache is written even if LoggedMovie fails
-                        # For now, let's keep it consistent with existing pattern and commit after logged.
-                    
+                        # No commit here yet, as it's part of a larger transaction.
+                    else:
+                        # If cached, we need to generate the embedding for LoggedMovie,
+                        # as it's stored directly on LoggedMovie rather than referenced.
+                        embedding_list = nlp.embed_movie(movie_data)
+
                     # Log the movie with rating
                     logged = LoggedMovie(
                         tmdb_id=tmdb_id,
@@ -260,7 +263,7 @@ def import_letterboxd_zip(file: UploadFile = File(...), db: Session = Depends(ge
                         poster_path=movie_data['poster_path'],
                         release_year=movie_data['release_year'],
                         rating=rating,
-                        embedding=nlp.embedding_to_json(nlp.embed_movie(movie_data)) # Re-embeds, could use cached embedding
+                        embedding=nlp.embedding_to_json(embedding_list) # Use the obtained embedding
                     )
                     db.add(logged)
                     db.commit() # Commit after both cache (if new) and logged movie are added

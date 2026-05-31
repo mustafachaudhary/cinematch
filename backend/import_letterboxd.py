@@ -27,44 +27,46 @@ def import_ratings(csv_path: str):
                 year = int(row['Year']) if row['Year'] else None
                 rating = float(row['Rating']) if row['Rating'] else None
                 
-                if not rating or rating < 1.0 or rating > 5.0:
-                    print(f"⚠️  Skipping {movie_name} - invalid rating: {rating}")
+                if not rating or rating < 0.5 or rating > 5.0: # Letterboxd ratings can be 0.5
+                    print(f"⚠️  Skipping '{movie_name}' (Year: {year}): invalid rating: {rating}")
                     skipped += 1
                     continue
-                
-                # Check if already logged
-                existing = db.query(LoggedMovie).filter(
-                    LoggedMovie.title == movie_name
-                ).first()
-                if existing:
-                    print(f"✓ Already logged: {movie_name} ({rating}⭐)")
-                    skipped += 1
-                    continue
-                
-                # Search TMDB
-                print(f"🔍 Searching TMDB for: {movie_name} ({year})")
-                results = tmdb.search_movies(movie_name, limit=5)
-                
+
+                # Search TMDB first to get canonical tmdb_id for duplicate check
+                print(f"🔍 Searching TMDB for: '{movie_name}' (Year: {year if year else 'N/A'})")
+                results = tmdb.search_movies(movie_name, year=year, limit=5) # Pass year for better accuracy
+
                 if not results:
-                    print(f"  ✗ Not found on TMDB, skipping")
+                    print(f"  ✗ TMDB not found for '{movie_name}' (Year: {year if year else 'N/A'}), skipping.")
                     skipped += 1
                     continue
                 
-                # Try to match year if available
-                movie_data = results[0]
+                # Try to match year if available and multiple results
+                movie_data = results[0] # Default to first result
                 if year and len(results) > 1:
                     for r in results:
                         r_year = r.get('release_date', '')
-                        if r_year.startswith(str(year)):
+                        if r_year and r_year.startswith(str(year)):
                             movie_data = r
                             break
-                
+
                 tmdb_id = movie_data['tmdb_id']
                 
-                # Check if cached
+                # Check if already logged by TMDB ID
+                existing_logged_movie = db.query(LoggedMovie).filter(
+                    LoggedMovie.tmdb_id == tmdb_id
+                ).first()
+                if existing_logged_movie:
+                    print(f"✓ Already logged: {movie_data['title']} (TMDB ID: {tmdb_id}), skipping.")
+                    skipped += 1
+                    continue
+
+                # Check if cached and get embedding
+                embedding_list = None
                 cached = db.query(MovieCache).filter(
                     MovieCache.tmdb_id == tmdb_id
                 ).first()
+                
                 if not cached:
                     embedding_list = nlp.embed_movie(movie_data)
                     cached = MovieCache(
@@ -79,8 +81,12 @@ def import_ratings(csv_path: str):
                         embedding=nlp.embedding_to_json(embedding_list),
                     )
                     db.add(cached)
-                    db.commit()
-                
+                    # Don't commit yet, wait for LoggedMovie to be added in the same transaction
+                else:
+                    # If cached, generate embedding for LoggedMovie (as LoggedMovie stores it directly)
+                    embedding_list = nlp.embed_movie(movie_data)
+
+
                 # Log the movie with rating
                 logged = LoggedMovie(
                     tmdb_id=tmdb_id,
@@ -90,20 +96,22 @@ def import_ratings(csv_path: str):
                     poster_path=movie_data['poster_path'],
                     release_year=movie_data['release_year'],
                     rating=rating,
-                    embedding=nlp.embedding_to_json(nlp.embed_movie(movie_data))
+                    embedding=nlp.embedding_to_json(embedding_list) # Use the obtained embedding
                 )
                 db.add(logged)
-                db.commit()
-                
-                print(f"  ✓ Logged: {movie_data['title']} ({rating}⭐)")
+                db.commit() # Commit both cached (if new) and logged movie
+
+                print(f"  ✅ Logged: {movie_data['title']} ({rating}★)")
                 imported += 1
-                
+
             except Exception as e:
-                print(f"  ✗ Error importing {movie_name}: {str(e)}")
+                # Catch exceptions and log them, incrementing skipped
+                print(f"  ❌ Error importing '{movie_name}': {str(e)}")
                 skipped += 1
     
-    db.close()
-    print(f"\n✅ Import complete: {imported} movies logged, {skipped} skipped")
+    finally:
+        db.close()
+    print(f"\n✅ Import complete: {imported} movies logged, {skipped} skipped.")
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
