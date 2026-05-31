@@ -266,21 +266,33 @@ def import_letterboxd_zip(file: UploadFile = File(...), db: Session = Depends(ge
                         embedding=nlp.embedding_to_json(embedding_list) # Use the obtained embedding
                     )
                     db.add(logged)
-                    db.commit() # Commit after both cache (if new) and logged movie are added
+                    # Defer commit to after the loop
                     
                     imported += 1
                     print(f"  ✅ Logged: {movie_data['title']} ({rating}★)")
                     
                 except Exception as e:
+                    db.rollback() # Rollback changes for the current row on error
                     skipped += 1
                     error_msg = f"Row {row_num} ('{title}'): {str(e)}"
                     errors.append(error_msg)
                     if len(errors) <= 5: # Only print first few errors to avoid log spam
                         print(f"❌ Error on row {row_num} ('{title}'): {str(e)}")
             
+            # Commit all changes at once after the loop
+            if imported > 0:
+                try:
+                    db.commit()
+                except Exception as e:
+                    db.rollback()
+                    print(f"❌ Error committing batch: {str(e)}")
+                    raise HTTPException(status_code=500, detail=f"Database commit failed after import: {str(e)}")
+
     except zipfile.BadZipFile:
+        db.rollback() # Rollback any pending transactions if the zip file itself is bad
         raise HTTPException(status_code=400, detail="Invalid zip file: Not a valid ZIP archive.")
     except Exception as e: # Catch other potential file/processing errors
+        db.rollback() # Rollback on critical errors
         print(f"Critical error during import: {e}")
         raise HTTPException(status_code=500, detail=f"Failed to process zip file: {str(e)}")
     finally:

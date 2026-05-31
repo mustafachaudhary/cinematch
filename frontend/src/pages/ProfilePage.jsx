@@ -277,10 +277,10 @@ export default function ProfilePage() {
             return (
               <div key={rating} className="graph-bar">
                 <div className="bar-value">{display}{unit}</div>
-                <div className="bar-container">
+                <div className="bar-container" style={{ position: 'relative' }}>
                   <div
                     className="bar-fill"
-                    style={{ height: `${percentage}%` }}
+                    style={{ height: `${percentage}%`, position: 'absolute', bottom: 0, width: '100%' }}
                   />
                 </div>
                 <div className="bar-label">{rating/2}⭐</div>
