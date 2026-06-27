@@ -1,0 +1,36 @@
+.aider*
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Frontend
+node_modules/
+dist/
+.vite/
+coverage/
+
+# Local runtime data
+.env
+.env.*
+*.db
+*.log
+uploads/
+backend/letterboxd_data/
+
+# Editors and OS files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local imports/archives
+letterboxdDATA/
+letterboxdDATA.zip
+cinematch_project_report.pdf

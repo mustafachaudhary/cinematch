@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { api } from '../hooks/api'
 import './ProfilePage.css'
+import Loading from '../components/Loading'
 
 export default function ProfilePage() {
   const [profile, setProfile] = useState(null)
@@ -13,6 +14,10 @@ export default function ProfilePage() {
   const [showCounts, setShowCounts] = useState(true)
   const [importing, setImporting] = useState(false)
   const [showHeartedPage, setShowHeartedPage] = useState(false)
+  const [editing, setEditing] = useState(false)
+  const [editName, setEditName] = useState('')
+  const [editDisplayName, setEditDisplayName] = useState('')
+  const [editBio, setEditBio] = useState('')
 
   useEffect(() => {
     loadProfileData()
@@ -41,6 +46,29 @@ export default function ProfilePage() {
       setLikedMovies(liked)
     } catch (err) {
       console.error('Error loading profile:', err)
+      if (err.message?.includes('API error 404')) {
+        const fallbackUser = 'mustafa'
+        localStorage.setItem('cinematch_username', fallbackUser)
+        try {
+          const [profileData, moviesData] = await Promise.all([
+            api.getProfile(),
+            api.getLogs(),
+          ])
+          setProfile(profileData)
+          setMovies(moviesData)
+
+          const dist = {}
+          for (let i = 1; i <= 10; i++) {
+            dist[i] = moviesData.filter(m => Math.round(m.rating * 2) === i).length
+          }
+          setRatingDistribution(dist)
+          const liked = moviesData.filter(m => m.rating >= 4.5).sort((a, b) => b.rating - a.rating)
+          setLikedMovies(liked)
+          return
+        } catch (innerErr) {
+          console.error('Fallback profile load failed:', innerErr)
+        }
+      }
     } finally {
       setLoading(false)
     }
@@ -54,6 +82,37 @@ export default function ProfilePage() {
     setProfile(updatedProfile)
     setShowFavoritePicker(null)
     setFavoriteSearch('')
+  }
+
+  const handleEditToggle = () => {
+    setEditName(profile.username || '')
+    setEditDisplayName(profile.display_name || '')
+    setEditBio(profile.bio || '')
+    setEditing(!editing)
+  }
+
+  const handleSaveProfile = async () => {
+    try {
+      await api.updateProfile({ username: editName, display_name: editDisplayName, bio: editBio })
+      await loadProfileData()
+      setEditing(false)
+      alert('✅ Profile updated')
+    } catch (err) {
+      console.error('Failed to update profile', err)
+      alert('❌ Failed to save')
+    }
+  }
+
+  const handleSignOut = async () => {
+    try {
+      const res = await fetch('http://localhost:8000/profile/signout', { method: 'POST' })
+      if (!res.ok) throw new Error('Sign out failed')
+      await loadProfileData()
+      alert('Signed out')
+    } catch (err) {
+      console.error('Sign out error', err)
+      alert('❌ Sign out failed')
+    }
   }
 
   const handlePfpUpload = async (e) => {
@@ -117,7 +176,11 @@ export default function ProfilePage() {
   }
 
   if (loading) {
-    return <div className="page"><p>Loading profile...</p></div>
+    return (
+      <div className="page">
+        <Loading message="Loading profile..." />
+      </div>
+    )
   }
 
   if (!profile) {
@@ -129,8 +192,9 @@ export default function ProfilePage() {
   }
 
   const maxCount = Math.max(...Object.values(ratingDistribution))
-  const totalMovies = movies.length
-  const avgRating = totalMovies > 0 ? (movies.reduce((sum, m) => sum + m.rating, 0) / totalMovies).toFixed(1) : 0
+  const ratedMovies = movies.length
+  const totalMovies = profile.stats?.watched_count || ratedMovies
+  const avgRating = ratedMovies > 0 ? (movies.reduce((sum, m) => sum + m.rating, 0) / ratedMovies).toFixed(1) : 0
 
   // Filter movies for favorite picker
   const filteredMovies = movies
@@ -158,7 +222,12 @@ export default function ProfilePage() {
         </div>
 
         <div className="profile-info">
-          <h1>{profile.username}</h1>
+          <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+            <h1>{profile.display_name ? profile.display_name : `@${profile.username}`}</h1>
+            <div style={{ color: 'var(--text-dim)', fontSize: 13 }}>{`@${profile.username}`}</div>
+            <button className="toggle-btn" onClick={handleEditToggle}>Edit Profile</button>
+            <button className="toggle-btn" onClick={handleSignOut}>Sign Out</button>
+          </div>
           <p className="bio">{profile.bio || 'No bio yet'}</p>
           <div className="stats">
             <div className="stat">
@@ -330,6 +399,23 @@ export default function ProfilePage() {
         </label>
         {importing && <p>Importing...</p>}
       </div>
+
+      {editing && (
+        <div className="modal-overlay" onClick={() => setEditing(false)}>
+          <div className="modal" onClick={e => e.stopPropagation()}>
+            <h3>Edit Profile</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <input value={editDisplayName} onChange={(e) => setEditDisplayName(e.target.value)} placeholder="Display name" />
+              <input value={editName} onChange={(e) => setEditName(e.target.value)} placeholder="Username" />
+              <textarea value={editBio} onChange={(e) => setEditBio(e.target.value)} placeholder="Short bio" />
+              <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
+                <button onClick={handleSaveProfile} className="toggle-btn">Save</button>
+                <button onClick={() => setEditing(false)} className="toggle-btn">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
