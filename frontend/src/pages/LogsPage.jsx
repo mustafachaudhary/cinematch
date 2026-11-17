@@ -1,193 +1,288 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { api } from '../hooks/api'
-import Loading from '../components/Loading'
+import useTitle from '../hooks/useTitle'
+import { formatCount, formatDate } from '../lib/format'
+import Button from '../components/Button'
+import EmptyState from '../components/EmptyState'
+import LogFilmDialog from '../components/LogFilmDialog'
+import PageHeader from '../components/PageHeader'
+import SectionHeader from '../components/SectionHeader'
+import Skeleton from '../components/Skeleton'
+import { StaticStars } from '../components/Stars'
+import { useToast } from '../components/Toast'
+import styles from './LogsPage.module.css'
+
+function Thumb({ log }) {
+  return (
+    <span className={styles.thumb}>
+      {log.poster_path ? (
+        <img src={log.poster_path} alt="" loading="lazy" decoding="async" />
+      ) : (
+        <span className={styles.thumbFallback} aria-hidden="true">
+          {log.title.slice(0, 1)}
+        </span>
+      )}
+    </span>
+  )
+}
 
 export default function LogsPage() {
-  const [logs, setLogs] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [tmdbQuery, setTmdbQuery] = useState('')
-  const [tmdbResults, setTmdbResults] = useState([])
-  const [selectedMovie, setSelectedMovie] = useState(null)
-  const [rating, setRating] = useState(7)
-  const [logging, setLogging] = useState(false)
+  const toast = useToast()
+  const [logs, setLogs] = useState(null)
+  const [error, setError] = useState(null)
+  const [filter, setFilter] = useState('')
+  const [visible, setVisible] = useState(24)
+  const [logOpen, setLogOpen] = useState(false)
+  useTitle('The archive')
+
+  const load = async () => {
+    try {
+      setLogs(await api.getLogs())
+      setError(null)
+    } catch (err) {
+      setError(err.message)
+    }
+  }
 
   useEffect(() => {
-    fetchLogs()
+    load()
   }, [])
 
-  const fetchLogs = async () => {
-    setLoading(true)
+  const count = logs?.length || 0
+  const average = count
+    ? logs.reduce((sum, log) => sum + Number(log.rating || 0), 0) / count
+    : 0
+  const hearted = logs?.filter((log) => log.rating >= 4.5).length || 0
+  const fiveStar = logs?.filter((log) => log.rating === 5).length || 0
+
+  const needle = filter.trim().toLowerCase()
+  const filtered = (logs || []).filter((log) => {
+    if (!needle) return true
+    return [log.title, log.release_year, ...(log.genres || [])]
+      .filter(Boolean)
+      .join(' ')
+      .toLowerCase()
+      .includes(needle)
+  })
+  const shown = filtered.slice(0, visible)
+  const remaining = Math.max(0, filtered.length - shown.length)
+
+  const remove = async (log) => {
     try {
-      const data = await api.getLogs()
-      setLogs(data)
+      await api.removeLog(log.tmdb_id)
+      setLogs((list) => (list || []).filter((item) => item.tmdb_id !== log.tmdb_id))
+      toast(`Removed “${log.title}” from the archive.`)
     } catch (err) {
-      console.error('Error fetching logs:', err)
-    } finally {
-      setLoading(false)
+      toast(err.message, 'error')
     }
   }
 
-  const handleTmdbSearch = async (q) => {
-    setTmdbQuery(q)
-    if (!q.trim()) {
-      setTmdbResults([])
-      return
-    }
-    try {
-      const data = await api.tmdbSearch(q)
-      setTmdbResults(data)
-    } catch (err) {
-      console.error('TMDB search error:', err)
-    }
-  }
-
-  const handleSelectMovie = (movie) => {
-    setSelectedMovie(movie)
-    setTmdbQuery(movie.title)
-    setTmdbResults([])
-    setRating(3.5)
-  }
-
-  const handleLogFilm = async () => {
-    if (!selectedMovie) return
-    setLogging(true)
-    try {
-      await api.logMovie(selectedMovie.tmdb_id, rating)
-      setSelectedMovie(null)
-      setTmdbQuery('')
-      setRating(7)
-      fetchLogs()
-    } catch (err) {
-      console.error('Error logging film:', err)
-    } finally {
-      setLogging(false)
-    }
-  }
-
-  const handleRemoveLog = async (tmdbId) => {
-    try {
-      await api.removeLog(tmdbId)
-      fetchLogs()
-    } catch (err) {
-      console.error('Error removing log:', err)
-    }
-  }
-
-  const hasPersonality = logs.length >= 2
+  const intro = logs
+    ? `${formatCount(count)} films, kept and rated.`
+    : 'Your ratings, in one ledger.'
 
   return (
-    <div className="page">
-      <h1>My Films</h1>
+    <div>
+      <PageHeader
+        title="The archive"
+        intro={intro}
+        action={<Button onClick={() => setLogOpen(true)}>Log a film</Button>}
+      />
 
-      <section className="log-film-section">
-        <h2>Log a Film</h2>
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Search for a movie..."
-          value={tmdbQuery}
-          onChange={(e) => handleTmdbSearch(e.target.value)}
-          disabled={selectedMovie ? true : false}
-        />
-        
-        {tmdbResults.length > 0 && (
-          <div className="tmdb-dropdown">
-            {tmdbResults.map((movie) => (
-              <div
-                key={movie.tmdb_id}
-                className="tmdb-result"
-                onClick={() => handleSelectMovie(movie)}
-              >
-                {movie.poster_path && (
-                  <img src={movie.poster_path} alt={movie.title} />
-                )}
-                <div>
-                  <p className="result-title">{movie.title}</p>
-                  <p className="result-year">{movie.release_year}</p>
-                </div>
+      {error ? (
+        <EmptyState
+          title="The archive could not be read."
+          action={
+            <Button variant="secondary" onClick={load}>
+              Try again
+            </Button>
+          }
+        >
+          {error}
+        </EmptyState>
+      ) : (
+        <div className={styles.ledger}>
+          <aside className={styles.aside}>
+            <h2 className={styles.asideTitle}>In numbers</h2>
+            <dl className={styles.stats}>
+              <div className={styles.stat}>
+                <dt>films in the archive</dt>
+                <dd>{logs ? formatCount(count) : <Skeleton className={styles.statSkeleton} />}</dd>
               </div>
-            ))}
-          </div>
-        )}
+              <div className={styles.stat}>
+                <dt>average rating, out of five</dt>
+                <dd>{logs ? average.toFixed(2) : <Skeleton className={styles.statSkeleton} />}</dd>
+              </div>
+              <div className={styles.stat}>
+                <dt>hearted at 4.5 or more</dt>
+                <dd>{logs ? formatCount(hearted) : <Skeleton className={styles.statSkeleton} />}</dd>
+              </div>
+              <div className={styles.stat}>
+                <dt>five-star ratings</dt>
+                <dd>{logs ? formatCount(fiveStar) : <Skeleton className={styles.statSkeleton} />}</dd>
+              </div>
+            </dl>
+          </aside>
 
-        {selectedMovie && (
-          <div className="selected-movie-section">
-            <h3>{selectedMovie.title}</h3>
-            <p>{selectedMovie.release_year}</p>
-            
-            <div className="rating-section">
+          <section className={styles.tableSection} aria-labelledby="logbook-title">
+            <SectionHeader
+              id="logbook-title"
+              title="The logbook"
+              action={logs ? `${formatCount(filtered.length)} films` : undefined}
+            />
+
+            <div className={styles.toolbar}>
+              <label className={styles.srOnly} htmlFor="archive-filter">
+                Filter the archive
+              </label>
               <input
-                type="range"
-                min="1"
-                max="5"
-                step="0.5"
-                value={rating}
-                onChange={(e) => setRating(parseFloat(e.target.value))}
-                className="rating-slider"
-              />
-              <div className="rating-display">{rating.toFixed(1)}</div>
-            </div>
-
-            <div className="modal-buttons">
-              <button
-                className="btn-secondary"
-                onClick={() => {
-                    setSelectedMovie(null)
-                    setTmdbQuery('')
-                    setRating(3.5)
+                id="archive-filter"
+                className={styles.filter}
+                value={filter}
+                onChange={(event) => {
+                  setFilter(event.target.value)
+                  setVisible(24)
                 }}
-              >
-                Cancel
-              </button>
-              <button
-                className="btn-primary"
-                onClick={handleLogFilm}
-                disabled={logging}
-              >
-                {logging ? 'Logging...' : 'Log Film'}
-              </button>
+                placeholder="Filter by title, genre, or year"
+                autoComplete="off"
+              />
             </div>
-          </div>
-        )}
-      </section>
 
-      <section className="logged-films-section">
-        <h2>
-          Logged Films
-          {hasPersonality && <span className="personality-badge"> ✦</span>}
-        </h2>
-
-        {loading ? (
-          <Loading message="Loading logged films..." />
-        ) : logs.length === 0 ? (
-          <p className="empty-state">No films logged yet. Start by logging a film above!</p>
-        ) : (
-          <div className="movie-grid">
-            {logs.map((movie) => (
-              <div key={movie.tmdb_id} className="logged-card">
-                {movie.poster_path && (
-                  <img src={movie.poster_path} alt={movie.title} />
-                )}
-                {!movie.poster_path && <div className="movie-poster-placeholder">No Image</div>}
-                
-                <div className="logged-card-footer">
-                  <h3>{movie.title}</h3>
-                  <p className="logged-rating">{movie.rating.toFixed(1)}/5</p>
-                  <p className="card-meta">{movie.release_year}</p>
+            {!logs ? (
+              <div className={styles.loading} aria-label="Loading archive">
+                {Array.from({ length: 9 }, (_, index) => (
+                  <div key={index} className={styles.loadingRow}>
+                    <Skeleton className={styles.loadingThumb} ratio="2 / 3" />
+                    <Skeleton className={styles.loadingCopy} />
+                    <Skeleton className={styles.loadingMeta} />
+                  </div>
+                ))}
+              </div>
+            ) : !count ? (
+              <EmptyState
+                title="An empty archive."
+                action={<Button onClick={() => setLogOpen(true)}>Log your first film</Button>}
+              >
+                Rate a film and it will take its place here. The archive is the evidence
+                the recommendation engine reads.
+              </EmptyState>
+            ) : !filtered.length ? (
+              <EmptyState
+                title={`Nothing matches “${filter.trim()}”.`}
+                action={
+                  <Button variant="secondary" onClick={() => setFilter('')}>
+                    Clear the filter
+                  </Button>
+                }
+              >
+                Try a shorter title, a genre, or a release year.
+              </EmptyState>
+            ) : (
+              <>
+                <div className={styles.tableWrap}>
+                  <table className={styles.table}>
+                    <thead>
+                      <tr>
+                        <th scope="col">Film</th>
+                        <th scope="col" className={styles.genreCell}>
+                          Genre
+                        </th>
+                        <th scope="col">Rating</th>
+                        <th scope="col" className={styles.loggedCell}>
+                          Logged
+                        </th>
+                        <th scope="col" className={styles.actionCell}>
+                          <span className={styles.srOnly}>Actions</span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {shown.map((log) => (
+                        <tr key={log.tmdb_id}>
+                          <td>
+                            <Link
+                              to={`/film/${log.tmdb_id}`}
+                              state={{ from: '/films' }}
+                              className={styles.film}
+                            >
+                              <Thumb log={log} />
+                              <span className={styles.filmCopy}>
+                                <span className={styles.filmTitle}>{log.title}</span>
+                                <span className={styles.filmMeta}>
+                                  {log.release_year || 'Year unknown'}
+                                </span>
+                                <span className={styles.mobileMeta}>
+                                  {[
+                                    log.release_year,
+                                    (log.genres || []).slice(0, 2).join(', '),
+                                  ]
+                                    .filter(Boolean)
+                                    .join(' \u00b7 ')}
+                                </span>
+                              </span>
+                            </Link>
+                          </td>
+                          <td className={`${styles.mutedCell} ${styles.genreCell}`}>
+                            {(log.genres || []).slice(0, 2).join(', ') || '—'}
+                          </td>
+                          <td>
+                            <span className={styles.rating}>
+                              <StaticStars value={log.rating} size={12} />
+                              <span className={styles.ratingValue}>
+                                {Number(log.rating).toFixed(1)}
+                              </span>
+                            </span>
+                          </td>
+                          <td className={`${styles.mutedCell} ${styles.loggedCell}`}>
+                            {formatDate(log.logged_at, { short: true }) || '—'}
+                          </td>
+                          <td className={styles.actionCell}>
+                            <button
+                              type="button"
+                              className={styles.remove}
+                              onClick={() => remove(log)}
+                              aria-label={`Remove ${log.title} from the archive`}
+                              title="Remove from archive"
+                            >
+                              <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true">
+                                <path
+                                  d="M3 3l10 10M13 3L3 13"
+                                  stroke="currentColor"
+                                  strokeWidth="1.3"
+                                />
+                              </svg>
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
 
-                <button
-                  className="remove-button"
-                  onClick={() => handleRemoveLog(movie.tmdb_id)}
-                  title="Remove log"
-                >
-                  ×
-                </button>
-              </div>
-            ))}
-          </div>
-        )}
-      </section>
+                <div className={styles.more}>
+                  <p className={styles.moreText}>
+                    Showing {shown.length} of {formatCount(filtered.length)}
+                  </p>
+                  {remaining ? (
+                    <Button
+                      variant="secondary"
+                      size="sm"
+                      onClick={() => setVisible((value) => value + 24)}
+                    >
+                      Show 24 more
+                    </Button>
+                  ) : null}
+                </div>
+              </>
+            )}
+          </section>
+        </div>
+      )}
+
+      {logOpen ? (
+        <LogFilmDialog onClose={() => setLogOpen(false)} onLogged={load} />
+      ) : null}
     </div>
   )
 }

@@ -1,0 +1,29 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 30px;
+  padding: 0 2px;
+  font-size: var(--text-xs);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.active {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.idle {
+  color: var(--faint);
+  transition: color 0.18s ease;
+}
+
+.toggle:hover .idle {
+  color: var(--muted);
+}
+
+.separator {
+  color: var(--faint);
+}

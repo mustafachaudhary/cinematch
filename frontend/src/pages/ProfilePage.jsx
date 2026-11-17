@@ -1,461 +1,608 @@
-import { useState, useEffect } from 'react'
-import { api } from '../hooks/api'
-import './ProfilePage.css'
-import Loading from '../components/Loading'
+import { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { BASE, api } from '../hooks/api'
+import useTitle from '../hooks/useTitle'
+import { formatCount, formatDate } from '../lib/format'
+import Avatar from '../components/Avatar'
+import Button from '../components/Button'
+import EditProfileModal from '../components/EditProfileModal'
+import EmptyState from '../components/EmptyState'
+import FavoritePicker from '../components/FavoritePicker'
+import ImportDialog from '../components/ImportDialog'
+import PageHeader from '../components/PageHeader'
+import Poster from '../components/Poster'
+import SectionHeader from '../components/SectionHeader'
+import Skeleton from '../components/Skeleton'
+import { StaticStars } from '../components/Stars'
+import { useToast } from '../components/Toast'
+import { useAuth } from '../context/AuthProvider'
+import styles from './ProfilePage.module.css'
 
-export default function ProfilePage() {
-  const [profile, setProfile] = useState(null)
-  const [movies, setMovies] = useState([])
-  const [likedMovies, setLikedMovies] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [showFavoritePicker, setShowFavoritePicker] = useState(null)
-  const [favoriteSearch, setFavoriteSearch] = useState('')
-  const [ratingDistribution, setRatingDistribution] = useState({})
-  const [showCounts, setShowCounts] = useState(true)
-  const [importing, setImporting] = useState(false)
-  const [showHeartedPage, setShowHeartedPage] = useState(false)
-  const [editing, setEditing] = useState(false)
-  const [editName, setEditName] = useState('')
-  const [editDisplayName, setEditDisplayName] = useState('')
-  const [editBio, setEditBio] = useState('')
+const RATING_STEPS = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]
 
-  useEffect(() => {
-    loadProfileData()
-  }, [])
-
-  const loadProfileData = async () => {
-    setLoading(true)
-    try {
-      const [profileData, moviesData] = await Promise.all([
-        api.getProfile(),
-        api.getLogs(),
-      ])
-
-      setProfile(profileData)
-      setMovies(moviesData)
-
-      // Calculate rating distribution
-      const dist = {}
-      for (let i = 1; i <= 10; i++) {
-        dist[i] = moviesData.filter(m => Math.round(m.rating * 2) === i).length
-      }
-      setRatingDistribution(dist)
-
-      // Get liked movies (4.5+ stars)
-      const liked = moviesData.filter(m => m.rating >= 4.5).sort((a, b) => b.rating - a.rating)
-      setLikedMovies(liked)
-    } catch (err) {
-      console.error('Error loading profile:', err)
-      if (err.message?.includes('API error 404')) {
-        const fallbackUser = 'mustafa'
-        localStorage.setItem('cinematch_username', fallbackUser)
-        try {
-          const [profileData, moviesData] = await Promise.all([
-            api.getProfile(),
-            api.getLogs(),
-          ])
-          setProfile(profileData)
-          setMovies(moviesData)
-
-          const dist = {}
-          for (let i = 1; i <= 10; i++) {
-            dist[i] = moviesData.filter(m => Math.round(m.rating * 2) === i).length
-          }
-          setRatingDistribution(dist)
-          const liked = moviesData.filter(m => m.rating >= 4.5).sort((a, b) => b.rating - a.rating)
-          setLikedMovies(liked)
-          return
-        } catch (innerErr) {
-          console.error('Fallback profile load failed:', innerErr)
-        }
-      }
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  const handleSetFavorite = (slot, movieId) => {
-    // Update profile
-    const updatedProfile = { ...profile }
-    updatedProfile[`favorite_movie_${slot + 1}`] = movieId
-    api.updateProfile(updatedProfile)
-    setProfile(updatedProfile)
-    setShowFavoritePicker(null)
-    setFavoriteSearch('')
-  }
-
-  const handleEditToggle = () => {
-    setEditName(profile.username || '')
-    setEditDisplayName(profile.display_name || '')
-    setEditBio(profile.bio || '')
-    setEditing(!editing)
-  }
-
-  const handleSaveProfile = async () => {
-    try {
-      await api.updateProfile({ username: editName, display_name: editDisplayName, bio: editBio })
-      await loadProfileData()
-      setEditing(false)
-      alert('✅ Profile updated')
-    } catch (err) {
-      console.error('Failed to update profile', err)
-      alert('❌ Failed to save')
-    }
-  }
-
-  const handleSignOut = async () => {
-    try {
-      const res = await fetch('http://localhost:8000/profile/signout', { method: 'POST' })
-      if (!res.ok) throw new Error('Sign out failed')
-      await loadProfileData()
-      alert('Signed out')
-    } catch (err) {
-      console.error('Sign out error', err)
-      alert('❌ Sign out failed')
-    }
-  }
-
-  const handlePfpUpload = async (e) => {
-    const file = e.target.files?.[0]
-    if (!file) return
-
-    const formData = new FormData()
-    formData.append('file', file)
-
-    try {
-      const result = await fetch('http://localhost:8000/profile/upload-pfp', {
-        method: 'POST',
-        body: formData,
-      })
-      if (!result.ok) {
-        const error = await result.json()
-        alert(`Error: ${error.detail}`)
-        return
-      }
-      const data = await result.json()
-      // Force cache bust with timestamp
-      const pfpUrl = `http://localhost:8000${data.pfp_path}?t=${Date.now()}`
-      setProfile({ ...profile, pfp_path: pfpUrl })
-      alert('✅ Profile picture updated!')
-    } catch (err) {
-      console.error('Error uploading profile picture:', err)
-      alert('❌ Upload failed')
-    }
-  }
-
-  const handleLetterboxdImport = async (e) => {
-    const file = e.target.files?.[0]
-    if (!file) return
-
-    setImporting(true)
-    const formData = new FormData()
-    formData.append('file', file)
-
-    try {
-      const result = await fetch('http://localhost:8000/profile/import-letterboxd', {
-        method: 'POST',
-        body: formData,
-      })
-      const data = await result.json()
-      alert(`✅ Imported ${data.imported} movies! (${data.skipped} duplicates/invalid)`)
-      loadProfileData()
-    } catch (err) {
-      console.error('Error importing Letterboxd:', err)
-      alert('❌ Import failed')
-    } finally {
-      setImporting(false)
-    }
-  }
-
-  const getPfpUrl = () => {
-    if (!profile.pfp_path) return null
-    // If already a full URL, return as is
-    if (profile.pfp_path.startsWith('http')) return profile.pfp_path
-    // Otherwise prepend server URL
-    return `http://localhost:8000${profile.pfp_path}?t=${Date.now()}`
-  }
-
-  if (loading) {
-    return (
-      <div className="page">
-        <Loading message="Loading profile..." />
-      </div>
-    )
-  }
-
-  if (!profile) {
-    return <div className="page"><p>Profile not found</p></div>
-  }
-
-  if (showHeartedPage) {
-    return <HeartedMoviesPage onBack={() => setShowHeartedPage(false)} movies={likedMovies} />
-  }
-
-  const maxCount = Math.max(...Object.values(ratingDistribution))
-  const ratedMovies = movies.length
-  const totalMovies = profile.stats?.watched_count || ratedMovies
-  const avgRating = ratedMovies > 0 ? (movies.reduce((sum, m) => sum + m.rating, 0) / ratedMovies).toFixed(1) : 0
-
-  // Filter movies for favorite picker
-  const filteredMovies = movies
-    .filter(m => m.title.toLowerCase().includes(favoriteSearch.toLowerCase()))
-    .sort((a, b) => b.rating - a.rating)
-
+function ProfileSkeleton() {
   return (
-    <div className="page profile-page">
-      <div className="profile-header">
-        <div className="profile-pic">
-          <div className="pfp-placeholder">
-            {getPfpUrl() ? (
-              <img src={getPfpUrl()} alt="Profile" onError={(e) => {
-                console.error('Failed to load PFP:', getPfpUrl())
-                e.target.style.display = 'none'
-              }} />
-            ) : (
-              <span>📷</span>
-            )}
-          </div>
-          <label className="pfp-upload">
-            Change
-            <input type="file" accept="image/*" onChange={handlePfpUpload} hidden />
-          </label>
-        </div>
-
-        <div className="profile-info">
-          <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-            <h1>{profile.display_name ? profile.display_name : `@${profile.username}`}</h1>
-            <div style={{ color: 'var(--text-dim)', fontSize: 13 }}>{`@${profile.username}`}</div>
-            <button className="toggle-btn" onClick={handleEditToggle}>Edit Profile</button>
-            <button className="toggle-btn" onClick={handleSignOut}>Sign Out</button>
-          </div>
-          <p className="bio">{profile.bio || 'No bio yet'}</p>
-          <div className="stats">
-            <div className="stat">
-              <span className="stat-value">{totalMovies}</span>
-              <span className="stat-label">Movies</span>
-            </div>
-            <div className="stat">
-              <span className="stat-value">{avgRating}</span>
-              <span className="stat-label">Avg Rating</span>
-            </div>
-            <div className="stat">
-              <span className="stat-value">{likedMovies.length}</span>
-              <span className="stat-label">Hearted</span>
-            </div>
-          </div>
+    <div>
+      <h1 className={styles.srOnly}>Profile</h1>
+      <div className={styles.header}>
+        <Skeleton className={styles.skeletonPortrait} ratio="4 / 5" />
+        <div className={styles.skeletonIdentity}>
+          <Skeleton className={styles.skeletonName} />
+          <Skeleton className={styles.skeletonLine} />
+          <Skeleton className={styles.skeletonLineShort} />
         </div>
       </div>
-
-      {/* Favorite Movies */}
-      <div className="section">
-        <h2>Your 4 Favorites</h2>
-        <div className="favorites-grid">
-          {[0, 1, 2, 3].map((slot) => {
-            const movieId = profile[`favorite_movie_${slot + 1}`]
-            const movie = movies.find(m => m.tmdb_id === movieId)
-            
-            return (
-              <div key={slot} className="favorite-slot">
-                {movie ? (
-                  <>
-                    {movie.poster_path && (
-                      <img src={movie.poster_path} alt={movie.title} />
-                    )}
-                    <div className="favorite-info">
-                      <p>{movie.title}</p>
-                      <button onClick={() => {
-                        setShowFavoritePicker(slot)
-                        setFavoriteSearch('')
-                      }}>
-                        Change
-                      </button>
-                    </div>
-                  </>
-                ) : (
-                  <button
-                    className="empty-favorite"
-                    onClick={() => {
-                      setShowFavoritePicker(slot)
-                      setFavoriteSearch('')
-                    }}
-                  >
-                    + Add
-                  </button>
-                )}
-              </div>
-            )
-          })}
-        </div>
-
-        {showFavoritePicker !== null && (
-          <div className="modal-overlay" onClick={() => setShowFavoritePicker(null)}>
-            <div className="modal favorites-picker" onClick={e => e.stopPropagation()}>
-              <h3>Select Favorite #{showFavoritePicker + 1}</h3>
-              <input
-                type="text"
-                className="favorites-search"
-                placeholder="Search movies..."
-                value={favoriteSearch}
-                onChange={(e) => setFavoriteSearch(e.target.value)}
-                autoFocus
-              />
-              <div className="favorites-list">
-                {filteredMovies.length > 0 ? (
-                  filteredMovies.map(movie => (
-                    <div
-                      key={movie.tmdb_id}
-                      className="favorite-item"
-                      onClick={() => handleSetFavorite(showFavoritePicker, movie.tmdb_id)}
-                    >
-                      {movie.poster_path && (
-                        <img src={movie.poster_path} alt={movie.title} />
-                      )}
-                      <div>
-                        <p>{movie.title}</p>
-                        <p className="rating">⭐ {movie.rating}</p>
-                      </div>
-                    </div>
-                  ))
-                ) : (
-                  <p style={{ textAlign: 'center', color: '#999' }}>No movies found</p>
-                )}
-              </div>
-            </div>
-          </div>
-        )}
+      <div className={styles.skeletonStats}>
+        {Array.from({ length: 4 }, (_, index) => (
+          <Skeleton key={index} className={styles.skeletonStat} />
+        ))}
       </div>
-
-      {/* Rating Distribution */}
-      <div className="section">
-        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-          <h2>Rating Distribution</h2>
-          <button
-            className="toggle-btn"
-            onClick={() => setShowCounts(!showCounts)}
-          >
-            {showCounts ? 'Show %' : 'Show #'}
-          </button>
-        </div>
-
-        <div className="rating-graph">
-          {Object.entries(ratingDistribution).map(([rating, count]) => {
-            const percentage = maxCount > 0 ? (count / maxCount) * 100 : 0
-            const display = showCounts ? count : ((count / totalMovies) * 100).toFixed(0)
-            const unit = showCounts ? '' : '%'
-            
-            return (
-              <div key={rating} className="graph-bar">
-                <div className="bar-value">{display}{unit}</div>
-                <div className="bar-container" style={{ position: 'relative' }}>
-                  <div
-                    className="bar-fill"
-                    style={{ height: `${percentage}%`, position: 'absolute', bottom: 0, width: '100%' }}
-                  />
-                </div>
-                <div className="bar-label">{rating/2}⭐</div>
-              </div>
-            )
-          })}
-        </div>
-      </div>
-
-      {/* Hearted Movies */}
-      <div className="section">
-        <div className="hearted-heading">
-          <h2>❤️ Hearted Movies ({likedMovies.length})</h2>
-          {likedMovies.length > 6 && (
-            <button className="view-all-btn" onClick={() => setShowHeartedPage(true)}>
-              →
-            </button>
-          )}
-        </div>
-        <div className="movie-list">
-          {likedMovies.slice(0, 6).map(movie => (
-            <div key={movie.tmdb_id} className="movie-item">
-              {movie.poster_path && (
-                <img src={movie.poster_path} alt={movie.title} />
-              )}
-              <div>
-                <p>{movie.title}</p>
-                <p className="rating">⭐ {movie.rating}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Import Letterboxd */}
-      <div className="section">
-        <h2>Import Letterboxd Data</h2>
-        <label className="import-label">
-          📦 Upload Letterboxd zip file
-          <input
-            type="file"
-            accept=".zip"
-            onChange={handleLetterboxdImport}
-            disabled={importing}
-            hidden
-          />
-        </label>
-        {importing && <p>Importing...</p>}
-      </div>
-
-      {editing && (
-        <div className="modal-overlay" onClick={() => setEditing(false)}>
-          <div className="modal" onClick={e => e.stopPropagation()}>
-            <h3>Edit Profile</h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <input value={editDisplayName} onChange={(e) => setEditDisplayName(e.target.value)} placeholder="Display name" />
-              <input value={editName} onChange={(e) => setEditName(e.target.value)} placeholder="Username" />
-              <textarea value={editBio} onChange={(e) => setEditBio(e.target.value)} placeholder="Short bio" />
-              <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
-                <button onClick={handleSaveProfile} className="toggle-btn">Save</button>
-                <button onClick={() => setEditing(false)} className="toggle-btn">Cancel</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   )
 }
 
-// Hearted Movies Full Page Component
-function HeartedMoviesPage({ onBack, movies }) {
-  const [searchTerm, setSearchTerm] = useState('')
-  
-  const filteredMovies = movies.filter(m => 
-    m.title.toLowerCase().includes(searchTerm.toLowerCase())
-  )
+export default function ProfilePage() {
+  const toast = useToast()
+  const navigate = useNavigate()
+  const { signOut, signIn } = useAuth()
+  const [profile, setProfile] = useState(null)
+  const [logs, setLogs] = useState(null)
+  const [taste, setTaste] = useState(null)
+  const [engine, setEngine] = useState(null)
+  const [reviews, setReviews] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  const [editOpen, setEditOpen] = useState(false)
+  const [importOpen, setImportOpen] = useState(false)
+  const [pickerSlot, setPickerSlot] = useState(null)
+  const [pfpUploading, setPfpUploading] = useState(false)
+  useTitle('Profile')
+
+  const load = async () => {
+    setLoading(true)
+    const [profileRes, logsRes, tasteRes, engineRes, reviewsRes] = await Promise.allSettled([
+      api.getProfile(),
+      api.getLogs(),
+      api.profileSummary(),
+      api.engineStatus(),
+      api.myReviews(),
+    ])
+    if (profileRes.status === 'fulfilled') {
+      setProfile(profileRes.value)
+      setError(null)
+    } else {
+      setError(profileRes.reason?.message || 'Profile could not be loaded.')
+    }
+    if (logsRes.status === 'fulfilled') setLogs(logsRes.value)
+    if (tasteRes.status === 'fulfilled') setTaste(tasteRes.value)
+    if (engineRes.status === 'fulfilled') setEngine(engineRes.value)
+    if (reviewsRes.status === 'fulfilled') setReviews(reviewsRes.value)
+    setLoading(false)
+  }
+
+  useEffect(() => {
+    load()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const handleSignOut = async () => {
+    await signOut()
+    navigate('/login')
+  }
+
+  const uploadPfp = async (event) => {
+    const file = event.target.files?.[0]
+    if (!file) return
+    setPfpUploading(true)
+    try {
+      const formData = new FormData()
+      formData.append('file', file)
+      const result = await api.uploadPfp(formData)
+      setProfile((current) => ({
+        ...current,
+        pfp_path: result.pfp_path || current.pfp_path,
+      }))
+      toast('Profile photo updated.')
+    } catch (err) {
+      toast(err.message, 'error')
+    } finally {
+      setPfpUploading(false)
+      event.target.value = ''
+    }
+  }
+
+  if (loading && !profile) return <ProfileSkeleton />
+
+  if (error) {
+    return (
+      <div>
+        <PageHeader title="Profile" />
+        <EmptyState
+          title="Your profile could not be opened."
+          action={
+            <Button variant="secondary" onClick={load}>
+              Try again
+            </Button>
+          }
+        >
+          {error}
+        </EmptyState>
+      </div>
+    )
+  }
+
+  if (!profile) return null
+
+  const pfpSrc = profile.pfp_path
+    ? profile.pfp_path.startsWith('http')
+      ? profile.pfp_path
+      : `${BASE}${profile.pfp_path}`
+    : null
+  const displayName = profile.display_name || profile.username
+  const ratedCount = profile.stats?.rated_count || 0
+  const reviewCount = profile.stats?.reviews_count || 0
+  const average = logs?.length
+    ? logs.reduce((sum, log) => sum + Number(log.rating || 0), 0) / logs.length
+    : null
+  const hearted = (logs || []).filter((log) => log.rating >= 4.5)
+  const heartedTop = hearted.slice(0, 6)
+  const reviewList = reviews?.reviews || []
+  const loved = taste?.genres?.loved || []
+  const avoided = taste?.genres?.avoided || []
+  const maxGenre = loved.length ? Math.max(...loved.map(([, value]) => Number(value))) : 0
+  const distribution = taste?.sentiment?.distribution || {}
+  const sentimentTotal =
+    (distribution.positive || 0) + (distribution.mixed || 0) + (distribution.negative || 0)
+  const segment = (value) =>
+    sentimentTotal ? `${(Number(value || 0) / sentimentTotal) * 100}%` : '0%'
+
+  const favoriteSlots = [1, 2, 3, 4].map((slot) => {
+    const movieId = profile[`favorite_movie_${slot}`]
+    if (!movieId) return { slot, movie: null }
+    const summary = (profile.favorites || []).find(
+      (film) => Number(film.tmdb_id) === Number(movieId),
+    )
+    const log = (logs || []).find((film) => Number(film.tmdb_id) === Number(movieId))
+    const movie = summary ? { ...summary, rating: log?.rating } : log
+    return { slot, movie: movie || null }
+  })
+
+  const ratingDistribution = RATING_STEPS.map((value) => ({
+    value,
+    count: (logs || []).filter((log) => Number(log.rating) === value).length,
+  }))
+  const maxRatingCount = Math.max(...ratingDistribution.map((entry) => entry.count), 1)
+  const distributionLabel = ratingDistribution
+    .map((entry) => `${entry.value}: ${entry.count}`)
+    .join(', ')
+
+  const engineRows = engine
+    ? [
+        ['Catalog', `${formatCount(engine.catalog_size)} films`],
+        ['Embedded', formatCount(engine.embedded_movies)],
+        [
+          'Ratings in matrix',
+          formatCount(engine.collaborative_filtering?.total_ratings),
+        ],
+        ['Raters', formatCount(engine.collaborative_filtering?.users_with_ratings)],
+        ['Sentiment', engine.sentiment_model?.split(' (')[0] || 'VADER'],
+      ]
+    : []
+
+  const saveProfile = (next) => {
+    setProfile(next)
+    signIn({ username: next.username, display_name: next.display_name || '' })
+  }
+
+  const pickFavorite = (slot, film) => {
+    setProfile((current) => {
+      const others = (current.favorites || []).filter(
+        (item) => Number(item.tmdb_id) !== Number(film.tmdb_id),
+      )
+      return {
+        ...current,
+        [`favorite_movie_${slot}`]: film.tmdb_id,
+        favorites: [...others, film],
+      }
+    })
+  }
 
   return (
-    <div className="page hearted-page">
-      <button className="back-btn" onClick={onBack}>← Back</button>
-      
-      <h1>❤️ Hearted Movies</h1>
-      
-      <input
-        type="text"
-        className="search-input"
-        placeholder="Search hearted movies..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      
-      <div className="hearted-grid">
-        {filteredMovies.map(movie => (
-          <div key={movie.tmdb_id} className="hearted-item">
-            {movie.poster_path && (
-              <img src={movie.poster_path} alt={movie.title} />
-            )}
-            <div className="hearted-info">
-              <p className="hearted-title">{movie.title}</p>
-              <p className="hearted-year">({movie.release_year})</p>
-              <p className="hearted-rating">⭐ {movie.rating}</p>
-            </div>
+    <div>
+      <header className={styles.header}>
+        <div className={styles.portraitCol}>
+          <span className={styles.portraitFrame}>
+            <Avatar name={displayName} src={pfpSrc} size="lg" />
+          </span>
+          <label className={styles.changePhoto}>
+            {pfpUploading ? 'Uploading…' : 'Change photo'}
+            <input
+              type="file"
+              accept="image/*"
+              className={styles.fileInput}
+              onChange={uploadPfp}
+              disabled={pfpUploading}
+            />
+          </label>
+        </div>
+
+        <div className={styles.identity}>
+          <div className={styles.nameRow}>
+            <h1 className={styles.name}>{displayName}</h1>
+            <span className={styles.handle}>
+              {profile.display_name ? `@${profile.username}` : 'CineMatch member'}
+            </span>
           </div>
-        ))}
+          <p className={styles.bio}>
+            {profile.bio || 'No bio yet. A sentence about the films you keep coming back to.'}
+          </p>
+          <div className={styles.headerActions}>
+            <Button variant="secondary" onClick={() => setEditOpen(true)}>
+              Edit profile
+            </Button>
+            <Button variant="text" onClick={handleSignOut}>
+              Sign out
+            </Button>
+          </div>
+        </div>
+      </header>
+
+      <dl className={styles.stats}>
+        <div className={styles.stat}>
+          <dt>films rated</dt>
+          <dd>{formatCount(ratedCount)}</dd>
+        </div>
+        <div className={styles.stat}>
+          <dt>average, out of five</dt>
+          <dd>{average != null ? average.toFixed(2) : '—'}</dd>
+        </div>
+        <div className={styles.stat}>
+          <dt>hearted at 4.5 or more</dt>
+          <dd>{logs ? formatCount(hearted.length) : '—'}</dd>
+        </div>
+        <div className={styles.stat}>
+          <dt>{reviewCount === 1 ? 'written note' : 'written notes'}</dt>
+          <dd>{formatCount(reviewCount)}</dd>
+        </div>
+      </dl>
+
+      <div className={styles.panels}>
+        <section className={styles.taste} aria-labelledby="taste-title">
+          <SectionHeader
+            id="taste-title"
+            title="Taste profile"
+            description="The shape of your ratings, as the engine reads it."
+          />
+          {taste ? (
+            <>
+              <p className={styles.summary}>{taste.summary}</p>
+
+              <div className={styles.block}>
+                <h3 className={styles.blockTitle}>Genre affinity</h3>
+                {loved.length ? (
+                  <ul className={styles.genreList}>
+                    {loved.slice(0, 5).map(([genre, value]) => (
+                      <li key={genre} className={styles.genreRow}>
+                        <span className={styles.genreName}>{genre}</span>
+                        <span className={styles.genreTrack}>
+                          <span
+                            className={styles.genreFill}
+                            style={{
+                              width: maxGenre
+                                ? `${(Number(value) / maxGenre) * 100}%`
+                                : '0%',
+                            }}
+                          />
+                        </span>
+                        <span className={styles.genreValue}>
+                          {Number(value).toFixed(1)}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className={styles.blockEmpty}>Not enough ratings yet.</p>
+                )}
+                {avoided.length ? (
+                  <p className={styles.avoided}>
+                    Weaker ground: {avoided.slice(0, 3).map(([genre]) => genre).join(', ')}.
+                  </p>
+                ) : null}
+              </div>
+
+              <div className={styles.block}>
+                <h3 className={styles.blockTitle}>Review sentiment</h3>
+                {sentimentTotal ? (
+                  <>
+                    <div
+                      className={styles.sentimentBar}
+                      role="img"
+                      aria-label={`Review sentiment: ${distribution.positive || 0} positive, ${distribution.mixed || 0} mixed, ${distribution.negative || 0} negative`}
+                    >
+                      <span
+                        className={styles.sentimentPositive}
+                        style={{ width: segment(distribution.positive) }}
+                      />
+                      <span
+                        className={styles.sentimentMixed}
+                        style={{ width: segment(distribution.mixed) }}
+                      />
+                      <span
+                        className={styles.sentimentNegative}
+                        style={{ width: segment(distribution.negative) }}
+                      />
+                    </div>
+                    <p className={styles.sentimentLegend}>
+                      {distribution.positive || 0} positive · {distribution.mixed || 0}{' '}
+                      mixed · {distribution.negative || 0} negative
+                    </p>
+                  </>
+                ) : (
+                  <p className={styles.blockEmpty}>
+                    No written notes have been scored yet.
+                  </p>
+                )}
+              </div>
+            </>
+          ) : (
+            <p className={styles.blockEmpty}>Taste summary unavailable.</p>
+          )}
+        </section>
+
+        <section className={styles.engine} aria-labelledby="engine-title">
+          <SectionHeader
+            id="engine-title"
+            title="Recommendation engine"
+            description="What is running under the shelf."
+          />
+          {engine ? (
+            <>
+              <p className={styles.engineStatus}>
+                {engine.collaborative_filtering?.cf_viable
+                  ? 'Collaborative filtering is active.'
+                  : 'Content signals only.'}
+              </p>
+              <dl className={styles.engineRows}>
+                {engineRows.map(([label, value]) => (
+                  <div key={label} className={styles.engineRow}>
+                    <dt>{label}</dt>
+                    <dd>{value}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p className={styles.engineNote}>
+                Embeddings: {engine.embedding_backend}
+              </p>
+            </>
+          ) : (
+            <p className={styles.blockEmpty}>Engine status unavailable.</p>
+          )}
+        </section>
       </div>
+
+      <section className={styles.section} aria-labelledby="favorites-title">
+        <SectionHeader
+          id="favorites-title"
+          title="Four favorites"
+          description="The films you keep closest."
+        />
+        <div className={styles.favorites}>
+          {favoriteSlots.map(({ slot, movie }) => (
+            <div key={slot} className={styles.favorite}>
+              {movie ? (
+                <>
+                  <Link
+                    to={`/film/${movie.tmdb_id}`}
+                    state={{ from: '/profile' }}
+                    className={styles.favoritePosterLink}
+                  >
+                    <Poster movie={movie} className={styles.favoritePoster} />
+                  </Link>
+                  <div className={styles.favoriteMeta}>
+                    <div className={styles.favoriteInfo}>
+                      <Link
+                        to={`/film/${movie.tmdb_id}`}
+                        state={{ from: '/profile' }}
+                        className={styles.favoriteTitle}
+                      >
+                        {movie.title}
+                      </Link>
+                      <span className={styles.favoriteSub}>
+                        {[
+                          movie.release_year,
+                          movie.rating ? `${Number(movie.rating).toFixed(1)} / 5` : null,
+                        ]
+                          .filter(Boolean)
+                          .join(' · ')}
+                      </span>
+                    </div>
+                    <button
+                      type="button"
+                      className={styles.changeFavorite}
+                      onClick={() => setPickerSlot(slot)}
+                    >
+                      Change
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <button
+                    type="button"
+                    className={styles.emptySlot}
+                    onClick={() => setPickerSlot(slot)}
+                  >
+                    <span className={styles.emptyIndex}>0{slot}</span>
+                    <span>Choose a film</span>
+                  </button>
+                  <div className={styles.favoriteMeta}>
+                    <span className={styles.favoriteSub}>Open slot</span>
+                    <button
+                      type="button"
+                      className={styles.changeFavorite}
+                      onClick={() => setPickerSlot(slot)}
+                    >
+                      Set favorite
+                    </button>
+                  </div>
+                </>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {heartedTop.length ? (
+        <section className={styles.section} aria-labelledby="hearted-title">
+          <SectionHeader
+            id="hearted-title"
+            title="Hearted"
+            description="A few of the films you keep at 4.5 and above."
+            action={
+              <Link to="/films" className={styles.archiveLink}>
+                The archive
+              </Link>
+            }
+          />
+          <div className={styles.heartedGrid}>
+            {heartedTop.map((movie) => (
+              <Link
+                key={movie.tmdb_id}
+                to={`/film/${movie.tmdb_id}`}
+                state={{ from: '/profile' }}
+                className={styles.heartItem}
+              >
+                <Poster movie={movie} ratio="portrait" decorative />
+                <span className={styles.heartTitle}>{movie.title}</span>
+                <span className={styles.heartMeta}>
+                  {Number(movie.rating).toFixed(1)} / 5
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      <section className={styles.section} aria-labelledby="notes-title">
+        <SectionHeader
+          id="notes-title"
+          title="Notes and numbers"
+          description="What you wrote, and how the ratings fall."
+          action={`${reviewList.length} ${reviewList.length === 1 ? 'note' : 'notes'}`}
+        />
+        <div className={styles.notesGrid}>
+          <div>
+            <h3 className={styles.columnTitle}>Recent notes</h3>
+            {reviewList.length ? (
+              <div>
+                {reviewList.slice(0, 6).map((review) => (
+                  <article key={review.id} className={styles.review}>
+                    <div className={styles.reviewHead}>
+                      <Link
+                        to={`/film/${review.tmdb_id}`}
+                        state={{ from: '/profile' }}
+                        className={styles.reviewTitle}
+                      >
+                        {review.title || `Film ${review.tmdb_id}`}
+                      </Link>
+                      <span className={styles.reviewDate}>
+                        {formatDate(review.created_at, { short: true })}
+                      </span>
+                    </div>
+                    <blockquote className={styles.reviewQuote}>
+                      “{review.content}”
+                    </blockquote>
+                    <p className={styles.reviewTone} data-tone={review.sentiment?.label}>
+                      {review.sentiment?.label || 'mixed'} note
+                    </p>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <p className={styles.noNotes}>
+                No notes yet. A review can be added whenever you log a film.
+              </p>
+            )}
+          </div>
+
+          <div>
+            <h3 className={styles.columnTitle}>Rating spread</h3>
+            {logs?.length ? (
+              <>
+                <div
+                  className={styles.chart}
+                  role="img"
+                  aria-label={`Rating distribution. ${distributionLabel}.`}
+                >
+                  {ratingDistribution.map((entry) => (
+                    <div key={entry.value} className={styles.bar} aria-hidden="true">
+                      <span className={styles.barCount}>{entry.count || ''}</span>
+                      <span className={styles.barTrack}>
+                        <span
+                          className={styles.barFill}
+                          style={{
+                            height: `${(entry.count / maxRatingCount) * 100}%`,
+                          }}
+                        />
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <div className={styles.axis} aria-hidden="true">
+                  {ratingDistribution.map((entry) => (
+                    <span key={entry.value}>
+                      {Number.isInteger(entry.value)
+                        ? entry.value.toFixed(0)
+                        : entry.value.toFixed(1)}
+                    </span>
+                  ))}
+                </div>
+                <p className={styles.spreadNote}>
+                  {formatCount(hearted.length)} films sit at 4.5 or above.
+                </p>
+              </>
+            ) : (
+              <p className={styles.noNotes}>No ratings to chart yet.</p>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.importStrip} aria-labelledby="import-title">
+        <div>
+          <h2 id="import-title" className={styles.importTitle}>
+            Bring your history
+          </h2>
+          <p className={styles.importText}>
+            Have a Letterboxd export? Its ratings and watched films can seed this
+            archive without retyping a thing.
+          </p>
+        </div>
+        <Button variant="secondary" onClick={() => setImportOpen(true)}>
+          Import Letterboxd
+        </Button>
+      </section>
+
+      {editOpen ? (
+        <EditProfileModal
+          profile={profile}
+          onClose={() => setEditOpen(false)}
+          onSaved={saveProfile}
+        />
+      ) : null}
+
+      {importOpen ? (
+        <ImportDialog onClose={() => setImportOpen(false)} onImported={load} />
+      ) : null}
+
+      {pickerSlot ? (
+        <FavoritePicker
+          films={logs || []}
+          slot={pickerSlot}
+          onClose={() => setPickerSlot(null)}
+          onPicked={pickFavorite}
+        />
+      ) : null}
     </div>
   )
 }

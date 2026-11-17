@@ -1,0 +1,15 @@
+.block {
+  display: block;
+  background: var(--surface);
+  animation: breathe 1.7s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}

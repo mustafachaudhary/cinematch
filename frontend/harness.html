@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      ;(() => {
+        try {
+          const params = new URLSearchParams(location.search)
+          const screen = params.get('screen') || 'home'
+          const theme = params.get('theme') === 'dark' ? 'dark' : 'light'
+          localStorage.setItem('cinematch_theme', theme)
+          document.documentElement.dataset.theme = theme
+          if (screen === 'login') {
+            localStorage.removeItem('cinematch_username')
+            localStorage.removeItem('cinematch_display_name')
+            history.replaceState(null, '', '/login')
+          } else {
+            localStorage.setItem('cinematch_username', 'mustafa')
+            localStorage.setItem('cinematch_display_name', '')
+            const paths = {
+              home: '/',
+              films: '/films',
+              profile: '/profile',
+              film: '/film/976893',
+              search: '/search?q=obsession',
+            }
+            history.replaceState(null, '', paths[screen] || '/')
+          }
+        } catch (err) {
+          document.documentElement.dataset.theme = 'light'
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

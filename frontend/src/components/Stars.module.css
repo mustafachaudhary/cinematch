@@ -1,0 +1,65 @@
+.star {
+  position: relative;
+  display: inline-block;
+  flex: none;
+}
+
+.base {
+  display: block;
+  fill: var(--field);
+}
+
+.clip {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  display: block;
+}
+
+.fill {
+  display: block;
+  fill: var(--accent);
+}
+
+.static {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.value {
+  margin-left: 8px;
+  color: var(--ink);
+  font-size: var(--text-xs);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.picker {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.starButton {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+}
+
+.starButton:hover {
+  background: transparent;
+}
+
+.readout {
+  margin-left: 10px;
+  font-size: var(--text-base);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.scale {
+  color: var(--muted);
+  font-size: var(--text-xs);
+}

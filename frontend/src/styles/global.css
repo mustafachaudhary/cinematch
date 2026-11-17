@@ -1,0 +1,223 @@
+/* Design tokens, theme variables, reset, and base elements only.
+   Every component and page owns its layout in a scoped CSS Module. */
+
+:root {
+  color-scheme: light;
+
+  --frame: #dedbd5;
+  --sheet: #eeecea;
+  --surface: #e4e1dd;
+  --surface-strong: #d6d1c9;
+  --highlight: #e8e5df;
+
+  --ink: #333231;
+  --muted: #58544f;
+  --faint: #635f5b;
+  --placeholder: #55514c;
+
+  --accent: #5c6b54;
+  --accent-strong: #4b5944;
+  --accent-ink: #ffffff;
+  --accent-soft: #d8ddd2;
+
+  --field: #cdc3b6;
+  --field-strong: #c1b6a7;
+  --field-ink: #333231;
+
+  --rule: #d8d4cd;
+  --edge: #d3cec6;
+  --poster-bg: #d7d2ca;
+
+  --danger: #874740;
+  --danger-soft: #eadbd7;
+  --positive: #5c6b54;
+  --negative: #874740;
+
+  --overlay: rgba(30, 29, 27, 0.62);
+  --toast-bg: #333231;
+  --toast-ink: #f4f1ea;
+  --focus: #4b5944;
+  --shadow: 0 24px 72px rgba(36, 34, 31, 0.22);
+
+  --gutter: clamp(20px, 4.5vw, 56px);
+  --rail: 224px;
+  --topbar: 52px;
+
+  --text-xs: 13px;
+  --text-sm: 15px;
+  --text-base: 17px;
+  --text-h2: 24px;
+  --text-h1: 34px;
+  --text-figure: 32px;
+
+  --serif: 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+}
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+
+  --frame: #0d0d0c;
+  --sheet: #151513;
+  --surface: #1d1d1a;
+  --surface-strong: #282822;
+  --highlight: #22221e;
+
+  --ink: #e9e7e2;
+  --muted: #a6a096;
+  --faint: #837d74;
+  --placeholder: #a6a096;
+
+  --accent: #aab69c;
+  --accent-strong: #bcc7ad;
+  --accent-ink: #161610;
+  --accent-soft: #2c3228;
+
+  --field: #2a2a25;
+  --field-strong: #34342d;
+  --field-ink: #e9e7e2;
+
+  --rule: #2c2b26;
+  --edge: #292823;
+  --poster-bg: #292823;
+
+  --danger: #d69a92;
+  --danger-soft: #35241f;
+  --positive: #aab69c;
+  --negative: #d69a92;
+
+  --overlay: rgba(0, 0, 0, 0.72);
+  --toast-bg: #e9e7e2;
+  --toast-ink: #161613;
+  --focus: #aab69c;
+  --shadow: 0 24px 72px rgba(0, 0, 0, 0.52);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--frame);
+  font-optical-sizing: auto;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--frame);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: var(--text-base);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+h1 {
+  font-size: var(--text-h1);
+}
+
+h2 {
+  font-size: var(--text-h2);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--placeholder);
+  opacity: 1;
+}
+
+@media (max-width: 700px) {
+  :root {
+    --text-h1: 28px;
+    --text-h2: 22px;
+    --text-figure: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

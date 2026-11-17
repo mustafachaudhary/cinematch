@@ -1,171 +1,295 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { api } from '../hooks/api'
+import useTitle from '../hooks/useTitle'
+import { SHOWCASE } from '../data/showcase'
+import Brand from '../components/Brand'
+import Button from '../components/Button'
+import ThemeToggle from '../components/ThemeToggle'
+import { useAuth } from '../context/AuthProvider'
+import styles from './LoginPage.module.css'
 
-export default function LoginPage({ onLogin }) {
+const normalizeUsername = (value) =>
+  (value || '').trim().replace(/^@+/, '').replace(/\s+/g, '').toLowerCase()
+
+const MIN_PASSWORD = 8
+
+export default function LoginPage() {
+  const navigate = useNavigate()
+  const location = useLocation()
+  const { signIn } = useAuth()
   const [mode, setMode] = useState('login')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [displayName, setDisplayName] = useState('')
-  const [status, setStatus] = useState(null)
-  const [loading, setLoading] = useState(false)
+  const [showPw, setShowPw] = useState(false)
+  const [busy, setBusy] = useState(false)
+  const [error, setError] = useState('')
+  const [availability, setAvailability] = useState(null)
+  const checkTimer = useRef(null)
+  const isSignup = mode === 'signup'
+  const uname = normalizeUsername(username)
+  useTitle(isSignup ? 'Create account' : 'Sign in')
 
-  const normalize = (value) => {
-    const trimmed = (value || '').trim()
-    return trimmed.replace(/^@+/, '').replace(/\s+/g, '').toLowerCase()
+  useEffect(() => () => clearTimeout(checkTimer.current), [])
+
+  const switchMode = (next) => {
+    clearTimeout(checkTimer.current)
+    setMode(next)
+    setError('')
+    setAvailability(null)
   }
-  const currentUser = localStorage.getItem('cinematch_username')
 
-  const showMessage = (message, success = true) => {
-    setStatus({ message, success })
-  }
-
-  const handleMode = (nextMode) => {
-    setMode(nextMode)
-    setStatus(null)
-  }
-
-  const handleCheck = async () => {
-    const uname = normalize(username)
-    if (!uname) {
-      showMessage('Enter a username to check', false)
+  const onUsernameChange = (event) => {
+    const raw = event.target.value
+    setUsername(raw)
+    setError('')
+    if (!isSignup) return
+    clearTimeout(checkTimer.current)
+    const candidate = normalizeUsername(raw)
+    if (!candidate) {
+      setAvailability(null)
       return
     }
-
-    setLoading(true)
-    try {
-      const result = await api.checkUser(uname)
-      if (result.exists) {
-        showMessage(`Username @${uname} exists. You can log in.`, true)
-      } else {
-        showMessage(`Username @${uname} is available for signup.`, true)
+    setAvailability('checking')
+    checkTimer.current = setTimeout(async () => {
+      try {
+        const res = await api.checkUser(candidate)
+        setAvailability(res.exists ? 'taken' : 'free')
+      } catch {
+        setAvailability(null)
       }
-    } catch (error) {
-      showMessage('Unable to check username. Try again.', false)
-    } finally {
-      setLoading(false)
-    }
+    }, 350)
   }
 
-  const submit = async (e) => {
-    e.preventDefault()
-    const uname = normalize(username)
-    if (!uname) {
-      showMessage('Username is required', false)
-      return
-    }
-    if (!password) {
-      showMessage('Password is required', false)
-      return
-    }
+  const onPasswordChange = (event) => {
+    setPassword(event.target.value)
+    setError('')
+  }
 
-    setLoading(true)
-    setStatus(null)
+  const submit = async (event) => {
+    event.preventDefault()
+    if (busy) return
+    if (!uname || !password) return
+    if (isSignup && password.length < MIN_PASSWORD) {
+      setError(`Password must be at least ${MIN_PASSWORD} characters.`)
+      return
+    }
+    setBusy(true)
+    setError('')
     try {
-      if (mode === 'signup') {
-        await api.signup({ username: uname, password })
-        localStorage.setItem('cinematch_username', uname)
-        localStorage.removeItem('cinematch_display_name')
-        setDisplayName('')
-        showMessage(`Signed up as @${uname}. Set your display name in profile settings.`, true)
-        if (onLogin) onLogin(uname)
-      } else {
-        const profile = await api.login({ username: uname, password })
-        localStorage.setItem('cinematch_username', profile.username)
-        if (profile.display_name) {
-          localStorage.setItem('cinematch_display_name', profile.display_name)
-          setDisplayName(profile.display_name)
-        } else {
-          localStorage.removeItem('cinematch_display_name')
-          setDisplayName('')
-        }
-        showMessage(`Welcome back, @${profile.username}`, true)
-        if (onLogin) onLogin(profile.username)
-      }
-    } catch (error) {
-      showMessage(error.message || 'Account action failed', false)
+      const profile = isSignup
+        ? await api.signup({ username: uname, password })
+        : await api.login({ username: uname, password })
+      signIn(profile)
+      const from = location.state?.from
+      const destination = from && !from.startsWith('/login') ? from : '/'
+      navigate(destination, { replace: true })
+    } catch (err) {
+      setError(err.message)
     } finally {
-      setLoading(false)
+      setBusy(false)
     }
   }
 
-  const logout = () => {
-    localStorage.removeItem('cinematch_username')
-    localStorage.removeItem('cinematch_display_name')
-    setUsername('')
-    setPassword('')
-    setDisplayName('')
-    setStatus({ message: 'Signed out locally.', success: true })
-    if (onLogin) onLogin(null)
-  }
+  const posters = SHOWCASE.filter((film) => film.poster_path)
+  const wides = SHOWCASE.filter((film) => film.backdrop_path)
 
   return (
-    <div className="page" style={{ maxWidth: 520 }}>
-      <h1>Account</h1>
-      <div style={{ display: 'flex', gap: 8, marginBottom: 20 }}>
-        <button
-          className={mode === 'login' ? 'btn-primary' : 'btn-secondary'}
-          type="button"
-          onClick={() => handleMode('login')}
-        >
-          Login
-        </button>
-        <button
-          className={mode === 'signup' ? 'btn-primary' : 'btn-secondary'}
-          type="button"
-          onClick={() => handleMode('signup')}
-        >
-          Sign Up
-        </button>
-      </div>
+    <main className={styles.screen}>
+      <section className={styles.gallery}>
+        <header className={styles.galleryTop}>
+          <Brand to="/login" tagline="Private film archive" />
+          <ThemeToggle />
+        </header>
 
-      <form onSubmit={submit} style={{ display: 'grid', gap: 14 }}>
-        <label>Username</label>
-        <input
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="e.g. mustafa"
-          autoComplete="username"
-        />
-
-        <label>Password</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="••••••••"
-          autoComplete={mode === 'signup' ? 'new-password' : 'current-password'}
-        />
-
-        <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-          <button className="btn-primary" type="submit" disabled={loading}>
-            {mode === 'signup' ? 'Create Account' : 'Log In'}
-          </button>
-          <button type="button" className="btn-secondary" onClick={handleCheck} disabled={loading}>
-            Check Availability
-          </button>
-          <button type="button" className="btn-tertiary" onClick={logout}>
-            Sign Out
-          </button>
+        <div className={styles.wall} aria-hidden="true">
+          <div className={styles.wallCol}>
+            {posters[0] ? (
+              <img src={posters[0].poster_path} alt="" loading="eager" />
+            ) : null}
+            {(wides[3] || wides[0]) ? (
+              <img
+                className={styles.wallWide}
+                src={(wides[3] || wides[0]).backdrop_path}
+                alt=""
+                loading="eager"
+              />
+            ) : null}
+          </div>
+          <div className={styles.wallCol}>
+            {wides[0] ? (
+              <img
+                className={styles.wallWide}
+                src={wides[0].backdrop_path}
+                alt=""
+                loading="eager"
+              />
+            ) : null}
+            {posters[1] ? (
+              <img src={posters[1].poster_path} alt="" loading="eager" />
+            ) : null}
+          </div>
+          <div className={styles.wallCol}>
+            {posters[2] ? (
+              <img src={posters[2].poster_path} alt="" loading="eager" />
+            ) : null}
+            {wides[1] ? (
+              <img
+                className={styles.wallWide}
+                src={wides[1].backdrop_path}
+                alt=""
+                loading="eager"
+              />
+            ) : null}
+          </div>
         </div>
-      </form>
 
-      {status && (
-        <div style={{
-          marginTop: 18,
-          padding: 14,
-          borderRadius: 12,
-          background: status.success ? 'rgba(56, 142, 60, 0.12)' : 'rgba(183, 28, 28, 0.12)',
-          color: status.success ? '#1b5e20' : '#b71c1c',
-        }}>
-          {status.message}
+        <div className={styles.mobileStrip} aria-hidden="true">
+          {posters.slice(0, 6).map((film) => (
+            <img key={film.tmdb_id} src={film.poster_path} alt="" loading="eager" />
+          ))}
         </div>
-      )}
 
-      {currentUser && (
-        <div style={{ marginTop: 24, color: 'var(--text-dim)' }}>
-          Currently saved user: <strong>@{currentUser}</strong>
+        <footer className={styles.wallFoot}>
+          <p className={styles.wallCaption}>Every print is a film in the collection.</p>
+          <p className={styles.wallCredit}>Film data &amp; artwork from TMDB.</p>
+        </footer>
+      </section>
+
+      <section className={styles.desk}>
+        <div className={styles.deskInner}>
+          <h1 className={styles.title}>
+            {isSignup ? 'Create your account.' : 'Welcome back.'}
+          </h1>
+          <p className={styles.intro}>
+            {isSignup
+              ? 'Rate films, build a taste profile, and get recommendations that explain themselves.'
+              : 'Sign in to pick up your taste profile where you left it.'}
+          </p>
+
+          <form className={styles.form} onSubmit={submit}>
+            <div className={styles.field}>
+              <label className={styles.label} htmlFor={`${mode}-username`}>
+                Username
+              </label>
+              <input
+                id={`${mode}-username`}
+                name={`${mode}-username`}
+                type="text"
+                className={styles.input}
+                autoComplete="username"
+                autoCapitalize="none"
+                spellCheck={false}
+                placeholder="e.g. @mustafa"
+                required
+                value={username}
+                onChange={onUsernameChange}
+              />
+              {isSignup && uname ? (
+                <p
+                  className={styles.availability}
+                  data-state={availability}
+                  aria-live="polite"
+                >
+                  {availability === 'checking'
+                    ? `Checking @${uname}…`
+                    : availability === 'free'
+                      ? `@${uname} is available.`
+                      : availability === 'taken'
+                        ? `@${uname} is already taken.`
+                        : ''}
+                </p>
+              ) : null}
+            </div>
+
+            <div className={styles.field}>
+              <label className={styles.label} htmlFor={`${mode}-password`}>
+                Password
+              </label>
+              <div className={styles.passwordWrap}>
+                <input
+                  id={`${mode}-password`}
+                  name={`${mode}-password`}
+                  type={showPw ? 'text' : 'password'}
+                  className={`${styles.input} ${styles.passwordInput}`}
+                  autoComplete={isSignup ? 'new-password' : 'current-password'}
+                  placeholder={isSignup ? `${MIN_PASSWORD}+ characters` : 'Your password'}
+                  required
+                  value={password}
+                  onChange={onPasswordChange}
+                  aria-describedby={isSignup ? 'pw-rules' : undefined}
+                />
+                <button
+                  type="button"
+                  className={styles.showPassword}
+                  onClick={() => setShowPw((value) => !value)}
+                  aria-label={
+                    showPw
+                      ? 'Hide password'
+                      : 'Show password as plain text. Warning: your password will be visible on screen.'
+                  }
+                  aria-pressed={showPw}
+                >
+                  {showPw ? 'Hide' : 'Show'}
+                </button>
+              </div>
+              {isSignup && password.length > 0 && password.length < MIN_PASSWORD ? (
+                <p className={styles.hint} id="pw-rules">
+                  {MIN_PASSWORD - password.length} more character
+                  {MIN_PASSWORD - password.length === 1 ? '' : 's'} to go. Length beats
+                  complexity.
+                </p>
+              ) : null}
+            </div>
+
+            {error ? (
+              <p className={styles.error} role="alert">
+                {error}
+              </p>
+            ) : null}
+
+            <Button type="submit" full className={styles.submit} disabled={busy}>
+              {busy
+                ? isSignup
+                  ? 'Creating…'
+                  : 'Signing in…'
+                : isSignup
+                  ? 'Create account'
+                  : 'Sign in'}
+            </Button>
+          </form>
+
+          <div className={styles.switch}>
+            {isSignup ? (
+              <>
+                <span>Already have an account?</span>
+                <button
+                  type="button"
+                  className={styles.switchButton}
+                  onClick={() => switchMode('login')}
+                >
+                  Sign in
+                </button>
+              </>
+            ) : (
+              <>
+                <span>First time here?</span>
+                <button
+                  type="button"
+                  className={styles.switchButton}
+                  onClick={() => switchMode('signup')}
+                >
+                  Create an account
+                </button>
+              </>
+            )}
+          </div>
+
+          <p className={styles.privacy}>
+            Your ratings train your own recommendations. Nothing leaves this machine.
+          </p>
         </div>
-      )}
-    </div>
+      </section>
+    </main>
   )
 }
