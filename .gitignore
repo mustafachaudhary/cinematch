@@ -19,6 +19,9 @@ coverage/
 .env
 .env.*
 *.db
+*.db-journal
+*.db-wal
+*.db-shm
 *.log
 uploads/
 backend/letterboxd_data/
@@ -33,4 +36,13 @@ backend/letterboxd_data/
 # Local imports/archives
 letterboxdDATA/
 letterboxdDATA.zip
+letterboxd-*-utc.zip
+extracted/
 cinematch_project_report.pdf
+
+# Local agent tooling artifacts
+.qwen/
+.taste-skill/
+
+# Graphify build output
+graphify-out/
