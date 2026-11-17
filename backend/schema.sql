@@ -1,6 +1,13 @@
 -- schema.sql
--- Database schema for CineMatch multi-user collaborative filtering support
--- SQLite-compatible syntax
+-- LEGACY / NOT USED — kept for historical reference only.
+--
+-- The live schema is defined in models/database.py (SQLAlchemy models plus
+-- the migrations run by init_db()). This file predates multi-user support:
+-- it lacks movie_cache, logged_movies, watched_movies, reviews, user_profile
+-- and app_meta, and its films table has a column the ORM does not define.
+-- Do not apply it; doing so creates a database the application cannot use.
+--
+-- SQLite-compatible syntax (historical)
 
 -- Films table (stable reference)
 CREATE TABLE films (

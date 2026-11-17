@@ -6,6 +6,7 @@ requests==2.34.2
 numpy==2.4.6
 pandas==3.0.3
 scikit-learn==1.8.0
+networkx==3.6.1
 sqlalchemy==2.0.50
 aiosqlite==0.20.0
 pydantic==2.13.4

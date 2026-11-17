@@ -1,11 +1,18 @@
-fastapi==0.136.3
-uvicorn==0.48.0
-python-dotenv==1.0.1
-python-multipart==0.0.20
+# Pinned to the tested environment (Python 3.14.8, .venv).
+# The API is compatible with newer patch/minor releases of these packages.
+fastapi==0.141.1
+uvicorn==0.52.4
+python-dotenv==1.2.3
+python-multipart==0.0.32
 requests==2.34.2
-numpy==2.4.6
-pandas==3.0.3
-scikit-learn==1.8.0
-sqlalchemy==2.0.50
-aiosqlite==0.20.0
+numpy==2.5.2
+pandas==3.0.5
+scikit-learn==1.9.0
+networkx==3.6.1
+sqlalchemy==2.0.52
 pydantic==2.13.4
+sentence-transformers==6.0.0
+torch
+vaderSentiment==3.3.2
+pytest==9.1.1
+httpx==0.28.1
