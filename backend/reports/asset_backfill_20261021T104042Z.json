@@ -1,0 +1,21 @@
+{
+  "captured_at": "2026-10-21T10:40:42.247618+00:00",
+  "db": "/home/mustafa/Downloads/Odin/NLP/cinematch.ai/backend/cinematch.db",
+  "targets": 176,
+  "updated": 173,
+  "failed": [
+    {
+      "tmdb_id": 1778411,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 37452,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1598414,
+      "error": "no_payload"
+    }
+  ],
+  "elapsed_seconds": 33.5
+}

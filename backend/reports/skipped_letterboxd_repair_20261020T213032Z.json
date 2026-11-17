@@ -1,0 +1,456 @@
+{
+  "captured_at": "2026-10-20T21:30:32.717301+00:00",
+  "targets": 56,
+  "changes": [
+    {
+      "slug": "pg-psycho-goreman",
+      "old_tmdb_id": 670428,
+      "new_tmdb_id": 670428,
+      "page_title": "‎PG: Psycho Goreman",
+      "page_year": 2020,
+      "rank": 9267
+    },
+    {
+      "slug": "i-spit-on-your-grave",
+      "old_tmdb_id": 25239,
+      "new_tmdb_id": 25239,
+      "page_title": "‎I Spit on Your Grave",
+      "page_year": 1978,
+      "rank": 9414
+    },
+    {
+      "slug": "i-wanna-dance-with-somebody",
+      "old_tmdb_id": 696157,
+      "new_tmdb_id": 696157,
+      "page_title": "‎I Wanna Dance with Somebody",
+      "page_year": 2022,
+      "rank": 9497
+    },
+    {
+      "slug": "evil-bong",
+      "old_tmdb_id": 10089,
+      "new_tmdb_id": 10089,
+      "page_title": "‎Evil Bong",
+      "page_year": 2006,
+      "rank": 9659
+    },
+    {
+      "slug": "2010-1984",
+      "old_tmdb_id": 4437,
+      "new_tmdb_id": 4437,
+      "page_title": "‎2010: The Year We Make Contact",
+      "page_year": 1984,
+      "rank": 9733
+    },
+    {
+      "slug": "soyut-dsavurumcu-bir-dostlugun-anatomisi",
+      "old_tmdb_id": 1546963,
+      "new_tmdb_id": 1546963,
+      "page_title": "‎Soyut Dışavurumcu Bir Dostluğun Anatomisi Veyahut Yan Yana",
+      "page_year": 2025,
+      "rank": 9973
+    },
+    {
+      "slug": "9-weeks",
+      "old_tmdb_id": 10068,
+      "new_tmdb_id": 10068,
+      "page_title": "‎9½ Weeks",
+      "page_year": 1986,
+      "rank": 10118
+    },
+    {
+      "slug": "puppet-master-1989",
+      "old_tmdb_id": 26953,
+      "new_tmdb_id": 26953,
+      "page_title": "‎Puppet Master",
+      "page_year": 1989,
+      "rank": 10150
+    },
+    {
+      "slug": "history-of-the-occult",
+      "old_tmdb_id": 649294,
+      "new_tmdb_id": 649294,
+      "page_title": "‎History of the Occult",
+      "page_year": 2020,
+      "rank": 10252
+    },
+    {
+      "slug": "holy-camp",
+      "old_tmdb_id": 426338,
+      "new_tmdb_id": 426338,
+      "page_title": "‎Holy Camp!",
+      "page_year": 2017,
+      "rank": 10503
+    },
+    {
+      "slug": "asterix-and-obelix-vs-caesar",
+      "old_tmdb_id": 9564,
+      "new_tmdb_id": 9564,
+      "page_title": "‎Asterix and Obelix vs. Caesar",
+      "page_year": 1999,
+      "rank": 10592
+    },
+    {
+      "slug": "broken-blossoms-1919",
+      "old_tmdb_id": 899,
+      "new_tmdb_id": 899,
+      "page_title": "‎Broken Blossoms",
+      "page_year": 1919,
+      "rank": 10635
+    },
+    {
+      "slug": "a-cop-1972",
+      "old_tmdb_id": 42741,
+      "new_tmdb_id": 42741,
+      "page_title": "‎A Cop",
+      "page_year": 1972,
+      "rank": 10672
+    },
+    {
+      "slug": "la-commune-paris-1871",
+      "old_tmdb_id": 63195,
+      "new_tmdb_id": 63195,
+      "page_title": "‎La Commune (Paris, 1871)",
+      "page_year": 2000,
+      "rank": 10974
+    },
+    {
+      "slug": "junk-head",
+      "old_tmdb_id": 464768,
+      "new_tmdb_id": 464768,
+      "page_title": "‎Junk Head",
+      "page_year": 2017,
+      "rank": 11182
+    },
+    {
+      "slug": "crimes-of-the-future",
+      "old_tmdb_id": 27371,
+      "new_tmdb_id": 27371,
+      "page_title": "‎Crimes of the Future",
+      "page_year": 1970,
+      "rank": 11551
+    },
+    {
+      "slug": "soleil-o",
+      "old_tmdb_id": 195841,
+      "new_tmdb_id": 195841,
+      "page_title": "‎Soleil O",
+      "page_year": 1970,
+      "rank": 11784
+    },
+    {
+      "slug": "incoherence",
+      "old_tmdb_id": 67415,
+      "new_tmdb_id": 67415,
+      "page_title": "‎Incoherence",
+      "page_year": 1994,
+      "rank": 11945
+    },
+    {
+      "slug": "a-story-from-chikamatsu",
+      "old_tmdb_id": 35861,
+      "new_tmdb_id": 35861,
+      "page_title": "‎A Story from Chikamatsu",
+      "page_year": 1954,
+      "rank": 11986
+    },
+    {
+      "slug": "waking-ned-devine",
+      "old_tmdb_id": 10162,
+      "new_tmdb_id": 10162,
+      "page_title": "‎Waking Ned Devine",
+      "page_year": 1998,
+      "rank": 12014
+    },
+    {
+      "slug": "cannibal-the-musical",
+      "old_tmdb_id": 13063,
+      "new_tmdb_id": 13063,
+      "page_title": "‎Cannibal! The Musical",
+      "page_year": 1993,
+      "rank": 12282
+    },
+    {
+      "slug": "goat-story",
+      "old_tmdb_id": 21188,
+      "new_tmdb_id": 21188,
+      "page_title": "‎Goat Story",
+      "page_year": 2008,
+      "rank": 12613
+    },
+    {
+      "slug": "repentance",
+      "old_tmdb_id": 96920,
+      "new_tmdb_id": 96920,
+      "page_title": "‎Repentance",
+      "page_year": 1984,
+      "rank": 12780
+    },
+    {
+      "slug": "the-ear",
+      "old_tmdb_id": 88953,
+      "new_tmdb_id": 88953,
+      "page_title": "‎The Ear",
+      "page_year": 1970,
+      "rank": 12872
+    },
+    {
+      "slug": "nick-cave-the-bad-seeds-one-more-time-with",
+      "old_tmdb_id": 404141,
+      "new_tmdb_id": 404141,
+      "page_title": "‎Nick Cave & The Bad Seeds: One More Time with Feeling",
+      "page_year": 2016,
+      "rank": 12886
+    },
+    {
+      "slug": "fando-and-lis",
+      "old_tmdb_id": 33257,
+      "new_tmdb_id": 33257,
+      "page_title": "‎Fando and Lis",
+      "page_year": 1968,
+      "rank": 12934
+    },
+    {
+      "slug": "cat-city-2017",
+      "old_tmdb_id": 469154,
+      "new_tmdb_id": 469154,
+      "page_title": "‎Cat City",
+      "page_year": 2017,
+      "rank": 13158
+    },
+    {
+      "slug": "rifkins-festival",
+      "old_tmdb_id": 606876,
+      "new_tmdb_id": 606876,
+      "page_title": "‎Rifkin’s Festival",
+      "page_year": 2020,
+      "rank": 13331
+    },
+    {
+      "slug": "ziggy-stardust-and-the-spiders-from-mars",
+      "old_tmdb_id": 34759,
+      "new_tmdb_id": 34759,
+      "page_title": "‎Ziggy Stardust and the Spiders from Mars",
+      "page_year": 1979,
+      "rank": 13385
+    },
+    {
+      "slug": "a-real-young-girl",
+      "old_tmdb_id": 1631,
+      "new_tmdb_id": 1631,
+      "page_title": "‎A Real Young Girl",
+      "page_year": 1976,
+      "rank": 13550
+    },
+    {
+      "slug": "straight-outta-nowhere-scooby-doo-meets-courage-the-cowardly-dog",
+      "old_tmdb_id": 843906,
+      "new_tmdb_id": 843906,
+      "page_title": "‎Straight Outta Nowhere: Scooby-Doo! Meets Courage the Cowardly Dog",
+      "page_year": 2021,
+      "rank": 14117
+    },
+    {
+      "slug": "stranger-things",
+      "old_tmdb_id": 182026,
+      "new_tmdb_id": 182026,
+      "page_title": "‎Stranger Things",
+      "page_year": 2010,
+      "rank": 14386
+    },
+    {
+      "slug": "room-666",
+      "old_tmdb_id": 118257,
+      "new_tmdb_id": 118257,
+      "page_title": "‎Room 666",
+      "page_year": 1982,
+      "rank": 14394
+    },
+    {
+      "slug": "hotel-monterey",
+      "old_tmdb_id": 108831,
+      "new_tmdb_id": 108831,
+      "page_title": "‎Hotel Monterey",
+      "page_year": 1973,
+      "rank": 14482
+    },
+    {
+      "slug": "monster-2018",
+      "old_tmdb_id": 489932,
+      "new_tmdb_id": 489932,
+      "page_title": "‎Monster",
+      "page_year": 2018,
+      "rank": 14518
+    },
+    {
+      "slug": "microwave-massacre",
+      "old_tmdb_id": 87852,
+      "new_tmdb_id": 87852,
+      "page_title": "‎Microwave Massacre",
+      "page_year": 1979,
+      "rank": 14773
+    },
+    {
+      "slug": "yacht-rock-a-dockumentary",
+      "old_tmdb_id": 1370580,
+      "new_tmdb_id": 1370580,
+      "page_title": "‎Yacht Rock: A DOCKumentary",
+      "page_year": 2024,
+      "rank": 14824
+    },
+    {
+      "slug": "the-men-who-tread-on-the-tigers-tail",
+      "old_tmdb_id": 36916,
+      "new_tmdb_id": 36916,
+      "page_title": "‎The Men Who Tread on the Tiger's Tail",
+      "page_year": 1945,
+      "rank": 14937
+    },
+    {
+      "slug": "compensation-1999",
+      "old_tmdb_id": 365501,
+      "new_tmdb_id": 365501,
+      "page_title": "‎Compensation",
+      "page_year": 1999,
+      "rank": 15118
+    },
+    {
+      "slug": "three-crowns-of-the-sailor",
+      "old_tmdb_id": 64441,
+      "new_tmdb_id": 64441,
+      "page_title": "‎Three Crowns of the Sailor",
+      "page_year": 1983,
+      "rank": 15682
+    },
+    {
+      "slug": "full-circle-1977",
+      "old_tmdb_id": 102283,
+      "new_tmdb_id": 102283,
+      "page_title": "‎The Haunting of Julia",
+      "page_year": 1977,
+      "rank": 15755
+    },
+    {
+      "slug": "voyage-in-time",
+      "old_tmdb_id": 47011,
+      "new_tmdb_id": 47011,
+      "page_title": "‎Voyage in Time",
+      "page_year": 1983,
+      "rank": 15759
+    },
+    {
+      "slug": "samurai-jack-the-premiere-movie",
+      "old_tmdb_id": 47388,
+      "new_tmdb_id": 47388,
+      "page_title": "‎Samurai Jack: The Premiere Movie",
+      "page_year": 2001,
+      "rank": 15978
+    },
+    {
+      "slug": "tango",
+      "old_tmdb_id": 48496,
+      "new_tmdb_id": 48496,
+      "page_title": "‎Tango",
+      "page_year": 1981,
+      "rank": 16060
+    },
+    {
+      "slug": "seven-up",
+      "old_tmdb_id": 51863,
+      "new_tmdb_id": 51863,
+      "page_title": "‎Seven Up!",
+      "page_year": 1964,
+      "rank": 16173
+    },
+    {
+      "slug": "i-hate-myself",
+      "old_tmdb_id": 233841,
+      "new_tmdb_id": 233841,
+      "page_title": "‎i hate myself :)",
+      "page_year": 2013,
+      "rank": 17097
+    },
+    {
+      "slug": "enter-nowhere",
+      "old_tmdb_id": 98568,
+      "new_tmdb_id": 98568,
+      "page_title": "‎Enter Nowhere",
+      "page_year": 2011,
+      "rank": 17116
+    },
+    {
+      "slug": "ramayana-the-legend-of-prince-rama",
+      "old_tmdb_id": 84092,
+      "new_tmdb_id": 84092,
+      "page_title": "‎Ramayana : The Legend of Prince Rama",
+      "page_year": 1993,
+      "rank": 17331
+    },
+    {
+      "slug": "the-loud-house-movie",
+      "old_tmdb_id": 410113,
+      "new_tmdb_id": 410113,
+      "page_title": "‎The Loud House Movie",
+      "page_year": 2021,
+      "rank": 17719
+    },
+    {
+      "slug": "the-goalies-anxiety-at-the-penalty-kick",
+      "old_tmdb_id": 42481,
+      "new_tmdb_id": 42481,
+      "page_title": "‎The Goalie's Anxiety at the Penalty Kick",
+      "page_year": 1972,
+      "rank": 18374
+    },
+    {
+      "slug": "egg-2002",
+      "old_tmdb_id": 188828,
+      "new_tmdb_id": 188828,
+      "page_title": "‎Egg",
+      "page_year": 2002,
+      "rank": 18610
+    },
+    {
+      "slug": "shut-up-and-play-the-hits",
+      "old_tmdb_id": 83589,
+      "new_tmdb_id": 83589,
+      "page_title": "‎Shut Up and Play the Hits",
+      "page_year": 2012,
+      "rank": 18857
+    },
+    {
+      "slug": "in-the-mood-for-love-2001-2001",
+      "old_tmdb_id": 1430370,
+      "new_tmdb_id": 1430370,
+      "page_title": "‎In the Mood for Love 2001",
+      "page_year": 2001,
+      "rank": 18897
+    },
+    {
+      "slug": "bona",
+      "old_tmdb_id": 75628,
+      "new_tmdb_id": 75628,
+      "page_title": "‎Bona",
+      "page_year": 1980,
+      "rank": 19079
+    },
+    {
+      "slug": "atrocious-2015",
+      "old_tmdb_id": 300906,
+      "new_tmdb_id": 300906,
+      "page_title": "‎Atrocious",
+      "page_year": 2015,
+      "rank": 19315
+    },
+    {
+      "slug": "the-very-eye-of-night",
+      "old_tmdb_id": 105577,
+      "new_tmdb_id": 105577,
+      "page_title": "‎The Very Eye of Night",
+      "page_year": 1955,
+      "rank": 19348
+    }
+  ],
+  "failed": [],
+  "applied": false
+}

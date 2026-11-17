@@ -1,0 +1,32 @@
+{
+  "captured_at": "2026-10-20T10:44:51.779296+00:00",
+  "db": "/tmp/opencode/cinematch_seed_import/final_import.db",
+  "checkpoint": "/home/mustafa/Downloads/Odin/NLP/cinematch.ai/backend/letterboxd_data/seeds/tmdb_enrichment.jsonl",
+  "stats": {
+    "catalog": 9608,
+    "targets": 9608,
+    "replayed": 3,
+    "fetched": 9602,
+    "applied": 9602,
+    "errors": [
+      {
+        "tmdb_id": 10312,
+        "error": "DNS resolution failed"
+      },
+      {
+        "tmdb_id": 37452,
+        "error": "TMDB 404 Not Found"
+      },
+      {
+        "tmdb_id": 1598414,
+        "error": "TMDB 404 Not Found"
+      }
+    ],
+    "error_count": 3,
+    "with_keywords": 9605,
+    "with_runtime": 9586,
+    "people_rows": 117609,
+    "related_rows": 226197,
+    "elapsed_seconds": 1561.2
+  }
+}

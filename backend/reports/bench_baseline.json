@@ -1,0 +1,31 @@
+{
+  "captured_at": "2026-10-19T18:39:37.041418+00:00",
+  "base": "http://127.0.0.1:8000",
+  "user": "mustafa",
+  "endpoints": {
+    "feed": {
+      "path": "/movies/feed?limit=20",
+      "n": 25,
+      "mean_ms": 104.99,
+      "p50_ms": 90.47,
+      "p95_ms": 103.52,
+      "max_ms": 261.51
+    },
+    "search": {
+      "path": "/movies/search?q=interstellar&limit=16",
+      "n": 25,
+      "mean_ms": 70.37,
+      "p50_ms": 61.16,
+      "p95_ms": 74.79,
+      "max_ms": 243.52
+    },
+    "engine_status": {
+      "path": "/movies/engine-status",
+      "n": 25,
+      "mean_ms": 16.58,
+      "p50_ms": 15.88,
+      "p95_ms": 20.88,
+      "max_ms": 22.16
+    }
+  }
+}

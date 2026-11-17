@@ -1,0 +1,52 @@
+[
+  {
+    "variant": "v2 full",
+    "ndcg20_graded": 0.2453,
+    "ndcg20_binary": 0.2757,
+    "recall20": 0.0849,
+    "recall50": 0.1638,
+    "mrr": 0.4313,
+    "coverage": 0.0505,
+    "intra_list_similarity": 0.2604
+  },
+  {
+    "variant": "no themes",
+    "ndcg20_graded": 0.1888,
+    "ndcg20_binary": 0.2108,
+    "recall20": 0.0663,
+    "recall50": 0.1394,
+    "mrr": 0.366,
+    "coverage": 0.0498,
+    "intra_list_similarity": 0.2822
+  },
+  {
+    "variant": "no collection",
+    "ndcg20_graded": 0.2413,
+    "ndcg20_binary": 0.2719,
+    "recall20": 0.084,
+    "recall50": 0.158,
+    "mrr": 0.4279,
+    "coverage": 0.0496,
+    "intra_list_similarity": 0.2616
+  },
+  {
+    "variant": "no CF",
+    "ndcg20_graded": 0.0832,
+    "ndcg20_binary": 0.0971,
+    "recall20": 0.0303,
+    "recall50": 0.057,
+    "mrr": 0.252,
+    "coverage": 0.0476,
+    "intra_list_similarity": 0.3561
+  },
+  {
+    "variant": "genre restored (0.08)",
+    "ndcg20_graded": 0.2266,
+    "ndcg20_binary": 0.2533,
+    "recall20": 0.0765,
+    "recall50": 0.1621,
+    "mrr": 0.4278,
+    "coverage": 0.0529,
+    "intra_list_similarity": 0.2533
+  }
+]

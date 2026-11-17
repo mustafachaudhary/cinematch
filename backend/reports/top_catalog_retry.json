@@ -1,0 +1,28 @@
+{
+  "captured_at": "2026-10-20T21:13:20.310296+00:00",
+  "db": "/home/mustafa/Downloads/Odin/NLP/cinematch.ai/backend/cinematch.db",
+  "backup": "/home/mustafa/Downloads/Odin/NLP/cinematch.ai/backend/reports/cinematch_pre_top20k_20261020T211241Z.db",
+  "resolution_db": "/tmp/opencode/retry_resolution.db",
+  "stats": {
+    "rows": 201,
+    "resolved_rows": 201,
+    "unresolved_rows": 0,
+    "new_ids": 201,
+    "imported_new": 5,
+    "imported_existing": 0,
+    "skipped": 0,
+    "title_mismatch": 0,
+    "year_mismatch": 0,
+    "invalid_tmdb": 196,
+    "duplicate_rows": 0,
+    "people_rows": 99,
+    "related_rows": 200,
+    "popularity_rows": 201,
+    "errors": [],
+    "catalog_after": 20458,
+    "letterboxd_popularity_rows": 20000,
+    "person_rows_total": 351664,
+    "related_rows_total": 641496,
+    "elapsed_seconds": 38.9
+  }
+}

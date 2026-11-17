@@ -1,0 +1,1846 @@
+{
+  "captured_at": "2026-10-21T11:46:30.977018+00:00",
+  "db": "/tmp/opencode/cinematch_pilot_nocol.db",
+  "films": 3000,
+  "limit": 3000,
+  "max_hops": 3,
+  "users": 81,
+  "rating_rows": 54792,
+  "like_rows": 24901,
+  "watch_rows": 6908,
+  "direct_anchors": 2902,
+  "direct_edges": 231120,
+  "rating_edges": 61185,
+  "like_edges": 128247,
+  "watch_edges": 37816,
+  "collection_edges": 0,
+  "behavior_edges": 139296,
+  "films_with_edges": 2902,
+  "hop_counts": {
+    "1": 69525,
+    "2": 58810,
+    "3": 10961
+  },
+  "average_score": 0.2151,
+  "behavior_clusters": [
+    {
+      "slug": "behavior-niche-01",
+      "label": "Viewers of The Favourite · Paddington",
+      "top_films": [
+        375262,
+        116149,
+        429200,
+        1541,
+        499,
+        346648
+      ],
+      "size": 383
+    },
+    {
+      "slug": "behavior-niche-02",
+      "label": "Viewers of Oppenheimer · One Battle After Another",
+      "top_films": [
+        872585,
+        1054867,
+        313369,
+        807,
+        694,
+        244786
+      ],
+      "size": 324
+    },
+    {
+      "slug": "behavior-niche-03",
+      "label": "Viewers of Licorice Pizza · The Worst Person in the World",
+      "top_films": [
+        718032,
+        660120,
+        631843,
+        570670,
+        635731,
+        624860
+      ],
+      "size": 309
+    },
+    {
+      "slug": "behavior-niche-04",
+      "label": "Viewers of Ice Age: The Meltdown · Horton Hears a Who!",
+      "top_films": [
+        950,
+        12222,
+        3170,
+        17979,
+        11688,
+        10693
+      ],
+      "size": 262
+    },
+    {
+      "slug": "behavior-niche-05",
+      "label": "Viewers of The Invite · Send Help",
+      "top_films": [
+        950028,
+        1198994,
+        1241983,
+        1272837,
+        1327819,
+        1249213
+      ],
+      "size": 237
+    },
+    {
+      "slug": "behavior-niche-06",
+      "label": "Viewers of Hustlers · M3GAN",
+      "top_films": [
+        540901,
+        536554,
+        330457,
+        345887,
+        328425,
+        198184
+      ],
+      "size": 216
+    },
+    {
+      "slug": "behavior-niche-07",
+      "label": "Viewers of Challengers · Poor Things",
+      "top_films": [
+        937287,
+        792307,
+        20770,
+        664300,
+        50619,
+        839369
+      ],
+      "size": 184
+    },
+    {
+      "slug": "behavior-niche-08",
+      "label": "Viewers of Wayne's World · Jerry Maguire",
+      "top_films": [
+        8872,
+        9390,
+        51876,
+        241,
+        307081,
+        13223
+      ],
+      "size": 159
+    },
+    {
+      "slug": "behavior-niche-09",
+      "label": "Viewers of Three Colors: Red · Magnolia",
+      "top_films": [
+        110,
+        334,
+        1626,
+        145,
+        108,
+        309
+      ],
+      "size": 146
+    },
+    {
+      "slug": "behavior-niche-10",
+      "label": "Viewers of Blade II · Meg 2: The Trench",
+      "top_films": [
+        36586,
+        615656,
+        419479,
+        338967,
+        192132,
+        338970
+      ],
+      "size": 140
+    },
+    {
+      "slug": "behavior-niche-11",
+      "label": "Viewers of Avengers: Infinity War · Captain America: Civil War",
+      "top_films": [
+        299536,
+        271110,
+        284053,
+        634649,
+        505600,
+        10138
+      ],
+      "size": 100
+    },
+    {
+      "slug": "behavior-niche-12",
+      "label": "Viewers of Death Proof · Carrie",
+      "top_films": [
+        1991,
+        7340,
+        411741,
+        1443,
+        258480,
+        29845
+      ],
+      "size": 97
+    },
+    {
+      "slug": "behavior-niche-13",
+      "label": "Viewers of Spencer · Spree",
+      "top_films": [
+        716612,
+        653598,
+        83666,
+        11171,
+        290098,
+        3558
+      ],
+      "size": 74
+    },
+    {
+      "slug": "behavior-niche-14",
+      "label": "Viewers of He's Just Not That Into You · Boyhood",
+      "top_films": [
+        10184,
+        85350,
+        50546,
+        500840,
+        122906,
+        228150
+      ],
+      "size": 67
+    },
+    {
+      "slug": "behavior-niche-15",
+      "label": "Viewers of Dirty Dancing · Ghost",
+      "top_films": [
+        88,
+        251,
+        838,
+        9361,
+        1621,
+        34584
+      ],
+      "size": 31
+    },
+    {
+      "slug": "behavior-niche-16",
+      "label": "Viewers of The Jungle Book · Penguins of Madagascar",
+      "top_films": [
+        278927,
+        270946,
+        158015,
+        87093,
+        8960,
+        3131
+      ],
+      "size": 17
+    }
+  ],
+  "behavior_members": 2746,
+  "samples": {
+    "Spirited Away": [
+      {
+        "tmdb_id": 1422,
+        "title": "The Departed",
+        "score": 0.414844,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4148,
+          "path_strength": 0.4148,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.0,
+          "like_jaccard": 0.0,
+          "like_weighted_similarity": 0.4148,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 0,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 8392,
+        "title": "My Neighbor Totoro",
+        "score": 0.401939,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4019,
+          "path_strength": 0.4019,
+          "rating_similarity": 0.3915,
+          "rating_jaccard": 0.45,
+          "like_similarity": 0.5363,
+          "like_jaccard": 0.5312,
+          "like_weighted_similarity": 0.3957,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 18,
+          "co_likers": 17,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 157336,
+        "title": "Interstellar",
+        "score": 0.400702,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4007,
+          "path_strength": 0.4007,
+          "rating_similarity": 0.3835,
+          "rating_jaccard": 0.2963,
+          "like_similarity": 0.557,
+          "like_jaccard": 0.5263,
+          "like_weighted_similarity": 0.4503,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 16,
+          "co_likers": 20,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 496243,
+        "title": "Parasite",
+        "score": 0.387098,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3871,
+          "path_strength": 0.3871,
+          "rating_similarity": 0.388,
+          "rating_jaccard": 0.4286,
+          "like_similarity": 0.5467,
+          "like_jaccard": 0.4783,
+          "like_weighted_similarity": 0.4422,
+          "watch_similarity": 0.0786,
+          "watch_jaccard": 0.2857,
+          "co_raters": 21,
+          "co_likers": 22,
+          "co_watchers": 2,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 10315,
+        "title": "Fantastic Mr. Fox",
+        "score": 0.386751,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3868,
+          "path_strength": 0.3868,
+          "rating_similarity": 0.3383,
+          "rating_jaccard": 0.4186,
+          "like_similarity": 0.5685,
+          "like_jaccard": 0.5588,
+          "like_weighted_similarity": 0.3776,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 18,
+          "co_likers": 19,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 508883,
+        "title": "The Boy and the Heron",
+        "score": 0.384978,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.385,
+          "path_strength": 0.385,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.0,
+          "like_jaccard": 0.0,
+          "like_weighted_similarity": 0.385,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 0,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 238,
+        "title": "The Godfather",
+        "score": 0.383497,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3835,
+          "path_strength": 0.3835,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.4977,
+          "like_jaccard": 0.4848,
+          "like_weighted_similarity": 0.3779,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 16,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 329865,
+        "title": "Arrival",
+        "score": 0.380742,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3807,
+          "path_strength": 0.3807,
+          "rating_similarity": 0.3913,
+          "rating_jaccard": 0.4091,
+          "like_similarity": 0.5422,
+          "like_jaccard": 0.5294,
+          "like_weighted_similarity": 0.3206,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 18,
+          "co_likers": 18,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      }
+    ],
+    "The Dark Knight": [
+      {
+        "tmdb_id": 414906,
+        "title": "The Batman",
+        "score": 0.499159,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4992,
+          "path_strength": 0.4992,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.5734,
+          "like_jaccard": 0.5385,
+          "like_weighted_similarity": 0.5588,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 21,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 807,
+        "title": "Se7en",
+        "score": 0.455624,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4556,
+          "path_strength": 0.4556,
+          "rating_similarity": 0.5242,
+          "rating_jaccard": 0.5106,
+          "like_similarity": 0.5747,
+          "like_jaccard": 0.5556,
+          "like_weighted_similarity": 0.4227,
+          "watch_similarity": 0.1413,
+          "watch_jaccard": 0.4286,
+          "co_raters": 24,
+          "co_likers": 20,
+          "co_watchers": 3,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 120467,
+        "title": "The Grand Budapest Hotel",
+        "score": 0.453222,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4532,
+          "path_strength": 0.4532,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.5232,
+          "like_jaccard": 0.5,
+          "like_weighted_similarity": 0.5094,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 18,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 27205,
+        "title": "Inception",
+        "score": 0.442602,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4426,
+          "path_strength": 0.4426,
+          "rating_similarity": 0.354,
+          "rating_jaccard": 0.449,
+          "like_similarity": 0.6047,
+          "like_jaccard": 0.6061,
+          "like_weighted_similarity": 0.5124,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 22,
+          "co_likers": 20,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 872585,
+        "title": "Oppenheimer",
+        "score": 0.442285,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4423,
+          "path_strength": 0.4423,
+          "rating_similarity": 0.3537,
+          "rating_jaccard": 0.3846,
+          "like_similarity": 0.5842,
+          "like_jaccard": 0.5714,
+          "like_weighted_similarity": 0.5753,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 20,
+          "co_likers": 20,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 157336,
+        "title": "Interstellar",
+        "score": 0.438454,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4385,
+          "path_strength": 0.4385,
+          "rating_similarity": 0.5019,
+          "rating_jaccard": 0.5106,
+          "like_similarity": 0.5905,
+          "like_jaccard": 0.5676,
+          "like_weighted_similarity": 0.3815,
+          "watch_similarity": 0.0786,
+          "watch_jaccard": 0.2857,
+          "co_raters": 24,
+          "co_likers": 21,
+          "co_watchers": 2,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 693134,
+        "title": "Dune: Part Two",
+        "score": 0.423443,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4234,
+          "path_strength": 0.4234,
+          "rating_similarity": 0.4859,
+          "rating_jaccard": 0.4444,
+          "like_similarity": 0.5364,
+          "like_jaccard": 0.4773,
+          "like_weighted_similarity": 0.3911,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 20,
+          "co_likers": 21,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 354912,
+        "title": "Coco",
+        "score": 0.419806,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4198,
+          "path_strength": 0.4198,
+          "rating_similarity": 0.3964,
+          "rating_jaccard": 0.5833,
+          "like_similarity": 0.0,
+          "like_jaccard": 0.0,
+          "like_weighted_similarity": 0.0,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 21,
+          "co_likers": 0,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      }
+    ],
+    "Batman Begins": [
+      {
+        "tmdb_id": 278,
+        "title": "The Shawshank Redemption",
+        "score": 0.411346,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4113,
+          "path_strength": 0.4113,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.4948,
+          "like_jaccard": 0.52,
+          "like_weighted_similarity": 0.4288,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 13,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 76,
+        "title": "Before Sunrise",
+        "score": 0.403292,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4033,
+          "path_strength": 0.4033,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.507,
+          "like_jaccard": 0.5185,
+          "like_weighted_similarity": 0.0,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 14,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 275,
+        "title": "Fargo",
+        "score": 0.400209,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4002,
+          "path_strength": 0.4002,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.4842,
+          "like_jaccard": 0.5217,
+          "like_weighted_similarity": 0.4115,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 12,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 121,
+        "title": "The Lord of the Rings: The Two Towers",
+        "score": 0.391304,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3913,
+          "path_strength": 0.3913,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.4842,
+          "like_jaccard": 0.5217,
+          "like_weighted_similarity": 0.0,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 12,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 155,
+        "title": "The Dark Knight",
+        "score": 0.383677,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3837,
+          "path_strength": 0.3837,
+          "rating_similarity": 0.3652,
+          "rating_jaccard": 0.45,
+          "like_similarity": 0.5303,
+          "like_jaccard": 0.5357,
+          "like_weighted_similarity": 0.3774,
+          "watch_similarity": 0.2333,
+          "watch_jaccard": 0.6667,
+          "co_raters": 18,
+          "co_likers": 15,
+          "co_watchers": 4,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 84892,
+        "title": "The Perks of Being a Wallflower",
+        "score": 0.383465,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3835,
+          "path_strength": 0.3835,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.4948,
+          "like_jaccard": 0.52,
+          "like_weighted_similarity": 0.3654,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 13,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 786,
+        "title": "Almost Famous",
+        "score": 0.382353,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3824,
+          "path_strength": 0.3824,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.4829,
+          "like_jaccard": 0.5,
+          "like_weighted_similarity": 0.0,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 13,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 150540,
+        "title": "Inside Out",
+        "score": 0.378961,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.379,
+          "path_strength": 0.379,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.4706,
+          "like_jaccard": 0.5,
+          "like_weighted_similarity": 0.384,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 12,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      }
+    ],
+    "Heat": [
+      {
+        "tmdb_id": 7345,
+        "title": "There Will Be Blood",
+        "score": 0.39042,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3904,
+          "path_strength": 0.3904,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.4793,
+          "like_jaccard": 0.4545,
+          "like_weighted_similarity": 0.4306,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 15,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 1078605,
+        "title": "Weapons",
+        "score": 0.377013,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.377,
+          "path_strength": 0.377,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.4967,
+          "like_jaccard": 0.4839,
+          "like_weighted_similarity": 0.3707,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 15,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 1124,
+        "title": "The Prestige",
+        "score": 0.375783,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3758,
+          "path_strength": 0.3758,
+          "rating_similarity": 0.3495,
+          "rating_jaccard": 0.3784,
+          "like_similarity": 0.458,
+          "like_jaccard": 0.48,
+          "like_weighted_similarity": 0.4688,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 14,
+          "co_likers": 12,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 680,
+        "title": "Pulp Fiction",
+        "score": 0.363408,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3634,
+          "path_strength": 0.3634,
+          "rating_similarity": 0.36,
+          "rating_jaccard": 0.4524,
+          "like_similarity": 0.0,
+          "like_jaccard": 0.0,
+          "like_weighted_similarity": 0.0,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 19,
+          "co_likers": 0,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 62,
+        "title": "2001: A Space Odyssey",
+        "score": 0.356251,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3563,
+          "path_strength": 0.3563,
+          "rating_similarity": 0.3587,
+          "rating_jaccard": 0.4737,
+          "like_similarity": 0.4308,
+          "like_jaccard": 0.4194,
+          "like_weighted_similarity": 0.384,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 18,
+          "co_likers": 13,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 913290,
+        "title": "Barbarian",
+        "score": 0.3421,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3421,
+          "path_strength": 0.3421,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.4592,
+          "like_jaccard": 0.4643,
+          "like_weighted_similarity": 0.3256,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 13,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 240,
+        "title": "The Godfather Part II",
+        "score": 0.340729,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3407,
+          "path_strength": 0.3407,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.4089,
+          "like_jaccard": 0.4231,
+          "like_weighted_similarity": 0.3795,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 11,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 2649,
+        "title": "The Game",
+        "score": 0.340136,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3401,
+          "path_strength": 0.3401,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.4415,
+          "like_jaccard": 0.4762,
+          "like_weighted_similarity": 0.0,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 10,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      }
+    ],
+    "Interstellar": [
+      {
+        "tmdb_id": 27205,
+        "title": "Inception",
+        "score": 0.492312,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4923,
+          "path_strength": 0.4923,
+          "rating_similarity": 0.4472,
+          "rating_jaccard": 0.5294,
+          "like_similarity": 0.6534,
+          "like_jaccard": 0.6486,
+          "like_weighted_similarity": 0.5685,
+          "watch_similarity": 0.0962,
+          "watch_jaccard": 0.4,
+          "co_raters": 27,
+          "co_likers": 24,
+          "co_watchers": 2,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 807,
+        "title": "Se7en",
+        "score": 0.490467,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4905,
+          "path_strength": 0.4905,
+          "rating_similarity": 0.437,
+          "rating_jaccard": 0.3929,
+          "like_similarity": 0.6514,
+          "like_jaccard": 0.641,
+          "like_weighted_similarity": 0.5945,
+          "watch_similarity": 0.1999,
+          "watch_jaccard": 0.75,
+          "co_raters": 22,
+          "co_likers": 25,
+          "co_watchers": 3,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 693134,
+        "title": "Dune: Part Two",
+        "score": 0.471224,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4712,
+          "path_strength": 0.4712,
+          "rating_similarity": 0.5217,
+          "rating_jaccard": 0.4118,
+          "like_similarity": 0.627,
+          "like_jaccard": 0.587,
+          "like_weighted_similarity": 0.4084,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 21,
+          "co_likers": 27,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 146233,
+        "title": "Prisoners",
+        "score": 0.46541,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4654,
+          "path_strength": 0.4654,
+          "rating_similarity": 0.4117,
+          "rating_jaccard": 0.3846,
+          "like_similarity": 0.5907,
+          "like_jaccard": 0.561,
+          "like_weighted_similarity": 0.5887,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 20,
+          "co_likers": 23,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 244786,
+        "title": "Whiplash",
+        "score": 0.451506,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4515,
+          "path_strength": 0.4515,
+          "rating_similarity": 0.4591,
+          "rating_jaccard": 0.3571,
+          "like_similarity": 0.6119,
+          "like_jaccard": 0.5625,
+          "like_weighted_similarity": 0.5459,
+          "watch_similarity": 0.0727,
+          "watch_jaccard": 0.25,
+          "co_raters": 20,
+          "co_likers": 27,
+          "co_watchers": 2,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 489,
+        "title": "Good Will Hunting",
+        "score": 0.450931,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4509,
+          "path_strength": 0.4509,
+          "rating_similarity": 0.5161,
+          "rating_jaccard": 0.3673,
+          "like_similarity": 0.5791,
+          "like_jaccard": 0.5526,
+          "like_weighted_similarity": 0.4135,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 18,
+          "co_likers": 21,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 155,
+        "title": "The Dark Knight",
+        "score": 0.438454,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4385,
+          "path_strength": 0.4385,
+          "rating_similarity": 0.5019,
+          "rating_jaccard": 0.5106,
+          "like_similarity": 0.5905,
+          "like_jaccard": 0.5676,
+          "like_weighted_similarity": 0.3815,
+          "watch_similarity": 0.0786,
+          "watch_jaccard": 0.2857,
+          "co_raters": 24,
+          "co_likers": 21,
+          "co_watchers": 2,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 438631,
+        "title": "Dune",
+        "score": 0.419414,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4194,
+          "path_strength": 0.4194,
+          "rating_similarity": 0.4461,
+          "rating_jaccard": 0.4074,
+          "like_similarity": 0.564,
+          "like_jaccard": 0.5227,
+          "like_weighted_similarity": 0.384,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 22,
+          "co_likers": 23,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      }
+    ],
+    "Parasite": [
+      {
+        "tmdb_id": 1436161,
+        "title": "Obsession",
+        "score": 0.445472,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4455,
+          "path_strength": 0.4455,
+          "rating_similarity": 0.3773,
+          "rating_jaccard": 0.3704,
+          "like_similarity": 0.5711,
+          "like_jaccard": 0.5094,
+          "like_weighted_similarity": 0.6029,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 20,
+          "co_likers": 27,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 324857,
+        "title": "Spider-Man: Into the Spider-Verse",
+        "score": 0.437809,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4378,
+          "path_strength": 0.4378,
+          "rating_similarity": 0.5039,
+          "rating_jaccard": 0.4118,
+          "like_similarity": 0.535,
+          "like_jaccard": 0.4694,
+          "like_weighted_similarity": 0.0,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 21,
+          "co_likers": 23,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 419430,
+        "title": "Get Out",
+        "score": 0.429511,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4295,
+          "path_strength": 0.4295,
+          "rating_similarity": 0.4679,
+          "rating_jaccard": 0.5,
+          "like_similarity": 0.5261,
+          "like_jaccard": 0.4583,
+          "like_weighted_similarity": 0.0,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 25,
+          "co_likers": 22,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 391713,
+        "title": "Lady Bird",
+        "score": 0.425926,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4259,
+          "path_strength": 0.4259,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.565,
+          "like_jaccard": 0.5,
+          "like_weighted_similarity": 0.0,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 23,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 545611,
+        "title": "Everything Everywhere All at Once",
+        "score": 0.421398,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4214,
+          "path_strength": 0.4214,
+          "rating_similarity": 0.44,
+          "rating_jaccard": 0.3636,
+          "like_similarity": 0.5711,
+          "like_jaccard": 0.5094,
+          "like_weighted_similarity": 0.0,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 20,
+          "co_likers": 27,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 569094,
+        "title": "Spider-Man: Across the Spider-Verse",
+        "score": 0.410138,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4101,
+          "path_strength": 0.4101,
+          "rating_similarity": 0.4753,
+          "rating_jaccard": 0.3846,
+          "like_similarity": 0.5076,
+          "like_jaccard": 0.44,
+          "like_weighted_similarity": 0.0,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 20,
+          "co_likers": 22,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 244786,
+        "title": "Whiplash",
+        "score": 0.408827,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4088,
+          "path_strength": 0.4088,
+          "rating_similarity": 0.4918,
+          "rating_jaccard": 0.4615,
+          "like_similarity": 0.559,
+          "like_jaccard": 0.4912,
+          "like_weighted_similarity": 0.349,
+          "watch_similarity": 0.0727,
+          "watch_jaccard": 0.25,
+          "co_raters": 24,
+          "co_likers": 28,
+          "co_watchers": 2,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 693134,
+        "title": "Dune: Part Two",
+        "score": 0.40666,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4067,
+          "path_strength": 0.4067,
+          "rating_similarity": 0.3521,
+          "rating_jaccard": 0.3333,
+          "like_similarity": 0.5728,
+          "like_jaccard": 0.5091,
+          "like_weighted_similarity": 0.4926,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 18,
+          "co_likers": 28,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      }
+    ],
+    "Everything Everywhere All at Once": [
+      {
+        "tmdb_id": 693134,
+        "title": "Dune: Part Two",
+        "score": 0.479893,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4799,
+          "path_strength": 0.4799,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.6175,
+          "like_jaccard": 0.5714,
+          "like_weighted_similarity": 0.4543,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 28,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 1054867,
+        "title": "One Battle After Another",
+        "score": 0.471744,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4717,
+          "path_strength": 0.4717,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.6148,
+          "like_jaccard": 0.5778,
+          "like_weighted_similarity": 0.4663,
+          "watch_similarity": 0.1667,
+          "watch_jaccard": 1.0,
+          "co_raters": 0,
+          "co_likers": 26,
+          "co_watchers": 2,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 391713,
+        "title": "Lady Bird",
+        "score": 0.465794,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4658,
+          "path_strength": 0.4658,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.6091,
+          "like_jaccard": 0.575,
+          "like_weighted_similarity": 0.4352,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 23,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 329865,
+        "title": "Arrival",
+        "score": 0.456168,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4562,
+          "path_strength": 0.4562,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.5672,
+          "like_jaccard": 0.5238,
+          "like_weighted_similarity": 0.4726,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 22,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 466420,
+        "title": "Killers of the Flower Moon",
+        "score": 0.451092,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4511,
+          "path_strength": 0.4511,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.6016,
+          "like_jaccard": 0.5641,
+          "like_weighted_similarity": 0.4177,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 22,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 807,
+        "title": "Se7en",
+        "score": 0.434558,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4346,
+          "path_strength": 0.4346,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.5578,
+          "like_jaccard": 0.5111,
+          "like_weighted_similarity": 0.4335,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 23,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 103,
+        "title": "Taxi Driver",
+        "score": 0.432118,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4321,
+          "path_strength": 0.4321,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.527,
+          "like_jaccard": 0.4773,
+          "like_weighted_similarity": 0.4718,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 21,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 496243,
+        "title": "Parasite",
+        "score": 0.421398,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4214,
+          "path_strength": 0.4214,
+          "rating_similarity": 0.44,
+          "rating_jaccard": 0.3636,
+          "like_similarity": 0.5711,
+          "like_jaccard": 0.5094,
+          "like_weighted_similarity": 0.0,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 20,
+          "co_likers": 27,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      }
+    ],
+    "The Substance": [
+      {
+        "tmdb_id": 375262,
+        "title": "The Favourite",
+        "score": 0.43975,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4398,
+          "path_strength": 0.4398,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.5525,
+          "like_jaccard": 0.5455,
+          "like_weighted_similarity": 0.4314,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 18,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 531428,
+        "title": "Portrait of a Lady on Fire",
+        "score": 0.432913,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4329,
+          "path_strength": 0.4329,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.5153,
+          "like_jaccard": 0.5,
+          "like_weighted_similarity": 0.4687,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 17,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 674324,
+        "title": "The Banshees of Inisherin",
+        "score": 0.420413,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4204,
+          "path_strength": 0.4204,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.5363,
+          "like_jaccard": 0.5312,
+          "like_weighted_similarity": 0.4081,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 17,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 839369,
+        "title": "May December",
+        "score": 0.418231,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4182,
+          "path_strength": 0.4182,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.532,
+          "like_jaccard": 0.5333,
+          "like_weighted_similarity": 0.4075,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 16,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 25623,
+        "title": "House",
+        "score": 0.41737,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4174,
+          "path_strength": 0.4174,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.0,
+          "like_jaccard": 0.0,
+          "like_weighted_similarity": 0.4174,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 0,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 792307,
+        "title": "Poor Things",
+        "score": 0.416233,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4162,
+          "path_strength": 0.4162,
+          "rating_similarity": 0.2991,
+          "rating_jaccard": 0.3659,
+          "like_similarity": 0.6528,
+          "like_jaccard": 0.6774,
+          "like_weighted_similarity": 0.4394,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 15,
+          "co_likers": 21,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 937287,
+        "title": "Challengers",
+        "score": 0.415882,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4159,
+          "path_strength": 0.4159,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.5525,
+          "like_jaccard": 0.5455,
+          "like_weighted_similarity": 0.3772,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 18,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 520023,
+        "title": "Bodies Bodies Bodies",
+        "score": 0.415059,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.4151,
+          "path_strength": 0.4151,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.4863,
+          "like_jaccard": 0.4828,
+          "like_weighted_similarity": 0.4654,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 14,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      }
+    ],
+    "The Dark Knight Rises": [
+      {
+        "tmdb_id": 38757,
+        "title": "Tangled",
+        "score": 0.38495,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3849,
+          "path_strength": 0.3849,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.4632,
+          "like_jaccard": 0.5625,
+          "like_weighted_similarity": 0.3793,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 9,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 8587,
+        "title": "The Lion King",
+        "score": 0.384165,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3842,
+          "path_strength": 0.3842,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.4632,
+          "like_jaccard": 0.5625,
+          "like_weighted_similarity": 0.3775,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 9,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 121,
+        "title": "The Lord of the Rings: The Two Towers",
+        "score": 0.37594,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3759,
+          "path_strength": 0.3759,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.4668,
+          "like_jaccard": 0.5263,
+          "like_weighted_similarity": 0.0,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 10,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 70160,
+        "title": "The Hunger Games",
+        "score": 0.372946,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3729,
+          "path_strength": 0.3729,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.4536,
+          "like_jaccard": 0.5,
+          "like_weighted_similarity": 0.3931,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 10,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 12445,
+        "title": "Harry Potter and the Deathly Hallows: Part 2",
+        "score": 0.366721,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3667,
+          "path_strength": 0.3667,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.4312,
+          "like_jaccard": 0.5,
+          "like_weighted_similarity": 0.3929,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 9,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 672,
+        "title": "Harry Potter and the Chamber of Secrets",
+        "score": 0.361042,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.361,
+          "path_strength": 0.361,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.0,
+          "like_jaccard": 0.0,
+          "like_weighted_similarity": 0.361,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 0,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 272,
+        "title": "Batman Begins",
+        "score": 0.354491,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3545,
+          "path_strength": 0.3545,
+          "rating_similarity": 0.3358,
+          "rating_jaccard": 0.3824,
+          "like_similarity": 0.5146,
+          "like_jaccard": 0.5789,
+          "like_weighted_similarity": 0.3779,
+          "watch_similarity": 0.0745,
+          "watch_jaccard": 0.2857,
+          "co_raters": 13,
+          "co_likers": 11,
+          "co_watchers": 2,
+          "collection_prior": 0.0
+        }
+      },
+      {
+        "tmdb_id": 453395,
+        "title": "Doctor Strange in the Multiverse of Madness",
+        "score": 0.354228,
+        "signals": {
+          "origin": "local_behavior",
+          "hop": 1,
+          "behavior_score": 0.3542,
+          "path_strength": 0.3542,
+          "rating_similarity": 0.0,
+          "rating_jaccard": 0.0,
+          "like_similarity": 0.0,
+          "like_jaccard": 0.0,
+          "like_weighted_similarity": 0.3542,
+          "watch_similarity": 0.0,
+          "watch_jaccard": 0.0,
+          "co_raters": 0,
+          "co_likers": 0,
+          "co_watchers": 0,
+          "collection_prior": 0.0
+        }
+      }
+    ]
+  },
+  "elapsed_seconds": 15.5,
+  "written": {
+    "behavior_clusters": 16,
+    "film_behavior_subniches": 2746,
+    "film_neighbors": 139296
+  }
+}

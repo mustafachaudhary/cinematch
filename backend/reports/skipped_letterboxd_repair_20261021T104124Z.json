@@ -1,0 +1,24 @@
+{
+  "captured_at": "2026-10-21T10:41:24.111795+00:00",
+  "targets": 2,
+  "changes": [
+    {
+      "slug": "la-commune-paris-1871",
+      "old_tmdb_id": 63195,
+      "new_tmdb_id": 63195,
+      "page_title": "‎La Commune (Paris, 1871)",
+      "page_year": 2000,
+      "rank": 10974
+    },
+    {
+      "slug": "compensation-1999",
+      "old_tmdb_id": 365501,
+      "new_tmdb_id": 365501,
+      "page_title": "‎Compensation",
+      "page_year": 1999,
+      "rank": 15118
+    }
+  ],
+  "failed": [],
+  "applied": true
+}

@@ -1,0 +1,375 @@
+{
+  "baseline": {
+    "warm": {
+      "ndcg20_graded": 0.15157486306093793,
+      "ndcg20_binary": 0.16932750171671807,
+      "recall20": 0.05161576464760937,
+      "recall50": 0.11941772821734534,
+      "mrr": 0.29188737069692444,
+      "cf_mae": 0.5608185895600726,
+      "cf_coverage": 0.917410993413741,
+      "cf_support_share": 0.9709876543209878,
+      "mean_popularity": 15.56385814814815,
+      "intra_list_similarity": 0.3061918185816871
+    },
+    "cold": {
+      "ndcg20_graded": 0.11481818652808189,
+      "ndcg20_binary": 0.13627318586771223,
+      "recall20": 0.008089882936131722,
+      "recall50": 0.01796822591855175,
+      "mrr": 0.2693856538060911,
+      "cf_mae": null,
+      "cf_coverage": null,
+      "cf_support_share": null,
+      "mean_popularity": null,
+      "intra_list_similarity": null
+    },
+    "by_cohort": {
+      "members/month": {
+        "ndcg20_graded": 0.19728910216656925,
+        "ndcg20_binary": 0.22409544764389605,
+        "recall20": 0.04756552082556776,
+        "recall50": 0.10692812971748236,
+        "mrr": 0.3597262714609653,
+        "cf_mae": 0.5512764313312258,
+        "cf_coverage": 0.9086651165288511,
+        "cf_support_share": 0.9948979591836735,
+        "mean_popularity": 13.90483775510204,
+        "intra_list_similarity": 0.3130421383040292
+      },
+      "members/week": {
+        "ndcg20_graded": 0.12581438490757046,
+        "ndcg20_binary": 0.14535678627063428,
+        "recall20": 0.03571428571428571,
+        "recall50": 0.07142857142857142,
+        "mrr": 0.1111111111111111,
+        "cf_mae": 0.44111764705882356,
+        "cf_coverage": 0.935,
+        "cf_support_share": 1.0,
+        "mean_popularity": 16.74324,
+        "intra_list_similarity": 0.29119637608528137
+      },
+      "members/year": {
+        "ndcg20_graded": 0.06899884887927821,
+        "ndcg20_binary": 0.07714693474999154,
+        "recall20": 0.020202020202020204,
+        "recall50": 0.06060606060606061,
+        "mrr": 0.125,
+        "cf_mae": 0.5797127659574468,
+        "cf_coverage": 0.94,
+        "cf_support_share": 1.0,
+        "mean_popularity": 10.690245,
+        "intra_list_similarity": 0.31737738847732544
+      },
+      "real": {
+        "ndcg20_graded": 0.06537500974543894,
+        "ndcg20_binary": 0.07102001981682865,
+        "recall20": 0.01818181818181818,
+        "recall50": 0.10909090909090909,
+        "mrr": 0.3333333333333333,
+        "cf_mae": 0.5238256880733945,
+        "cf_coverage": 0.872,
+        "cf_support_share": 1.0,
+        "mean_popularity": 21.420894999999998,
+        "intra_list_similarity": 0.3122347891330719
+      },
+      "reviews/dune-part-two": {
+        "ndcg20_graded": 0.09090864023854459,
+        "ndcg20_binary": 0.10554603660186716,
+        "recall20": 0.04148652322769783,
+        "recall50": 0.13919132914616783,
+        "mrr": 0.21236559139784947,
+        "cf_mae": 0.6102418096723868,
+        "cf_coverage": 0.9421517734167064,
+        "cf_support_share": 0.9875,
+        "mean_popularity": 17.84162625,
+        "intra_list_similarity": 0.27888504043221474
+      },
+      "reviews/everything-everywhere-all-at-once": {
+        "ndcg20_graded": 0.05072196346007406,
+        "ndcg20_binary": 0.060749932636677245,
+        "recall20": 0.0558296783625731,
+        "recall50": 0.175833889524536,
+        "mrr": 0.1425925925925926,
+        "cf_mae": 0.5403534482758621,
+        "cf_coverage": 0.9357013457556935,
+        "cf_support_share": 0.8125,
+        "mean_popularity": 15.22446375,
+        "intra_list_similarity": 0.32247183471918106
+      },
+      "reviews/interstellar": {
+        "ndcg20_graded": 0.012115935411246517,
+        "ndcg20_binary": 0.011145830461571164,
+        "recall20": 0.015873015873015872,
+        "recall50": 0.09903381642512077,
+        "mrr": 0.038176638176638175,
+        "cf_mae": 0.745912,
+        "cf_coverage": 0.9282001764299168,
+        "cf_support_share": 0.9833333333333334,
+        "mean_popularity": 15.045916666666665,
+        "intra_list_similarity": 0.30852289994557697
+      },
+      "reviews/oppenheimer-2023": {
+        "ndcg20_graded": 0.2841396994172525,
+        "ndcg20_binary": 0.23839793017849295,
+        "recall20": 0.23809523809523808,
+        "recall50": 0.42857142857142855,
+        "mrr": 0.5,
+        "cf_mae": 0.3592432432432432,
+        "cf_coverage": 1.0,
+        "cf_support_share": 1.0,
+        "mean_popularity": 20.41005,
+        "intra_list_similarity": 0.2732475697994232
+      },
+      "reviews/parasite-2019": {
+        "ndcg20_graded": 0.12062960098764026,
+        "ndcg20_binary": 0.10921249761861646,
+        "recall20": 0.10110858640270405,
+        "recall50": 0.14032307561719326,
+        "mrr": 0.2663919413919414,
+        "cf_mae": 0.7127327586206897,
+        "cf_coverage": 0.9079968810311553,
+        "cf_support_share": 0.9416666666666668,
+        "mean_popularity": 19.110758333333333,
+        "intra_list_similarity": 0.2952130784591039
+      },
+      "reviews/the-dark-knight": {
+        "ndcg20_graded": 0.05368393870232894,
+        "ndcg20_binary": 0.06097836186132153,
+        "recall20": 0.046927369786147165,
+        "recall50": 0.11539350935790844,
+        "mrr": 0.1378098022834865,
+        "cf_mae": 0.6404719471947194,
+        "cf_coverage": 0.9322997672523151,
+        "cf_support_share": 0.8785714285714287,
+        "mean_popularity": 20.94826642857143,
+        "intra_list_similarity": 0.29294308168547495
+      }
+    }
+  },
+  "v2": {
+    "warm": {
+      "ndcg20_graded": 0.24526517773974693,
+      "ndcg20_binary": 0.2757433818323445,
+      "recall20": 0.08493594043783578,
+      "recall50": 0.163824900373047,
+      "mrr": 0.4313430957964268,
+      "cf_mae": 0.5608185895600726,
+      "cf_coverage": 0.917410993413741,
+      "cf_support_share": 0.9938271604938271,
+      "mean_popularity": 16.82064450617284,
+      "intra_list_similarity": 0.2604050371381972
+    },
+    "cold": {
+      "ndcg20_graded": 0.11481818652808189,
+      "ndcg20_binary": 0.13627318586771223,
+      "recall20": 0.008089882936131722,
+      "recall50": 0.01796822591855175,
+      "mrr": 0.2693856538060911,
+      "cf_mae": null,
+      "cf_coverage": null,
+      "cf_support_share": null,
+      "mean_popularity": null,
+      "intra_list_similarity": null
+    },
+    "by_cohort": {
+      "members/month": {
+        "ndcg20_graded": 0.3080374609520376,
+        "ndcg20_binary": 0.35447754242640533,
+        "recall20": 0.069779606938938,
+        "recall50": 0.14387376092685628,
+        "mrr": 0.5450083542188805,
+        "cf_mae": 0.5512764313312258,
+        "cf_coverage": 0.9086651165288511,
+        "cf_support_share": 1.0,
+        "mean_popularity": 14.53875551020408,
+        "intra_list_similarity": 0.2644610079575558
+      },
+      "members/week": {
+        "ndcg20_graded": 0.206206405296667,
+        "ndcg20_binary": 0.2934354351031642,
+        "recall20": 0.0625,
+        "recall50": 0.16964285714285715,
+        "mrr": 0.3333333333333333,
+        "cf_mae": 0.44111764705882356,
+        "cf_coverage": 0.935,
+        "cf_support_share": 1.0,
+        "mean_popularity": 14.22024,
+        "intra_list_similarity": 0.23794056475162506
+      },
+      "members/year": {
+        "ndcg20_graded": 0.10662715351883563,
+        "ndcg20_binary": 0.11930603808202117,
+        "recall20": 0.030303030303030304,
+        "recall50": 0.06060606060606061,
+        "mrr": 0.14285714285714285,
+        "cf_mae": 0.5797127659574468,
+        "cf_coverage": 0.94,
+        "cf_support_share": 1.0,
+        "mean_popularity": 14.579325,
+        "intra_list_similarity": 0.25959303975105286
+      },
+      "real": {
+        "ndcg20_graded": 0.31781112130853956,
+        "ndcg20_binary": 0.3348291175205184,
+        "recall20": 0.10909090909090909,
+        "recall50": 0.23636363636363636,
+        "mrr": 0.5,
+        "cf_mae": 0.5238256880733945,
+        "cf_coverage": 0.872,
+        "cf_support_share": 0.95,
+        "mean_popularity": 38.301795,
+        "intra_list_similarity": 0.2470615953207016
+      },
+      "reviews/dune-part-two": {
+        "ndcg20_graded": 0.18924524278822374,
+        "ndcg20_binary": 0.20408538552589117,
+        "recall20": 0.1137599951952995,
+        "recall50": 0.18356591946913758,
+        "mrr": 0.24918154761904762,
+        "cf_mae": 0.6102418096723868,
+        "cf_coverage": 0.9421517734167064,
+        "cf_support_share": 0.99375,
+        "mean_popularity": 20.827396875,
+        "intra_list_similarity": 0.24709982238709927
+      },
+      "reviews/everything-everywhere-all-at-once": {
+        "ndcg20_graded": 0.12933747508778198,
+        "ndcg20_binary": 0.14874353876448318,
+        "recall20": 0.12325991609458428,
+        "recall50": 0.20229071319603356,
+        "mrr": 0.4125,
+        "cf_mae": 0.5403534482758621,
+        "cf_coverage": 0.9357013457556935,
+        "cf_support_share": 0.925,
+        "mean_popularity": 18.2208875,
+        "intra_list_similarity": 0.26691683381795883
+      },
+      "reviews/interstellar": {
+        "ndcg20_graded": 0.0156569327800903,
+        "ndcg20_binary": 0.023673339938942883,
+        "recall20": 0.014492753623188406,
+        "recall50": 0.14665286404416839,
+        "mrr": 0.13345345345345344,
+        "cf_mae": 0.745912,
+        "cf_coverage": 0.9282001764299168,
+        "cf_support_share": 1.0,
+        "mean_popularity": 16.072779999999998,
+        "intra_list_similarity": 0.2597138285636902
+      },
+      "reviews/oppenheimer-2023": {
+        "ndcg20_graded": 0.3462525143970443,
+        "ndcg20_binary": 0.2690594899032066,
+        "recall20": 0.23809523809523808,
+        "recall50": 0.5238095238095238,
+        "mrr": 0.5,
+        "cf_mae": 0.3592432432432432,
+        "cf_coverage": 1.0,
+        "cf_support_share": 1.0,
+        "mean_popularity": 13.696115,
+        "intra_list_similarity": 0.24722866714000702
+      },
+      "reviews/parasite-2019": {
+        "ndcg20_graded": 0.1673253976134025,
+        "ndcg20_binary": 0.16011260672654018,
+        "recall20": 0.15952870658753013,
+        "recall50": 0.2209476797712092,
+        "mrr": 0.2569444444444445,
+        "cf_mae": 0.7127327586206897,
+        "cf_coverage": 0.9079968810311553,
+        "cf_support_share": 1.0,
+        "mean_popularity": 18.84408833333333,
+        "intra_list_similarity": 0.2513752530018489
+      },
+      "reviews/the-dark-knight": {
+        "ndcg20_graded": 0.10193022701013836,
+        "ndcg20_binary": 0.09854733849657135,
+        "recall20": 0.08812159023315422,
+        "recall50": 0.16946366965453954,
+        "mrr": 0.16738735980222047,
+        "cf_mae": 0.6404719471947194,
+        "cf_coverage": 0.9322997672523151,
+        "cf_support_share": 0.9857142857142858,
+        "mean_popularity": 24.070016428571428,
+        "intra_list_similarity": 0.25864797617707935
+      }
+    }
+  },
+  "v2_ranker": {
+    "version": "v2",
+    "weights": {
+      "content": 0.48,
+      "liked": 0.0,
+      "theme": 0.12,
+      "genre": 0.0,
+      "collection": 0.04,
+      "quality": 0.16
+    },
+    "disabled": [],
+    "cf_max": 0.35,
+    "mmr_lambda": 0.7
+  },
+  "catalog_coverage": {
+    "baseline": 0.04995836802664446,
+    "v2": 0.05047876769358867
+  },
+  "paired_bootstrap": {
+    "ndcg20_graded": {
+      "baseline_mean": 0.151575,
+      "v2_mean": 0.245265,
+      "delta": 0.09369,
+      "ci95": [
+        0.074419,
+        0.113453
+      ],
+      "wins": 73,
+      "losses": 7
+    },
+    "ndcg20_binary": {
+      "baseline_mean": 0.169328,
+      "v2_mean": 0.275743,
+      "delta": 0.106416,
+      "ci95": [
+        0.085323,
+        0.128193
+      ],
+      "wins": 73,
+      "losses": 6
+    },
+    "recall20": {
+      "baseline_mean": 0.051616,
+      "v2_mean": 0.084936,
+      "delta": 0.03332,
+      "ci95": [
+        0.02518,
+        0.042156
+      ],
+      "wins": 63,
+      "losses": 4
+    },
+    "recall50": {
+      "baseline_mean": 0.119418,
+      "v2_mean": 0.163825,
+      "delta": 0.044407,
+      "ci95": [
+        0.034609,
+        0.055146
+      ],
+      "wins": 66,
+      "losses": 2
+    },
+    "mrr": {
+      "baseline_mean": 0.291887,
+      "v2_mean": 0.431343,
+      "delta": 0.139456,
+      "ci95": [
+        0.084841,
+        0.194657
+      ],
+      "wins": 51,
+      "losses": 10
+    }
+  },
+  "personas": 81,
+  "label": "CineMatch ranking v2 final (full themes, genre weight 0)"
+}

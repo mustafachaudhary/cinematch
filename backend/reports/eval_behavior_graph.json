@@ -1,0 +1,76 @@
+{
+  "db": "cinematch.db",
+  "limit": 3000,
+  "holdout": 0.2,
+  "seed": 42,
+  "users": 81,
+  "train_ratings": 43862,
+  "test_ratings": 10930,
+  "behavior_direct_anchors": 2861,
+  "behavior_direct_edges": 226661,
+  "metadata_edges": 32203,
+  "results": [
+    {
+      "name": "behavior_direct",
+      "users": 81,
+      "max_hops": 1,
+      "degree_penalty": 0.0,
+      "hit@20": 573,
+      "test_items": 10930,
+      "micro_recall@20": 0.0524,
+      "macro_recall@20": 0.0584,
+      "ndcg@20": 0.3489,
+      "users_with_a_hit": 78,
+      "avg_candidates": 2174.8
+    },
+    {
+      "name": "behavior_direct_degree",
+      "users": 81,
+      "max_hops": 1,
+      "degree_penalty": 0.5,
+      "hit@20": 603,
+      "test_items": 10930,
+      "micro_recall@20": 0.0552,
+      "macro_recall@20": 0.0635,
+      "ndcg@20": 0.3677,
+      "users_with_a_hit": 79,
+      "avg_candidates": 2174.8
+    },
+    {
+      "name": "behavior_2hop",
+      "users": 81,
+      "max_hops": 2,
+      "degree_penalty": 0.0,
+      "hit@20": 455,
+      "test_items": 10930,
+      "micro_recall@20": 0.0416,
+      "macro_recall@20": 0.0389,
+      "ndcg@20": 0.2855,
+      "users_with_a_hit": 72,
+      "avg_candidates": 2256.9
+    },
+    {
+      "name": "behavior_3hop",
+      "users": 81,
+      "max_hops": 3,
+      "degree_penalty": 0.5,
+      "hit@20": 478,
+      "test_items": 10930,
+      "micro_recall@20": 0.0437,
+      "macro_recall@20": 0.0454,
+      "ndcg@20": 0.2993,
+      "users_with_a_hit": 75,
+      "avg_candidates": 2258.4
+    },
+    {
+      "name": "local_popularity",
+      "users": 81,
+      "hit@20": 675,
+      "test_items": 10930,
+      "micro_recall@20": 0.0618,
+      "macro_recall@20": 0.0654,
+      "ndcg@20": 0.4301,
+      "users_with_a_hit": 78
+    }
+  ]
+}

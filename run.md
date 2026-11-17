@@ -29,7 +29,9 @@ curl http://127.0.0.1:8000/
 curl http://127.0.0.1:8000/movies/feed
 ```
 
-On startup the backend creates the normal app tables plus the collaborative-filtering tables from `backend/schema.sql` via SQLAlchemy models: `films`, `users`, `ratings`, and `user_vectors`.
+On startup the backend creates all tables from the SQLAlchemy models in `backend/models/database.py` (`movie_cache`, `logged_movies`, `watched_movies`, `reviews`, `profile`, `app_meta`, plus the CF tables). `backend/schema.sql` is legacy and is not used.
+
+Embedding backend: with `sentence-transformers` installed (it is in the venv) the engine uses the MiniLM neural embeddings stored in `movie_cache`; the first start embeds the catalog once. Without `sentence-transformers` the engine falls back to the local LSA/TF-IDF space automatically.
 
 ## Frontend
 

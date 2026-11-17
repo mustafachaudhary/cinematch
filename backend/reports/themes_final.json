@@ -1,0 +1,22 @@
+{
+  "captured_at": "2026-10-20T10:47:34.946507+00:00",
+  "db": "/tmp/opencode/cinematch_seed_import/final_import.db",
+  "applied": true,
+  "catalog": 9608,
+  "seed_films": 9086,
+  "with_themes": 9608,
+  "letterboxd_themes": 589,
+  "tmdb_keyword_fallback": 8544,
+  "genre_fallback": 444,
+  "text_fallback": 31,
+  "missing": 0,
+  "seed_with_themes": 9086,
+  "seed_letterboxd_themes": 589,
+  "seed_tmdb_keyword_fallback": 8090,
+  "seed_genre_fallback": 380,
+  "seed_text_fallback": 27,
+  "seed_missing": 0,
+  "coverage": 1.0,
+  "seed_coverage": 1.0,
+  "missing_examples": []
+}

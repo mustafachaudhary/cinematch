@@ -1,0 +1,713 @@
+{
+  "captured_at": "2026-10-21T10:39:28.573018+00:00",
+  "db": "/home/mustafa/Downloads/Odin/NLP/cinematch.ai/backend/cinematch.db",
+  "targets": 4508,
+  "updated": 4332,
+  "failed": [
+    {
+      "tmdb_id": 586940,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 18320,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1786,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 3777,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 13008,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 19490,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 8937,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 4952,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 23742,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 11787,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 5961,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1122099,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 10409,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 5185,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1599230,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 24913,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 49010,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 11252,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 27583,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1628116,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 582873,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 788669,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 11297,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 26963,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 55420,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 292,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 11206,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 12703,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 12837,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 848331,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 980,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 76487,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 64678,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 10188,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 23383,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 10218,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 10885,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 31417,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 31767,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 41733,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1092936,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1480,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 29437,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 934456,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 48035,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 27374,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 852485,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 74534,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 80,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 632,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 28260,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 405775,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1989,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 10189,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 10849,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 9300,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 253980,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 369972,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1430,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 13930,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 25768,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 21348,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 9430,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 9061,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 426284,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 635918,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 975335,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1290938,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 21316,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 5165,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 11482,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 86825,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 334536,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 77499,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1415,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 25103,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 653851,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 2003,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 649394,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1232667,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 831946,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 11229,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 3080,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 31952,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 11330,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 10072,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 458220,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 17687,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 28761,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1075676,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 28043,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 69605,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 145,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 616251,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 473019,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 10208,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 357786,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 43636,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1623,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 71883,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 24008,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 20139,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1596296,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 10858,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 890215,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 27586,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1781,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1142149,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 410718,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 973778,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 70670,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 9493,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 13555,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 760245,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 2009,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 544431,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 82424,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1018754,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 14580,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 171536,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 483980,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 707103,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 40096,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 55561,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 270302,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 8461,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 510498,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 999890,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 8130,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 923993,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 653723,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 24961,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 7219,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 26405,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 656690,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1088,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 11590,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 28276,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 3088,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 27581,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 13041,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 8052,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1473148,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 11109,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 965,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 28422,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 8446,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 39210,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 11163,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 261,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 776557,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 729720,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 13062,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 13187,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 369557,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 9694,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 31411,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 591222,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 524216,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1400032,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1136837,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 42120,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1778411,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 565383,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 28213,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 630322,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 36196,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1439808,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 45935,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 376261,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 40059,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 24382,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 586459,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 13911,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 37452,
+      "error": "no_payload"
+    },
+    {
+      "tmdb_id": 1598414,
+      "error": "no_payload"
+    }
+  ],
+  "elapsed_seconds": 861.7
+}

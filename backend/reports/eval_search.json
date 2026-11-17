@@ -1,0 +1,55 @@
+{
+  "captured_at": "2026-11-16T20:07:17.734893+00:00",
+  "source_db": "/home/mustafa/Downloads/Odin/NLP/cinematch.ai/backend/cinematch.db",
+  "catalog_films": 20514,
+  "persona_count": 81,
+  "personas_with_modes": 81,
+  "protocol": {
+    "split": "same deterministic 20% user-level holdout as eval_recommender",
+    "mood_relevance": "held-out films rated >= persona threshold whose genres intersect the mood profile's genre set",
+    "anchor_relevance": "the persona's other held-out films rated >= threshold"
+  },
+  "mood_suite": {
+    "global_nudge": {
+      "ndcg20": 0.004058383214978493,
+      "recall10": 0.001684646263903916,
+      "recall20": 0.003631296564425864,
+      "mrr": 0.021090987807999905
+    },
+    "modes_nudge": {
+      "ndcg20": 0.004021476451666958,
+      "recall10": 0.0015143233514353597,
+      "recall20": 0.0033031386945597783,
+      "mrr": 0.021851869746499088
+    },
+    "paired_delta_modes_minus_global": {
+      "ndcg20": {
+        "mean_delta": -3.690676331153477e-05,
+        "paired_t": -0.19620223745438076,
+        "n_personas": 81
+      },
+      "recall10": {
+        "mean_delta": -0.00017032291246855654,
+        "paired_t": -2.256182601525575,
+        "n_personas": 81
+      },
+      "recall20": {
+        "mean_delta": -0.0003281578698660858,
+        "paired_t": -1.601958741767473,
+        "n_personas": 81
+      },
+      "mrr": {
+        "mean_delta": 0.000760881938499184,
+        "paired_t": 0.6637534377734606,
+        "n_personas": 81
+      }
+    }
+  },
+  "anchor_suite": {
+    "ndcg20": 0.04915120420666789,
+    "recall10": 0.012869675887246397,
+    "recall20": 0.024378460848441842,
+    "mrr": 0.1816432072163568
+  },
+  "runtime_seconds": 588.4
+}

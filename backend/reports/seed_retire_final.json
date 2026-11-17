@@ -1,0 +1,96 @@
+{
+  "captured_at": "2026-10-20T10:16:04.753578+00:00",
+  "db": "/tmp/opencode/cinematch_seed_import/final_import.db",
+  "applied": true,
+  "retired": [
+    {
+      "username": "lb_agastak"
+    },
+    {
+      "username": "lb_alor"
+    },
+    {
+      "username": "lb_cinemaclown"
+    },
+    {
+      "username": "lb_davidehrlich"
+    },
+    {
+      "username": "lb_deathproof"
+    },
+    {
+      "username": "lb_demiadejuyigbe"
+    },
+    {
+      "username": "lb_hollieamanda"
+    },
+    {
+      "username": "lb_hstrawberry"
+    },
+    {
+      "username": "lb_ilyclemmie"
+    },
+    {
+      "username": "lb_juggernaut323"
+    },
+    {
+      "username": "lb_karsten"
+    },
+    {
+      "username": "lb_kurstboy"
+    },
+    {
+      "username": "lb_lucyskeet"
+    },
+    {
+      "username": "lb_nycsubwayrat"
+    },
+    {
+      "username": "lb_philbertdy"
+    },
+    {
+      "username": "lb_schaffrillas"
+    },
+    {
+      "username": "lb_softpine"
+    },
+    {
+      "username": "lb_sophiedarcy"
+    },
+    {
+      "username": "lb_superpulse"
+    },
+    {
+      "username": "lb_tom_ap"
+    }
+  ],
+  "deleted_rows": {
+    "ratings": 2291,
+    "user_vectors": 0,
+    "reviews": 0,
+    "logged_movies": 2291,
+    "watched_movies": 0,
+    "user_likes": 0,
+    "seed_profile": 0,
+    "user_feedback": 0,
+    "feed_impressions": 0,
+    "user_profile": 20,
+    "users": 20,
+    "orphan_films": 71
+  },
+  "remaining_seeds": 80,
+  "mustafa_before": {
+    "user_id": 1,
+    "password_hash_sha256": "649736e331efceaf258a82d9f8b6751183635ac1f8cc8a5b6bf247ebdb9fb7ed",
+    "logged": 623,
+    "watched": 622,
+    "logged_sha256": "13ba986a2f799c987010f01164a5ba8ba86a7af889d64de85dd0f759034285cb"
+  },
+  "mustafa_after": {
+    "user_id": 1,
+    "password_hash_sha256": "649736e331efceaf258a82d9f8b6751183635ac1f8cc8a5b6bf247ebdb9fb7ed",
+    "logged": 623,
+    "watched": 622,
+    "logged_sha256": "13ba986a2f799c987010f01164a5ba8ba86a7af889d64de85dd0f759034285cb"
+  }
+}

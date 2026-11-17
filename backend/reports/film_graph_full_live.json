@@ -1,0 +1,2208 @@
+{
+  "captured_at": "2026-10-21T10:51:47.169016+00:00",
+  "db": "/home/mustafa/Downloads/Odin/NLP/cinematch.ai/backend/cinematch.db",
+  "films": 20514,
+  "limit": 0,
+  "clusters": [
+    {
+      "slug": "subniche-01-quirky-and-endearing-relationships",
+      "label": "Quirky and endearing relationships · Touching and sentimental family stories · Crude humor and satire",
+      "themes": [
+        "quirky-and-endearing-relationships",
+        "crude-humor-and-satire",
+        "touching-and-sentimental-family-stories",
+        "heartfelt-and-sentimental-family-stories",
+        "laugh-out-loud-relationship-entanglements",
+        "relationship-comedy",
+        "emotional-and-heartfelt-family-dramas"
+      ],
+      "theme_labels": [
+        "Quirky and endearing relationships",
+        "Crude humor and satire",
+        "Touching and sentimental family stories",
+        "Heartfelt and sentimental family stories",
+        "Laugh-out-loud relationship entanglements",
+        "Relationship comedy",
+        "Emotional and heartfelt family dramas"
+      ],
+      "size": 545
+    },
+    {
+      "slug": "subniche-02-creepy-chilling-and-terrifying-horror",
+      "label": "Creepy, chilling, and terrifying horror · Gothic and eerie haunting horror · Terrifying, haunted, and supernatural horror",
+      "themes": [
+        "terrifying-haunted-and-supernatural-horror",
+        "creepy-chilling-and-terrifying-horror",
+        "gothic-and-eerie-haunting-horror",
+        "horror-the-undead-and-monster-classics",
+        "gory-gruesome-and-slasher-horror",
+        "chilling-experiments-and-classic-monster-horror",
+        "spooky-scary-comedy",
+        "bloody-vampire-horror",
+        "intense-violence-and-sexual-transgression",
+        "thrillers-and-murder-mysteries"
+      ],
+      "theme_labels": [
+        "Terrifying, haunted, and supernatural horror",
+        "Creepy, chilling, and terrifying horror",
+        "Gothic and eerie haunting horror",
+        "Horror, the undead and monster classics",
+        "Gory, gruesome, and slasher horror",
+        "Chilling experiments and classic monster horror",
+        "Spooky, scary comedy",
+        "Bloody vampire horror",
+        "Intense violence and sexual transgression",
+        "Thrillers and murder mysteries"
+      ],
+      "size": 2164
+    },
+    {
+      "slug": "subniche-03-emotional-and-touching-family-dramas",
+      "label": "Emotional and touching family dramas · Powerful stories of heartbreak and suffering · Touching and sentimental family stories",
+      "themes": [
+        "powerful-stories-of-heartbreak-and-suffering",
+        "touching-and-sentimental-family-stories",
+        "emotional-and-touching-family-dramas",
+        "moving-relationship-stories",
+        "heartbreaking-and-moving-family-drama",
+        "tragic-sadness-and-captivating-beauty",
+        "adorable-animals-and-heartwarming-families",
+        "underdog-fighting-and-boxing-stories",
+        "student-coming-of-age-challenges"
+      ],
+      "theme_labels": [
+        "Powerful stories of heartbreak and suffering",
+        "Touching and sentimental family stories",
+        "Emotional and touching family dramas",
+        "Moving relationship stories",
+        "Heartbreaking and moving family drama",
+        "Tragic sadness and captivating beauty",
+        "Adorable animals and heartwarming families",
+        "Underdog fighting and boxing stories",
+        "Student coming-of-age challenges"
+      ],
+      "size": 2213
+    },
+    {
+      "slug": "subniche-04-epic-heroes",
+      "label": "Epic heroes · Superheroes in action-packed battles with villains · Intense combat and martial arts",
+      "themes": [
+        "epic-heroes",
+        "superheroes-in-action-packed-battles-with-villains",
+        "intense-combat-and-martial-arts",
+        "fantasy-adventure-heroism-and-swordplay",
+        "epic-adventure-and-breathtaking-battles",
+        "explosive-and-action-packed-heroes-vs-villains",
+        "violent-action-guns-and-crime",
+        "bloody-vampire-horror",
+        "sci-fi-monster-and-dinosaur-adventures",
+        "action-packed-space-and-alien-sagas"
+      ],
+      "theme_labels": [
+        "Epic heroes",
+        "Superheroes in action-packed battles with villains",
+        "Intense combat and martial arts",
+        "Fantasy adventure, heroism, and swordplay",
+        "Epic adventure and breathtaking battles",
+        "Explosive and action-packed heroes vs. villains",
+        "Violent action, guns, and crime",
+        "Bloody vampire horror",
+        "Sci-fi monster and dinosaur adventures",
+        "Action-packed space and alien sagas"
+      ],
+      "size": 1155
+    },
+    {
+      "slug": "subniche-05-intriguing-and-suspenseful-murder-myster",
+      "label": "Intriguing and suspenseful murder mysteries · Thrillers and murder mysteries · Suspenseful crime thrillers",
+      "themes": [
+        "thrillers-and-murder-mysteries",
+        "suspenseful-crime-thrillers",
+        "intriguing-and-suspenseful-murder-mysteries",
+        "noir-and-dark-crime-dramas",
+        "gripping-intense-violent-crime",
+        "heists-and-thrilling-action",
+        "intense-political-and-terrorist-thrillers",
+        "gory-gruesome-and-slasher-horror",
+        "erotic-relationships-and-desire"
+      ],
+      "theme_labels": [
+        "Thrillers and murder mysteries",
+        "Suspenseful crime thrillers",
+        "Intriguing and suspenseful murder mysteries",
+        "Noir and dark crime dramas",
+        "Gripping, intense violent crime",
+        "Heists and thrilling action",
+        "Intense political and terrorist thrillers",
+        "Gory, gruesome, and slasher horror",
+        "Erotic relationships and desire"
+      ],
+      "size": 1485
+    },
+    {
+      "slug": "subniche-06-amusing-jokes-and-witty-satire",
+      "label": "Amusing jokes and witty satire · Funny jokes and crude humor · Gags, jokes, and slapstick humor",
+      "themes": [
+        "funny-jokes-and-crude-humor",
+        "gags-jokes-and-slapstick-humor",
+        "crude-humor-and-satire",
+        "amusing-jokes-and-witty-satire",
+        "laugh-out-loud-relationship-entanglements",
+        "spooky-scary-comedy",
+        "teen-school-antics-and-laughter",
+        "kids-animated-fun-and-adventure"
+      ],
+      "theme_labels": [
+        "Funny jokes and crude humor",
+        "Gags, jokes, and slapstick humor",
+        "Crude humor and satire",
+        "Amusing jokes and witty satire",
+        "Laugh-out-loud relationship entanglements",
+        "Spooky, scary comedy",
+        "Teen school antics and laughter",
+        "Kids' animated fun and adventure"
+      ],
+      "size": 923
+    },
+    {
+      "slug": "subniche-07-humanity-and-the-world-around-us",
+      "label": "Humanity and the world around us · Surreal and thought-provoking visions of life and death · Powerful poetic and passionate drama",
+      "themes": [
+        "humanity-and-the-world-around-us",
+        "surreal-and-thought-provoking-visions-of-life-and-death",
+        "powerful-poetic-and-passionate-drama",
+        "humanity-s-odyssey-earth-and-beyond",
+        "powerful-stories-of-heartbreak-and-suffering",
+        "thought-provoking-sci-fi-action-and-future-technology",
+        "intense-political-and-terrorist-thrillers"
+      ],
+      "theme_labels": [
+        "Humanity and the world around us",
+        "Surreal and thought-provoking visions of life and death",
+        "Powerful poetic and passionate drama",
+        "Humanity's odyssey: earth and beyond",
+        "Powerful stories of heartbreak and suffering",
+        "Thought-provoking sci-fi action and future technology",
+        "Intense political and terrorist thrillers"
+      ],
+      "size": 1729
+    },
+    {
+      "slug": "subniche-08-adorable-animals-and-heartwarming-famili",
+      "label": "Adorable animals and heartwarming families · Kids' animated fun and adventure · Holiday joy and heartwarming Christmas",
+      "themes": [
+        "kids-animated-fun-and-adventure",
+        "adorable-animals-and-heartwarming-families",
+        "holiday-joy-and-heartwarming-christmas",
+        "fairy-tale-fantasy-and-enchanted-magic",
+        "crude-humor-and-satire",
+        "emotional-and-touching-family-dramas",
+        "dazzling-vocal-performances-and-musicals",
+        "gags-jokes-and-slapstick-humor",
+        "laugh-out-loud-relationship-entanglements"
+      ],
+      "theme_labels": [
+        "Kids' animated fun and adventure",
+        "Adorable animals and heartwarming families",
+        "Holiday joy and heartwarming Christmas",
+        "Fairy-tale fantasy and enchanted magic",
+        "Crude humor and satire",
+        "Emotional and touching family dramas",
+        "Dazzling vocal performances and musicals",
+        "Gags, jokes, and slapstick humor",
+        "Laugh-out-loud relationship entanglements"
+      ],
+      "size": 1258
+    },
+    {
+      "slug": "subniche-09-gritty-crime-and-ruthless-gangsters",
+      "label": "Gritty crime and ruthless gangsters · Crime, drugs and gangsters · Violent crime and drugs",
+      "themes": [
+        "crime-drugs-and-gangsters",
+        "gritty-crime-and-ruthless-gangsters",
+        "violent-crime-and-drugs",
+        "violent-action-guns-and-crime",
+        "heists-and-thrilling-action",
+        "brutal-violent-prison-drama",
+        "gripping-intense-violent-crime",
+        "noir-and-dark-crime-dramas",
+        "intense-combat-and-martial-arts",
+        "engaging-intense-crime-and-casino-drama"
+      ],
+      "theme_labels": [
+        "Crime, drugs and gangsters",
+        "Gritty crime and ruthless gangsters",
+        "Violent crime and drugs",
+        "Violent action, guns, and crime",
+        "Heists and thrilling action",
+        "Brutal, violent prison drama",
+        "Gripping, intense violent crime",
+        "Noir and dark crime dramas",
+        "Intense combat and martial arts",
+        "Engaging, intense crime and casino drama"
+      ],
+      "size": 1532
+    },
+    {
+      "slug": "subniche-10-challenging-or-sexual-themes-twists",
+      "label": "Challenging or sexual themes & twists · Graphic violence and brutal revenge · Intense violence and sexual transgression",
+      "themes": [
+        "intense-violence-and-sexual-transgression",
+        "challenging-or-sexual-themes-twists",
+        "graphic-violence-and-brutal-revenge",
+        "gripping-intense-violent-crime",
+        "gory-gruesome-and-slasher-horror",
+        "erotic-relationships-and-desire",
+        "extreme-gory-horror-and-cannibalism",
+        "violent-crime-and-drugs",
+        "brutal-violent-prison-drama",
+        "powerful-stories-of-heartbreak-and-suffering"
+      ],
+      "theme_labels": [
+        "Intense violence and sexual transgression",
+        "Challenging or sexual themes & twists",
+        "Graphic violence and brutal revenge",
+        "Gripping, intense violent crime",
+        "Gory, gruesome, and slasher horror",
+        "Erotic relationships and desire",
+        "Extreme gory horror and cannibalism",
+        "Violent crime and drugs",
+        "Brutal, violent prison drama",
+        "Powerful stories of heartbreak and suffering"
+      ],
+      "size": 1067
+    },
+    {
+      "slug": "subniche-11-epic-history-and-literature",
+      "label": "Epic history and literature · Captivating vision and Shakespearean drama · Lavish dramas and sumptuous royalty",
+      "themes": [
+        "epic-history-and-literature",
+        "historical-battles-and-epic-heroism",
+        "captivating-vision-and-shakespearean-drama",
+        "lavish-dramas-and-sumptuous-royalty",
+        "fantasy-adventure-heroism-and-swordplay",
+        "epic-adventure-and-breathtaking-battles",
+        "disastrous-voyages-and-heroic-survival",
+        "powerful-poetic-and-passionate-drama",
+        "racism-and-the-powerful-fight-for-justice",
+        "political-drama-patriotism-and-war"
+      ],
+      "theme_labels": [
+        "Epic history and literature",
+        "Historical battles and epic heroism",
+        "Captivating vision and Shakespearean drama",
+        "Lavish dramas and sumptuous royalty",
+        "Fantasy adventure, heroism, and swordplay",
+        "Epic adventure and breathtaking battles",
+        "Disastrous voyages and heroic survival",
+        "Powerful poetic and passionate drama",
+        "Racism and the powerful fight for justice",
+        "Political drama, patriotism, and war"
+      ],
+      "size": 191
+    },
+    {
+      "slug": "subniche-12-war-and-historical-adventure",
+      "label": "War and historical adventure · Military combat and heroic soldiers · Nazis and World War II",
+      "themes": [
+        "war-and-historical-adventure",
+        "military-combat-and-heroic-soldiers",
+        "nazis-and-world-war-ii",
+        "bravery-in-war",
+        "political-drama-patriotism-and-war",
+        "historical-battles-and-epic-heroism",
+        "air-pilot-heroism-and-survival",
+        "exciting-spy-thrillers-with-tense-intrigue",
+        "disastrous-voyages-and-heroic-survival",
+        "politics-propaganda-and-political-documentaries"
+      ],
+      "theme_labels": [
+        "War and historical adventure",
+        "Military combat and heroic soldiers",
+        "Nazis and World War II",
+        "Bravery in War",
+        "Political drama, patriotism, and war",
+        "Historical battles and epic heroism",
+        "Air pilot heroism and survival",
+        "Exciting spy thrillers with tense intrigue",
+        "Disastrous voyages and heroic survival",
+        "Politics, propaganda, and political documentaries"
+      ],
+      "size": 772
+    },
+    {
+      "slug": "subniche-13-song-and-dance",
+      "label": "Song and dance · Dazzling vocal performances and musicals · Dance rhythms and catchy tunes",
+      "themes": [
+        "song-and-dance",
+        "dazzling-vocal-performances-and-musicals",
+        "dance-rhythms-and-catchy-tunes",
+        "legendary-musicians-and-stardom",
+        "holiday-joy-and-heartwarming-christmas",
+        "charming-romances-and-delightful-chemistry",
+        "fairy-tale-fantasy-and-enchanted-magic",
+        "touching-and-sentimental-family-stories"
+      ],
+      "theme_labels": [
+        "Song and dance",
+        "Dazzling vocal performances and musicals",
+        "Dance rhythms and catchy tunes",
+        "Legendary musicians and stardom",
+        "Holiday joy and heartwarming Christmas",
+        "Charming romances and delightful chemistry",
+        "Fairy-tale fantasy and enchanted magic",
+        "Touching and sentimental family stories"
+      ],
+      "size": 818
+    },
+    {
+      "slug": "subniche-14-monsters-aliens-sci-fi-and-the-apocalyps",
+      "label": "Monsters, aliens, sci-fi and the apocalypse · Imaginative space odysseys and alien encounters · Action-packed space and alien sagas",
+      "themes": [
+        "monsters-aliens-sci-fi-and-the-apocalypse",
+        "thought-provoking-sci-fi-action-and-future-technology",
+        "action-packed-space-and-alien-sagas",
+        "imaginative-space-odysseys-and-alien-encounters",
+        "dangerous-technology-and-the-apocalypse",
+        "humanity-s-odyssey-earth-and-beyond",
+        "sci-fi-horror-creatures-and-aliens",
+        "sci-fi-monster-and-dinosaur-adventures",
+        "superheroes-in-action-packed-battles-with-villains",
+        "disastrous-voyages-and-heroic-survival"
+      ],
+      "theme_labels": [
+        "Monsters, aliens, sci-fi and the apocalypse",
+        "Thought-provoking sci-fi action and future technology",
+        "Action-packed space and alien sagas",
+        "Imaginative space odysseys and alien encounters",
+        "Dangerous technology and the apocalypse",
+        "Humanity's odyssey: earth and beyond",
+        "Sci-fi horror, creatures, and aliens",
+        "Sci-fi monster and dinosaur adventures",
+        "Superheroes in action-packed battles with villains",
+        "Disastrous voyages and heroic survival"
+      ],
+      "size": 1081
+    },
+    {
+      "slug": "subniche-15-captivating-relationships-and-charming-r",
+      "label": "Captivating relationships and charming romance · Passion and romance · Powerful poetic and passionate drama",
+      "themes": [
+        "captivating-relationships-and-charming-romance",
+        "passion-and-romance",
+        "moving-relationship-stories",
+        "charming-romances-and-delightful-chemistry",
+        "erotic-relationships-and-desire",
+        "powerful-poetic-and-passionate-drama",
+        "touching-and-sentimental-family-stories",
+        "tragic-sadness-and-captivating-beauty",
+        "lavish-dramas-and-sumptuous-royalty",
+        "emotional-life-of-renowned-artists"
+      ],
+      "theme_labels": [
+        "Captivating relationships and charming romance",
+        "Passion and romance",
+        "Moving relationship stories",
+        "Charming romances and delightful chemistry",
+        "Erotic relationships and desire",
+        "Powerful poetic and passionate drama",
+        "Touching and sentimental family stories",
+        "Tragic sadness and captivating beauty",
+        "Lavish dramas and sumptuous royalty",
+        "Emotional life of renowned artists"
+      ],
+      "size": 1769
+    },
+    {
+      "slug": "subniche-16-high-speed-and-special-ops",
+      "label": "High speed and special ops · Adrenaline-fueled action and fast cars · Explosive and action-packed heroes vs. villains",
+      "themes": [
+        "high-speed-and-special-ops",
+        "explosive-and-action-packed-heroes-vs-villains",
+        "adrenaline-fueled-action-and-fast-cars",
+        "exciting-spy-thrillers-with-tense-intrigue",
+        "heists-and-thrilling-action",
+        "violent-action-guns-and-crime",
+        "intense-political-and-terrorist-thrillers",
+        "superheroes-in-action-packed-battles-with-villains",
+        "air-pilot-heroism-and-survival",
+        "dangerous-technology-and-the-apocalypse"
+      ],
+      "theme_labels": [
+        "High speed and special ops",
+        "Explosive and action-packed heroes vs. villains",
+        "Adrenaline-fueled action and fast cars",
+        "Exciting spy thrillers with tense intrigue",
+        "Heists and thrilling action",
+        "Violent action, guns, and crime",
+        "Intense political and terrorist thrillers",
+        "Superheroes in action-packed battles with villains",
+        "Air pilot heroism and survival",
+        "Dangerous technology and the apocalypse"
+      ],
+      "size": 1506
+    },
+    {
+      "slug": "subniche-17-politics-and-human-rights",
+      "label": "Politics and human rights · Riveting political and presidential drama · Politics, propaganda, and political documentaries",
+      "themes": [
+        "politics-and-human-rights",
+        "riveting-political-and-presidential-drama",
+        "politics-propaganda-and-political-documentaries",
+        "racism-and-the-powerful-fight-for-justice",
+        "intense-political-and-terrorist-thrillers",
+        "political-drama-patriotism-and-war",
+        "powerful-poetic-and-passionate-drama",
+        "exciting-spy-thrillers-with-tense-intrigue",
+        "violent-crime-and-drugs",
+        "gripping-intense-violent-crime"
+      ],
+      "theme_labels": [
+        "Politics and human rights",
+        "Riveting political and presidential drama",
+        "Politics, propaganda, and political documentaries",
+        "Racism and the powerful fight for justice",
+        "Intense political and terrorist thrillers",
+        "Political drama, patriotism, and war",
+        "Powerful poetic and passionate drama",
+        "Exciting spy thrillers with tense intrigue",
+        "Violent crime and drugs",
+        "Gripping, intense violent crime"
+      ],
+      "size": 899
+    },
+    {
+      "slug": "subniche-18-emotional-teen-coming-of-age-stories",
+      "label": "Emotional teen coming-of-age stories · Emotional LGBTQ relationships · Erotic relationships and desire",
+      "themes": [
+        "emotional-teen-coming-of-age-stories",
+        "emotional-lgbtq-relationships",
+        "moving-relationship-stories",
+        "erotic-relationships-and-desire",
+        "heartfelt-and-sentimental-family-stories",
+        "student-coming-of-age-challenges",
+        "powerful-stories-of-heartbreak-and-suffering",
+        "emotional-and-heartfelt-family-dramas",
+        "challenging-or-sexual-themes-twists"
+      ],
+      "theme_labels": [
+        "Emotional teen coming-of-age stories",
+        "Emotional LGBTQ relationships",
+        "Moving relationship stories",
+        "Erotic relationships and desire",
+        "Heartfelt and sentimental family stories",
+        "Student coming-of-age challenges",
+        "Powerful stories of heartbreak and suffering",
+        "Emotional and heartfelt family dramas",
+        "Challenging or sexual themes & twists"
+      ],
+      "size": 769
+    },
+    {
+      "slug": "subniche-19-sci-fi-horror-creatures-and-aliens",
+      "label": "Sci-fi horror, creatures, and aliens · Survival horror and zombie carnage · Bloody vampire horror",
+      "themes": [
+        "sci-fi-horror-creatures-and-aliens",
+        "survival-horror-and-zombie-carnage",
+        "horror-the-undead-and-monster-classics",
+        "gory-gruesome-and-slasher-horror",
+        "bloody-vampire-horror",
+        "chilling-experiments-and-classic-monster-horror",
+        "sci-fi-monster-and-dinosaur-adventures",
+        "extreme-gory-horror-and-cannibalism",
+        "spooky-scary-comedy",
+        "monsters-aliens-sci-fi-and-the-apocalypse"
+      ],
+      "theme_labels": [
+        "Sci-fi horror, creatures, and aliens",
+        "Survival horror and zombie carnage",
+        "Horror, the undead and monster classics",
+        "Gory, gruesome, and slasher horror",
+        "Bloody vampire horror",
+        "Chilling experiments and classic monster horror",
+        "Sci-fi monster and dinosaur adventures",
+        "Extreme gory horror and cannibalism",
+        "Spooky, scary comedy",
+        "Monsters, aliens, sci-fi and the apocalypse"
+      ],
+      "size": 1385
+    },
+    {
+      "slug": "subniche-20-dreamlike-quirky-and-surreal-storytellin",
+      "label": "Dreamlike, quirky, and surreal storytelling · Surreal and thought-provoking visions of life and death · Challenging or sexual themes & twists",
+      "themes": [
+        "dreamlike-quirky-and-surreal-storytelling",
+        "surreal-and-thought-provoking-visions-of-life-and-death",
+        "challenging-or-sexual-themes-twists",
+        "gothic-and-eerie-haunting-horror",
+        "erotic-relationships-and-desire",
+        "crude-humor-and-satire",
+        "horror-the-undead-and-monster-classics",
+        "thought-provoking-sci-fi-action-and-future-technology",
+        "relationship-comedy",
+        "crime-drugs-and-gangsters"
+      ],
+      "theme_labels": [
+        "Dreamlike, quirky, and surreal storytelling",
+        "Surreal and thought-provoking visions of life and death",
+        "Challenging or sexual themes & twists",
+        "Gothic and eerie haunting horror",
+        "Erotic relationships and desire",
+        "Crude humor and satire",
+        "Horror, the undead and monster classics",
+        "Thought-provoking sci-fi action and future technology",
+        "Relationship comedy",
+        "Crime, drugs and gangsters"
+      ],
+      "size": 772
+    },
+    {
+      "slug": "subniche-21-relationship-comedy",
+      "label": "Relationship comedy · Laugh-out-loud relationship entanglements · Charming romances and delightful chemistry",
+      "themes": [
+        "relationship-comedy",
+        "laugh-out-loud-relationship-entanglements",
+        "charming-romances-and-delightful-chemistry",
+        "gags-jokes-and-slapstick-humor",
+        "touching-and-sentimental-family-stories",
+        "crude-humor-and-satire",
+        "teen-school-antics-and-laughter",
+        "holiday-joy-and-heartwarming-christmas"
+      ],
+      "theme_labels": [
+        "Relationship comedy",
+        "Laugh-out-loud relationship entanglements",
+        "Charming romances and delightful chemistry",
+        "Gags, jokes, and slapstick humor",
+        "Touching and sentimental family stories",
+        "Crude humor and satire",
+        "Teen school antics and laughter",
+        "Holiday joy and heartwarming Christmas"
+      ],
+      "size": 2321
+    },
+    {
+      "slug": "subniche-22-faith-and-religion",
+      "label": "Faith and religion · Religious faith, sin, and forgiveness · Faith and spiritual journeys",
+      "themes": [
+        "faith-and-religion",
+        "religious-faith-sin-and-forgiveness",
+        "faith-and-spiritual-journeys",
+        "powerful-poetic-and-passionate-drama",
+        "gripping-intense-violent-crime",
+        "racism-and-the-powerful-fight-for-justice",
+        "heartbreaking-and-moving-family-drama",
+        "terrifying-haunted-and-supernatural-horror",
+        "surreal-and-thought-provoking-visions-of-life-and-death"
+      ],
+      "theme_labels": [
+        "Faith and religion",
+        "Religious faith, sin, and forgiveness",
+        "Faith and spiritual journeys",
+        "Powerful poetic and passionate drama",
+        "Gripping, intense violent crime",
+        "Racism and the powerful fight for justice",
+        "Heartbreaking and moving family drama",
+        "Terrifying, haunted, and supernatural horror",
+        "Surreal and thought-provoking visions of life and death"
+      ],
+      "size": 429
+    },
+    {
+      "slug": "subniche-23-emotional-life-of-renowned-artists",
+      "label": "Emotional life of renowned artists · Legendary musicians and stardom · Song and dance",
+      "themes": [
+        "emotional-life-of-renowned-artists",
+        "legendary-musicians-and-stardom",
+        "humanity-and-the-world-around-us",
+        "song-and-dance",
+        "moving-relationship-stories",
+        "heartfelt-and-sentimental-family-stories",
+        "powerful-stories-of-heartbreak-and-suffering"
+      ],
+      "theme_labels": [
+        "Emotional life of renowned artists",
+        "Legendary musicians and stardom",
+        "Humanity and the world around us",
+        "Song and dance",
+        "Moving relationship stories",
+        "Heartfelt and sentimental family stories",
+        "Powerful stories of heartbreak and suffering"
+      ],
+      "size": 428
+    },
+    {
+      "slug": "subniche-24-bollywood-emotional-dramas",
+      "label": "Bollywood emotional dramas · Song and dance · Epic heroes",
+      "themes": [
+        "bollywood-emotional-dramas",
+        "epic-heroes",
+        "song-and-dance",
+        "moving-relationship-stories",
+        "crime-drugs-and-gangsters",
+        "intense-political-and-terrorist-thrillers",
+        "humanity-and-the-world-around-us",
+        "laugh-out-loud-relationship-entanglements",
+        "captivating-vision-and-shakespearean-drama",
+        "underdog-fighting-and-boxing-stories"
+      ],
+      "theme_labels": [
+        "Bollywood emotional dramas",
+        "Epic heroes",
+        "Song and dance",
+        "Moving relationship stories",
+        "Crime, drugs and gangsters",
+        "Intense political and terrorist thrillers",
+        "Humanity and the world around us",
+        "Laugh-out-loud relationship entanglements",
+        "Captivating vision and Shakespearean drama",
+        "Underdog fighting and boxing stories"
+      ],
+      "size": 353
+    },
+    {
+      "slug": "subniche-25-western-frontier-dramas-with-a-touch-of-",
+      "label": "Western frontier dramas with a touch of humor · Wild west outlaws and gunfights · Westerns",
+      "themes": [
+        "westerns",
+        "wild-west-outlaws-and-gunfights",
+        "western-frontier-dramas-with-a-touch-of-humor",
+        "violent-action-guns-and-crime",
+        "racism-and-the-powerful-fight-for-justice",
+        "graphic-violence-and-brutal-revenge",
+        "military-combat-and-heroic-soldiers",
+        "historical-battles-and-epic-heroism",
+        "epic-heroes"
+      ],
+      "theme_labels": [
+        "Westerns",
+        "Wild west outlaws and gunfights",
+        "Western frontier dramas with a touch of humor",
+        "Violent action, guns, and crime",
+        "Racism and the powerful fight for justice",
+        "Graphic violence and brutal revenge",
+        "Military combat and heroic soldiers",
+        "Historical battles and epic heroism",
+        "Epic heroes"
+      ],
+      "size": 298
+    },
+    {
+      "slug": "subniche-26-catchy-songs-and-hilarious-musical-comed",
+      "label": "Catchy songs and hilarious musical comedy · Gags, jokes, and slapstick humor · Legendary musicians and stardom",
+      "themes": [
+        "catchy-songs-and-hilarious-musical-comedy",
+        "gags-jokes-and-slapstick-humor",
+        "crude-humor-and-satire",
+        "legendary-musicians-and-stardom"
+      ],
+      "theme_labels": [
+        "Catchy songs and hilarious musical comedy",
+        "Gags, jokes, and slapstick humor",
+        "Crude humor and satire",
+        "Legendary musicians and stardom"
+      ],
+      "size": 1021
+    },
+    {
+      "slug": "subniche-27-twisted-dark-psychological-thriller",
+      "label": "Twisted dark psychological thriller · Intense violence and sexual transgression · Horror, the undead and monster classics",
+      "themes": [
+        "twisted-dark-psychological-thriller",
+        "intense-violence-and-sexual-transgression",
+        "horror-the-undead-and-monster-classics",
+        "terrifying-haunted-and-supernatural-horror",
+        "gory-gruesome-and-slasher-horror",
+        "intense-political-and-terrorist-thrillers",
+        "suspenseful-crime-thrillers",
+        "heists-and-thrilling-action"
+      ],
+      "theme_labels": [
+        "Twisted dark psychological thriller",
+        "Intense violence and sexual transgression",
+        "Horror, the undead and monster classics",
+        "Terrifying, haunted, and supernatural horror",
+        "Gory, gruesome, and slasher horror",
+        "Intense political and terrorist thrillers",
+        "Suspenseful crime thrillers",
+        "Heists and thrilling action"
+      ],
+      "size": 2225
+    },
+    {
+      "slug": "subniche-28-action-comedy-and-silly-heroics",
+      "label": "Action comedy and silly heroics · Spooky, scary comedy · Crude humor and satire",
+      "themes": [
+        "action-comedy-and-silly-heroics",
+        "spooky-scary-comedy",
+        "crude-humor-and-satire",
+        "gags-jokes-and-slapstick-humor",
+        "kids-animated-fun-and-adventure",
+        "explosive-and-action-packed-heroes-vs-villains",
+        "intense-combat-and-martial-arts",
+        "action-packed-space-and-alien-sagas",
+        "adrenaline-fueled-action-and-fast-cars",
+        "superheroes-in-action-packed-battles-with-villains"
+      ],
+      "theme_labels": [
+        "Action comedy and silly heroics",
+        "Spooky, scary comedy",
+        "Crude humor and satire",
+        "Gags, jokes, and slapstick humor",
+        "Kids' animated fun and adventure",
+        "Explosive and action-packed heroes vs. villains",
+        "Intense combat and martial arts",
+        "Action-packed space and alien sagas",
+        "Adrenaline-fueled action and fast cars",
+        "Superheroes in action-packed battles with villains"
+      ],
+      "size": 1075
+    },
+    {
+      "slug": "subniche-29-fascinating-emotional-stories-and-docume",
+      "label": "Fascinating, emotional stories and documentaries · Gripping, intense violent crime · Powerful stories of heartbreak and suffering",
+      "themes": [
+        "fascinating-emotional-stories-and-documentaries",
+        "powerful-stories-of-heartbreak-and-suffering",
+        "humanity-and-the-world-around-us",
+        "gripping-intense-violent-crime",
+        "politics-and-human-rights",
+        "intense-violence-and-sexual-transgression",
+        "emotional-and-heartfelt-family-dramas",
+        "heartfelt-and-sentimental-family-stories",
+        "violent-crime-and-drugs",
+        "challenging-or-sexual-themes-twists"
+      ],
+      "theme_labels": [
+        "Fascinating, emotional stories and documentaries",
+        "Powerful stories of heartbreak and suffering",
+        "Humanity and the world around us",
+        "Gripping, intense violent crime",
+        "Politics and human rights",
+        "Intense violence and sexual transgression",
+        "Emotional and heartfelt family dramas",
+        "Heartfelt and sentimental family stories",
+        "Violent crime and drugs",
+        "Challenging or sexual themes & twists"
+      ],
+      "size": 423
+    },
+    {
+      "slug": "subniche-30-enduring-stories-of-family-and-marital-d",
+      "label": "Enduring stories of family and marital drama · Heartbreaking and moving family drama · Gripping, intense violent crime",
+      "themes": [
+        "enduring-stories-of-family-and-marital-drama",
+        "heartbreaking-and-moving-family-drama",
+        "gripping-intense-violent-crime",
+        "passion-and-romance",
+        "moving-relationship-stories",
+        "emotional-and-heartfelt-family-dramas",
+        "heartfelt-and-sentimental-family-stories",
+        "intense-political-and-terrorist-thrillers",
+        "racism-and-the-powerful-fight-for-justice",
+        "humanity-and-the-world-around-us"
+      ],
+      "theme_labels": [
+        "Enduring stories of family and marital drama",
+        "Heartbreaking and moving family drama",
+        "Gripping, intense violent crime",
+        "Passion and romance",
+        "Moving relationship stories",
+        "Emotional and heartfelt family dramas",
+        "Heartfelt and sentimental family stories",
+        "Intense political and terrorist thrillers",
+        "Racism and the powerful fight for justice",
+        "Humanity and the world around us"
+      ],
+      "size": 1479
+    },
+    {
+      "slug": "subniche-31-emotional-and-captivating-fantasy-storyt",
+      "label": "Emotional and captivating fantasy storytelling · Heartfelt and sentimental family stories · Fairy-tale fantasy and enchanted magic",
+      "themes": [
+        "emotional-and-captivating-fantasy-storytelling",
+        "fairy-tale-fantasy-and-enchanted-magic",
+        "heartfelt-and-sentimental-family-stories",
+        "tragic-sadness-and-captivating-beauty",
+        "moving-relationship-stories",
+        "surreal-and-thought-provoking-visions-of-life-and-death",
+        "captivating-relationships-and-charming-romance",
+        "emotional-and-heartfelt-family-dramas",
+        "fantasy-adventure-heroism-and-swordplay",
+        "epic-adventure-and-breathtaking-battles"
+      ],
+      "theme_labels": [
+        "Emotional and captivating fantasy storytelling",
+        "Fairy-tale fantasy and enchanted magic",
+        "Heartfelt and sentimental family stories",
+        "Tragic sadness and captivating beauty",
+        "Moving relationship stories",
+        "Surreal and thought-provoking visions of life and death",
+        "Captivating relationships and charming romance",
+        "Emotional and heartfelt family dramas",
+        "Fantasy adventure, heroism, and swordplay",
+        "Epic adventure and breathtaking battles"
+      ],
+      "size": 986
+    },
+    {
+      "slug": "subniche-32-underdogs-and-coming-of-age",
+      "label": "Underdogs and coming of age · Teen school antics and laughter · Student coming-of-age challenges",
+      "themes": [
+        "underdogs-and-coming-of-age",
+        "teen-school-antics-and-laughter",
+        "student-coming-of-age-challenges",
+        "emotional-teen-coming-of-age-stories",
+        "inspiring-sports-underdog-stories",
+        "teen-friendship-and-coming-of-age",
+        "emotional-and-touching-family-dramas",
+        "laugh-out-loud-relationship-entanglements",
+        "dance-rhythms-and-catchy-tunes",
+        "underdog-fighting-and-boxing-stories"
+      ],
+      "theme_labels": [
+        "Underdogs and coming of age",
+        "Teen school antics and laughter",
+        "Student coming-of-age challenges",
+        "Emotional teen coming-of-age stories",
+        "Inspiring sports underdog stories",
+        "Teen friendship and coming-of-age",
+        "Emotional and touching family dramas",
+        "Laugh-out-loud relationship entanglements",
+        "Dance rhythms and catchy tunes",
+        "Underdog fighting and boxing stories"
+      ],
+      "size": 1429
+    }
+  ],
+  "cluster_members": 14743,
+  "neighbors_per_film": 24,
+  "edges": 492336,
+  "films_with_neighbors": 20514,
+  "average_score": 0.2455,
+  "collection_edge_share": 0.013,
+  "theme_edge_share": 0.751,
+  "related_edge_share": 0.493,
+  "samples": {
+    "Interstellar": [
+      {
+        "tmdb_id": 2103,
+        "title": "Solaris",
+        "score": 0.430041,
+        "signals": {
+          "embedding": 0.4321,
+          "theme": 1.0,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 1.0,
+          "related": 1.0,
+          "genre": 0.5,
+          "quality": 0.665,
+          "era": 0.7
+        }
+      },
+      {
+        "tmdb_id": 329865,
+        "title": "Arrival",
+        "score": 0.334735,
+        "signals": {
+          "embedding": 0.3813,
+          "theme": 0.6667,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 1.0,
+          "related": 0.55,
+          "genre": 0.5,
+          "quality": 0.846,
+          "era": 0.95
+        }
+      },
+      {
+        "tmdb_id": 686,
+        "title": "Contact",
+        "score": 0.33166,
+        "signals": {
+          "embedding": 0.3371,
+          "theme": 0.7778,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.171,
+          "subniche": 0.667,
+          "related": 0.55,
+          "genre": 0.5,
+          "quality": 0.809,
+          "era": 0.575
+        }
+      },
+      {
+        "tmdb_id": 840,
+        "title": "Close Encounters of the Third Kind",
+        "score": 0.322,
+        "signals": {
+          "embedding": 0.5205,
+          "theme": 0.75,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 1.0,
+          "related": 0.0,
+          "genre": 0.667,
+          "quality": 0.801,
+          "era": 0.075
+        }
+      },
+      {
+        "tmdb_id": 49047,
+        "title": "Gravity",
+        "score": 0.319191,
+        "signals": {
+          "embedding": 0.3087,
+          "theme": 0.6667,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 1.0,
+          "related": 0.55,
+          "genre": 0.5,
+          "quality": 0.816,
+          "era": 0.975
+        }
+      },
+      {
+        "tmdb_id": 62,
+        "title": "2001: A Space Odyssey",
+        "score": 0.315028,
+        "signals": {
+          "embedding": 0.4113,
+          "theme": 0.875,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 1.0,
+          "related": 0.0,
+          "genre": 0.5,
+          "quality": 0.87,
+          "era": 0.0
+        }
+      },
+      {
+        "tmdb_id": 559581,
+        "title": "Stowaway",
+        "score": 0.313688,
+        "signals": {
+          "embedding": 0.3548,
+          "theme": 0.5556,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.5,
+          "related": 1.0,
+          "genre": 0.5,
+          "quality": 0.642,
+          "era": 0.825
+        }
+      },
+      {
+        "tmdb_id": 577922,
+        "title": "Tenet",
+        "score": 0.311408,
+        "signals": {
+          "embedding": 0.2595,
+          "theme": 0.1538,
+          "collection": 0.0,
+          "director": 1.0,
+          "writer": 0.5,
+          "cast": 0.057,
+          "subniche": 0.667,
+          "related": 0.0,
+          "genre": 0.2,
+          "quality": 0.816,
+          "era": 0.85
+        }
+      }
+    ],
+    "The Dark Knight": [
+      {
+        "tmdb_id": 49026,
+        "title": "The Dark Knight Rises",
+        "score": 0.777594,
+        "signals": {
+          "embedding": 0.8243,
+          "theme": 0.3636,
+          "collection": 1.0,
+          "director": 1.0,
+          "writer": 1.0,
+          "cast": 0.49,
+          "subniche": 0.5,
+          "related": 1.0,
+          "genre": 0.75,
+          "quality": 0.857,
+          "era": 0.9
+        }
+      },
+      {
+        "tmdb_id": 272,
+        "title": "Batman Begins",
+        "score": 0.692466,
+        "signals": {
+          "embedding": 0.669,
+          "theme": 0.2727,
+          "collection": 1.0,
+          "director": 1.0,
+          "writer": 0.667,
+          "cast": 0.518,
+          "subniche": 0.2,
+          "related": 1.0,
+          "genre": 0.5,
+          "quality": 0.852,
+          "era": 0.925
+        }
+      },
+      {
+        "tmdb_id": 414906,
+        "title": "The Batman",
+        "score": 0.348192,
+        "signals": {
+          "embedding": 0.6853,
+          "theme": 0.3333,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.5,
+          "related": 1.0,
+          "genre": 0.5,
+          "quality": 0.848,
+          "era": 0.65
+        }
+      },
+      {
+        "tmdb_id": 577922,
+        "title": "Tenet",
+        "score": 0.336931,
+        "signals": {
+          "embedding": 0.2501,
+          "theme": 0.4,
+          "collection": 0.0,
+          "director": 1.0,
+          "writer": 0.333,
+          "cast": 0.057,
+          "subniche": 0.5,
+          "related": 0.0,
+          "genre": 0.5,
+          "quality": 0.816,
+          "era": 0.7
+        }
+      },
+      {
+        "tmdb_id": 949,
+        "title": "Heat",
+        "score": 0.323766,
+        "signals": {
+          "embedding": 0.4331,
+          "theme": 0.3333,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 1.0,
+          "related": 1.0,
+          "genre": 0.5,
+          "quality": 0.861,
+          "era": 0.675
+        }
+      },
+      {
+        "tmdb_id": 242643,
+        "title": "Batman: Assault on Arkham",
+        "score": 0.318421,
+        "signals": {
+          "embedding": 0.6407,
+          "theme": 0.25,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.25,
+          "related": 1.0,
+          "genre": 0.75,
+          "quality": 0.745,
+          "era": 0.85
+        }
+      },
+      {
+        "tmdb_id": 268,
+        "title": "Batman",
+        "score": 0.316965,
+        "signals": {
+          "embedding": 0.7482,
+          "theme": 0.1818,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.2,
+          "related": 1.0,
+          "genre": 0.5,
+          "quality": 0.816,
+          "era": 0.525
+        }
+      },
+      {
+        "tmdb_id": 680,
+        "title": "Pulp Fiction",
+        "score": 0.312299,
+        "signals": {
+          "embedding": 0.5127,
+          "theme": 0.3333,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.5,
+          "related": 1.0,
+          "genre": 0.5,
+          "quality": 0.901,
+          "era": 0.65
+        }
+      }
+    ],
+    "Parasite": [
+      {
+        "tmdb_id": 11423,
+        "title": "Memories of Murder",
+        "score": 0.33261,
+        "signals": {
+          "embedding": 0.3367,
+          "theme": 0.2308,
+          "collection": 0.0,
+          "director": 1.0,
+          "writer": 0.333,
+          "cast": 0.341,
+          "subniche": 0.2,
+          "related": 0.0,
+          "genre": 0.5,
+          "quality": 0.847,
+          "era": 0.6
+        }
+      },
+      {
+        "tmdb_id": 1255,
+        "title": "The Host",
+        "score": 0.285135,
+        "signals": {
+          "embedding": 0.4,
+          "theme": 0.0,
+          "collection": 0.0,
+          "director": 1.0,
+          "writer": 0.25,
+          "cast": 0.341,
+          "subniche": 0.0,
+          "related": 0.0,
+          "genre": 0.2,
+          "quality": 0.762,
+          "era": 0.675
+        }
+      },
+      {
+        "tmdb_id": 30018,
+        "title": "Mother",
+        "score": 0.285014,
+        "signals": {
+          "embedding": 0.3084,
+          "theme": 0.1667,
+          "collection": 0.0,
+          "director": 1.0,
+          "writer": 0.333,
+          "cast": 0.0,
+          "subniche": 0.25,
+          "related": 0.0,
+          "genre": 0.2,
+          "quality": 0.785,
+          "era": 0.75
+        }
+      },
+      {
+        "tmdb_id": 118179,
+        "title": "Influenza",
+        "score": 0.283001,
+        "signals": {
+          "embedding": 0.4486,
+          "theme": 0.0,
+          "collection": 0.0,
+          "director": 1.0,
+          "writer": 0.5,
+          "cast": 0.0,
+          "subniche": 0.0,
+          "related": 0.0,
+          "genre": 0.5,
+          "quality": 0.556,
+          "era": 0.625
+        }
+      },
+      {
+        "tmdb_id": 387426,
+        "title": "Okja",
+        "score": 0.275056,
+        "signals": {
+          "embedding": 0.3279,
+          "theme": 0.0769,
+          "collection": 0.0,
+          "director": 1.0,
+          "writer": 0.333,
+          "cast": 0.0,
+          "subniche": 0.2,
+          "related": 0.0,
+          "genre": 0.2,
+          "quality": 0.797,
+          "era": 0.95
+        }
+      },
+      {
+        "tmdb_id": 41479,
+        "title": "The Joneses",
+        "score": 0.263295,
+        "signals": {
+          "embedding": 0.4006,
+          "theme": 0.2727,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.2,
+          "related": 1.0,
+          "genre": 0.667,
+          "quality": 0.65,
+          "era": 0.775
+        }
+      },
+      {
+        "tmdb_id": 395458,
+        "title": "Suburbicon",
+        "score": 0.260993,
+        "signals": {
+          "embedding": 0.3847,
+          "theme": 0.3,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.2,
+          "related": 1.0,
+          "genre": 0.4,
+          "quality": 0.669,
+          "era": 0.95
+        }
+      },
+      {
+        "tmdb_id": 480001,
+        "title": "The Art of Self-Defense",
+        "score": 0.239569,
+        "signals": {
+          "embedding": 0.3412,
+          "theme": 0.1667,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.2,
+          "related": 1.0,
+          "genre": 0.75,
+          "quality": 0.686,
+          "era": 1.0
+        }
+      }
+    ],
+    "Spirited Away": [
+      {
+        "tmdb_id": 4935,
+        "title": "Howl's Moving Castle",
+        "score": 0.494129,
+        "signals": {
+          "embedding": 0.4887,
+          "theme": 0.5,
+          "collection": 0.0,
+          "director": 1.0,
+          "writer": 1.0,
+          "cast": 0.144,
+          "subniche": 0.5,
+          "related": 0.55,
+          "genre": 0.5,
+          "quality": 0.895,
+          "era": 0.925
+        }
+      },
+      {
+        "tmdb_id": 8392,
+        "title": "My Neighbor Totoro",
+        "score": 0.487696,
+        "signals": {
+          "embedding": 0.3772,
+          "theme": 0.5714,
+          "collection": 0.0,
+          "director": 1.0,
+          "writer": 1.0,
+          "cast": 0.0,
+          "subniche": 0.667,
+          "related": 0.55,
+          "genre": 1.0,
+          "quality": 0.873,
+          "era": 0.675
+        }
+      },
+      {
+        "tmdb_id": 12429,
+        "title": "Ponyo",
+        "score": 0.484922,
+        "signals": {
+          "embedding": 0.3547,
+          "theme": 0.7143,
+          "collection": 0.0,
+          "director": 1.0,
+          "writer": 1.0,
+          "cast": 0.034,
+          "subniche": 1.0,
+          "related": 0.0,
+          "genre": 1.0,
+          "quality": 0.831,
+          "era": 0.825
+        }
+      },
+      {
+        "tmdb_id": 16859,
+        "title": "Kiki's Delivery Service",
+        "score": 0.464693,
+        "signals": {
+          "embedding": 0.3156,
+          "theme": 0.5714,
+          "collection": 0.0,
+          "director": 1.0,
+          "writer": 1.0,
+          "cast": 0.0,
+          "subniche": 0.5,
+          "related": 0.55,
+          "genre": 1.0,
+          "quality": 0.829,
+          "era": 0.7
+        }
+      },
+      {
+        "tmdb_id": 508883,
+        "title": "The Boy and the Heron",
+        "score": 0.40618,
+        "signals": {
+          "embedding": 0.388,
+          "theme": 0.5,
+          "collection": 0.0,
+          "director": 1.0,
+          "writer": 1.0,
+          "cast": 0.0,
+          "subniche": 0.5,
+          "related": 0.0,
+          "genre": 0.5,
+          "quality": 0.783,
+          "era": 0.45
+        }
+      },
+      {
+        "tmdb_id": 430447,
+        "title": "Mary and The Witch's Flower",
+        "score": 0.351758,
+        "signals": {
+          "embedding": 0.3663,
+          "theme": 0.6667,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.049,
+          "subniche": 0.667,
+          "related": 1.0,
+          "genre": 0.75,
+          "quality": 0.726,
+          "era": 0.6
+        }
+      },
+      {
+        "tmdb_id": 683127,
+        "title": "Earwig and the Witch",
+        "score": 0.328036,
+        "signals": {
+          "embedding": 0.4365,
+          "theme": 0.5,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.667,
+          "related": 1.0,
+          "genre": 0.6,
+          "quality": 0.603,
+          "era": 0.5
+        }
+      },
+      {
+        "tmdb_id": 100271,
+        "title": "A Letter to Momo",
+        "score": 0.32338,
+        "signals": {
+          "embedding": 0.3341,
+          "theme": 0.5714,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.667,
+          "related": 1.0,
+          "genre": 0.6,
+          "quality": 0.71,
+          "era": 0.725
+        }
+      }
+    ],
+    "Batman Begins": [
+      {
+        "tmdb_id": 49026,
+        "title": "The Dark Knight Rises",
+        "score": 0.710583,
+        "signals": {
+          "embedding": 0.607,
+          "theme": 0.3636,
+          "collection": 1.0,
+          "director": 1.0,
+          "writer": 0.667,
+          "cast": 0.452,
+          "subniche": 0.5,
+          "related": 1.0,
+          "genre": 0.75,
+          "quality": 0.857,
+          "era": 0.825
+        }
+      },
+      {
+        "tmdb_id": 155,
+        "title": "The Dark Knight",
+        "score": 0.693323,
+        "signals": {
+          "embedding": 0.669,
+          "theme": 0.2727,
+          "collection": 1.0,
+          "director": 1.0,
+          "writer": 0.667,
+          "cast": 0.518,
+          "subniche": 0.2,
+          "related": 1.0,
+          "genre": 0.5,
+          "quality": 0.904,
+          "era": 0.925
+        }
+      },
+      {
+        "tmdb_id": 268,
+        "title": "Batman",
+        "score": 0.363818,
+        "signals": {
+          "embedding": 0.6794,
+          "theme": 0.4444,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.5,
+          "related": 1.0,
+          "genre": 0.5,
+          "quality": 0.816,
+          "era": 0.6
+        }
+      },
+      {
+        "tmdb_id": 21683,
+        "title": "Batman: Mystery of the Batwoman",
+        "score": 0.342085,
+        "signals": {
+          "embedding": 0.639,
+          "theme": 0.2857,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.667,
+          "related": 1.0,
+          "genre": 0.5,
+          "quality": 0.669,
+          "era": 0.95
+        }
+      },
+      {
+        "tmdb_id": 209112,
+        "title": "Batman v Superman: Dawn of Justice",
+        "score": 0.34095,
+        "signals": {
+          "embedding": 0.6307,
+          "theme": 0.75,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.333,
+          "cast": 0.0,
+          "subniche": 0.667,
+          "related": 0.0,
+          "genre": 0.2,
+          "quality": 0.74,
+          "era": 0.725
+        }
+      },
+      {
+        "tmdb_id": 242643,
+        "title": "Batman: Assault on Arkham",
+        "score": 0.336394,
+        "signals": {
+          "embedding": 0.5216,
+          "theme": 0.4286,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.667,
+          "related": 1.0,
+          "genre": 0.4,
+          "quality": 0.745,
+          "era": 0.775
+        }
+      },
+      {
+        "tmdb_id": 414,
+        "title": "Batman Forever",
+        "score": 0.309443,
+        "signals": {
+          "embedding": 0.5633,
+          "theme": 0.4286,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.667,
+          "related": 0.55,
+          "genre": 0.5,
+          "quality": 0.684,
+          "era": 0.75
+        }
+      },
+      {
+        "tmdb_id": 577922,
+        "title": "Tenet",
+        "score": 0.303273,
+        "signals": {
+          "embedding": 0.1749,
+          "theme": 0.4,
+          "collection": 0.0,
+          "director": 1.0,
+          "writer": 0.5,
+          "cast": 0.057,
+          "subniche": 0.2,
+          "related": 0.0,
+          "genre": 0.2,
+          "quality": 0.816,
+          "era": 0.625
+        }
+      }
+    ],
+    "The Dark Knight Rises": [
+      {
+        "tmdb_id": 155,
+        "title": "The Dark Knight",
+        "score": 0.778376,
+        "signals": {
+          "embedding": 0.8243,
+          "theme": 0.3636,
+          "collection": 1.0,
+          "director": 1.0,
+          "writer": 1.0,
+          "cast": 0.49,
+          "subniche": 0.5,
+          "related": 1.0,
+          "genre": 0.75,
+          "quality": 0.904,
+          "era": 0.9
+        }
+      },
+      {
+        "tmdb_id": 272,
+        "title": "Batman Begins",
+        "score": 0.710508,
+        "signals": {
+          "embedding": 0.607,
+          "theme": 0.3636,
+          "collection": 1.0,
+          "director": 1.0,
+          "writer": 0.667,
+          "cast": 0.452,
+          "subniche": 0.5,
+          "related": 1.0,
+          "genre": 0.75,
+          "quality": 0.852,
+          "era": 0.825
+        }
+      },
+      {
+        "tmdb_id": 414906,
+        "title": "The Batman",
+        "score": 0.363774,
+        "signals": {
+          "embedding": 0.5991,
+          "theme": 0.5455,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.5,
+          "related": 1.0,
+          "genre": 0.4,
+          "quality": 0.848,
+          "era": 0.75
+        }
+      },
+      {
+        "tmdb_id": 268,
+        "title": "Batman",
+        "score": 0.329885,
+        "signals": {
+          "embedding": 0.6773,
+          "theme": 0.2727,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.5,
+          "related": 1.0,
+          "genre": 0.4,
+          "quality": 0.816,
+          "era": 0.425
+        }
+      },
+      {
+        "tmdb_id": 242643,
+        "title": "Batman: Assault on Arkham",
+        "score": 0.32829,
+        "signals": {
+          "embedding": 0.4883,
+          "theme": 0.375,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.667,
+          "related": 1.0,
+          "genre": 0.6,
+          "quality": 0.745,
+          "era": 0.95
+        }
+      },
+      {
+        "tmdb_id": 9316,
+        "title": "Ong-Bak",
+        "score": 0.313343,
+        "signals": {
+          "embedding": 0.2725,
+          "theme": 0.6667,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 1.0,
+          "related": 0.55,
+          "genre": 0.75,
+          "quality": 0.754,
+          "era": 0.775
+        }
+      },
+      {
+        "tmdb_id": 40662,
+        "title": "Batman: Under the Red Hood",
+        "score": 0.312872,
+        "signals": {
+          "embedding": 0.5841,
+          "theme": 0.6,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 1.0,
+          "related": 0.0,
+          "genre": 0.167,
+          "quality": 0.792,
+          "era": 0.95
+        }
+      },
+      {
+        "tmdb_id": 754,
+        "title": "Face/Off",
+        "score": 0.306193,
+        "signals": {
+          "embedding": 0.3394,
+          "theme": 0.875,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 1.0,
+          "related": 0.0,
+          "genre": 0.4,
+          "quality": 0.791,
+          "era": 0.625
+        }
+      }
+    ],
+    "Everything Everywhere All at Once": [
+      {
+        "tmdb_id": 347031,
+        "title": "Swiss Army Man",
+        "score": 0.394329,
+        "signals": {
+          "embedding": 0.3093,
+          "theme": 0.5455,
+          "collection": 0.0,
+          "director": 1.0,
+          "writer": 1.0,
+          "cast": 0.0,
+          "subniche": 0.5,
+          "related": 0.0,
+          "genre": 0.143,
+          "quality": 0.764,
+          "era": 0.85
+        }
+      },
+      {
+        "tmdb_id": 1119449,
+        "title": "Good Luck, Have Fun, Don't Die",
+        "score": 0.280838,
+        "signals": {
+          "embedding": 0.4057,
+          "theme": 0.2727,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.5,
+          "related": 1.0,
+          "genre": 0.5,
+          "quality": 0.73,
+          "era": 0.9
+        }
+      },
+      {
+        "tmdb_id": 976720,
+        "title": "Vesper",
+        "score": 0.220583,
+        "signals": {
+          "embedding": 0.3503,
+          "theme": 0.0769,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.25,
+          "related": 1.0,
+          "genre": 0.4,
+          "quality": 0.658,
+          "era": 1.0
+        }
+      },
+      {
+        "tmdb_id": 792307,
+        "title": "Poor Things",
+        "score": 0.215187,
+        "signals": {
+          "embedding": 0.5212,
+          "theme": 0.25,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.5,
+          "related": 0.0,
+          "genre": 0.2,
+          "quality": 0.825,
+          "era": 0.975
+        }
+      },
+      {
+        "tmdb_id": 455207,
+        "title": "Crazy Rich Asians",
+        "score": 0.210262,
+        "signals": {
+          "embedding": 0.4874,
+          "theme": 0.3333,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.156,
+          "subniche": 0.2,
+          "related": 0.0,
+          "genre": 0.0,
+          "quality": 0.773,
+          "era": 0.9
+        }
+      },
+      {
+        "tmdb_id": 8069,
+        "title": "Barbarella",
+        "score": 0.204427,
+        "signals": {
+          "embedding": 0.3407,
+          "theme": 0.0769,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.25,
+          "related": 1.0,
+          "genre": 0.5,
+          "quality": 0.647,
+          "era": 0.0
+        }
+      },
+      {
+        "tmdb_id": 6978,
+        "title": "Big Trouble in Little China",
+        "score": 0.20438,
+        "signals": {
+          "embedding": 0.3728,
+          "theme": 0.0714,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.085,
+          "subniche": 0.0,
+          "related": 1.0,
+          "genre": 0.4,
+          "quality": 0.779,
+          "era": 0.1
+        }
+      },
+      {
+        "tmdb_id": 27072,
+        "title": "On the Silver Globe",
+        "score": 0.203675,
+        "signals": {
+          "embedding": 0.5326,
+          "theme": 0.25,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.5,
+          "related": 0.0,
+          "genre": 0.25,
+          "quality": 0.7,
+          "era": 0.175
+        }
+      }
+    ],
+    "Heat": [
+      {
+        "tmdb_id": 1047807,
+        "title": "Heat 2",
+        "score": 0.49378,
+        "signals": {
+          "embedding": 0.5477,
+          "theme": 0.0,
+          "collection": 1.0,
+          "director": 1.0,
+          "writer": 1.0,
+          "cast": 0.0,
+          "subniche": 0.0,
+          "related": 0.0,
+          "genre": 1.0,
+          "quality": 0.0,
+          "era": 0.5
+        }
+      },
+      {
+        "tmdb_id": 11524,
+        "title": "Thief",
+        "score": 0.481756,
+        "signals": {
+          "embedding": 0.4728,
+          "theme": 0.7778,
+          "collection": 0.0,
+          "director": 1.0,
+          "writer": 1.0,
+          "cast": 0.0,
+          "subniche": 0.667,
+          "related": 0.0,
+          "genre": 0.5,
+          "quality": 0.729,
+          "era": 0.65
+        }
+      },
+      {
+        "tmdb_id": 82,
+        "title": "Miami Vice",
+        "score": 0.444137,
+        "signals": {
+          "embedding": 0.4308,
+          "theme": 0.6,
+          "collection": 0.0,
+          "director": 1.0,
+          "writer": 1.0,
+          "cast": 0.0,
+          "subniche": 0.667,
+          "related": 0.0,
+          "genre": 0.5,
+          "quality": 0.684,
+          "era": 0.725
+        }
+      },
+      {
+        "tmdb_id": 11322,
+        "title": "Public Enemies",
+        "score": 0.433677,
+        "signals": {
+          "embedding": 0.324,
+          "theme": 0.6,
+          "collection": 0.0,
+          "director": 1.0,
+          "writer": 0.333,
+          "cast": 0.0,
+          "subniche": 0.667,
+          "related": 0.55,
+          "genre": 0.5,
+          "quality": 0.758,
+          "era": 0.65
+        }
+      },
+      {
+        "tmdb_id": 1538,
+        "title": "Collateral",
+        "score": 0.365404,
+        "signals": {
+          "embedding": 0.2602,
+          "theme": 0.3077,
+          "collection": 0.0,
+          "director": 1.0,
+          "writer": 0.333,
+          "cast": 0.0,
+          "subniche": 0.5,
+          "related": 0.55,
+          "genre": 0.5,
+          "quality": 0.805,
+          "era": 0.775
+        }
+      },
+      {
+        "tmdb_id": 119283,
+        "title": "Parker",
+        "score": 0.356411,
+        "signals": {
+          "embedding": 0.4733,
+          "theme": 0.6,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.667,
+          "related": 1.0,
+          "genre": 0.667,
+          "quality": 0.705,
+          "era": 0.55
+        }
+      },
+      {
+        "tmdb_id": 604685,
+        "title": "Den of Thieves 2: Pantera",
+        "score": 0.337587,
+        "signals": {
+          "embedding": 0.4287,
+          "theme": 0.6,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.667,
+          "related": 1.0,
+          "genre": 0.5,
+          "quality": 0.686,
+          "era": 0.25
+        }
+      },
+      {
+        "tmdb_id": 30941,
+        "title": "The Anderson Tapes",
+        "score": 0.33094,
+        "signals": {
+          "embedding": 0.4378,
+          "theme": 0.6,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.5,
+          "related": 1.0,
+          "genre": 0.5,
+          "quality": 0.596,
+          "era": 0.4
+        }
+      }
+    ],
+    "The Heat": [
+      {
+        "tmdb_id": 238713,
+        "title": "Spy",
+        "score": 0.392002,
+        "signals": {
+          "embedding": 0.4154,
+          "theme": 0.5556,
+          "collection": 0.0,
+          "director": 1.0,
+          "writer": 0.0,
+          "cast": 0.171,
+          "subniche": 0.25,
+          "related": 0.0,
+          "genre": 1.0,
+          "quality": 0.778,
+          "era": 0.95
+        }
+      },
+      {
+        "tmdb_id": 43074,
+        "title": "Ghostbusters",
+        "score": 0.384632,
+        "signals": {
+          "embedding": 0.2789,
+          "theme": 0.625,
+          "collection": 0.0,
+          "director": 1.0,
+          "writer": 0.5,
+          "cast": 0.171,
+          "subniche": 0.25,
+          "related": 0.0,
+          "genre": 0.5,
+          "quality": 0.683,
+          "era": 0.925
+        }
+      },
+      {
+        "tmdb_id": 3179,
+        "title": "Beavis and Butt-Head Do America",
+        "score": 0.340338,
+        "signals": {
+          "embedding": 0.2828,
+          "theme": 0.8571,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.5,
+          "related": 1.0,
+          "genre": 0.333,
+          "quality": 0.687,
+          "era": 0.575
+        }
+      },
+      {
+        "tmdb_id": 90,
+        "title": "Beverly Hills Cop",
+        "score": 0.337811,
+        "signals": {
+          "embedding": 0.407,
+          "theme": 0.6,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.5,
+          "related": 1.0,
+          "genre": 1.0,
+          "quality": 0.791,
+          "era": 0.275
+        }
+      },
+      {
+        "tmdb_id": 193893,
+        "title": "Let's Be Cops",
+        "score": 0.329994,
+        "signals": {
+          "embedding": 0.4561,
+          "theme": 0.75,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.5,
+          "related": 0.55,
+          "genre": 0.333,
+          "quality": 0.725,
+          "era": 0.975
+        }
+      },
+      {
+        "tmdb_id": 187017,
+        "title": "22 Jump Street",
+        "score": 0.32878,
+        "signals": {
+          "embedding": 0.4124,
+          "theme": 0.5556,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.25,
+          "related": 1.0,
+          "genre": 1.0,
+          "quality": 0.789,
+          "era": 0.975
+        }
+      },
+      {
+        "tmdb_id": 513045,
+        "title": "Stuber",
+        "score": 0.324364,
+        "signals": {
+          "embedding": 0.3639,
+          "theme": 0.625,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 1.0,
+          "related": 0.55,
+          "genre": 0.667,
+          "quality": 0.706,
+          "era": 0.85
+        }
+      },
+      {
+        "tmdb_id": 9384,
+        "title": "Starsky & Hutch",
+        "score": 0.320434,
+        "signals": {
+          "embedding": 0.3957,
+          "theme": 0.625,
+          "collection": 0.0,
+          "director": 0.0,
+          "writer": 0.0,
+          "cast": 0.0,
+          "subniche": 0.2,
+          "related": 1.0,
+          "genre": 0.667,
+          "quality": 0.677,
+          "era": 0.775
+        }
+      }
+    ]
+  },
+  "elapsed_seconds": 104.5,
+  "written": {
+    "theme_clusters": 32,
+    "film_subniches": 36563,
+    "film_neighbors": 492336
+  }
+}

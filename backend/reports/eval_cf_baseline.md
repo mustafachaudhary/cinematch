@@ -1,0 +1,17 @@
+# CineMatch evaluation
+
+- source: `/home/mustafa/Downloads/Odin/NLP/cinematch.ai/backend/cinematch.db`
+- catalog: 20512 films
+- personas: 81
+- ranker: v2 (disabled: none)
+- split: 20% per user, 20–200 rows
+
+| arm | NDCG@20 graded | NDCG@20 binary | Recall@20 | Recall@50 | MRR | CF MAE | CF cov. |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| warm | 0.2308 | 0.2539 | 0.0820 | 0.1576 | 0.4763 | 0.5445 | 91.58% |
+| cold | 0.1095 | 0.1311 | 0.0080 | 0.0176 | 0.2646 | 0.0000 | 0.00% |
+
+- catalog coverage (warm): 2.18%
+- mean popularity (warm): 17.26
+- intra-list similarity (warm): 0.2579
+- CF support share (warm): 96.85%
